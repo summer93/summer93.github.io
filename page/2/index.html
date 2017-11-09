@@ -130,7 +130,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="搜尋">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -164,6 +164,68 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
+            <article id="post-Ajax01"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2016-11-09 08:31:27" datetime="2016-11-09T00:31:27.000Z"  itemprop="datePublished">2016-11-09</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2016/11/09/Ajax01/">Ajax01</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+1.Ajax
+
+1.原生Ajax,XMLHttpRequest
+
+2.jQuery Ajax,内部基于’原生Ajax’
+
+
+
+
+2.伪Ajax，非XMLHttpRequest
+
+3.跨域Ajax，JSONP
+
+
+
+1.Ajax
+JQuery Ajax12345678910111213141516171819202122232425262728293031323334353637383940...
+    
+
+        <a href="/2016/11/09/Ajax01/" class="post-more waves-effect waves-button">
+            閱讀全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
             <article id="post-CBV|FBV"
   class="article-card article-type-post" itemprop="blogPost">
 
@@ -194,7 +256,7 @@
     
 
         <a href="/2016/11/09/CBV|FBV/" class="post-more waves-effect waves-button">
-            阅读全文…
+            閱讀全文…
         </a>
     </div>
     
@@ -209,7 +271,7 @@
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-线程池、进程池"
+            <article id="post-Django-中间件01"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
@@ -225,7 +287,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/11/09/线程池、进程池/">线程池、进程池</a>
+      <a class="post-title-link" href="/2016/11/09/Django-中间件01/">Django-中间件01</a>
     </h3>
   
 
@@ -236,20 +298,66 @@
 
     
         
-线程池
-12345678910111213import timefrom concurrent.futures import ThreadPoolExecutordef task(i):    time.sleep(1)    print(i)p = ThreadPoolExecutor(10)for row in range(100):    p.submit(task,row)
-
-进程...
+django 中的中间件（middleware），在django中，中间件其实就是一个类，在请求到来和结束后，django会根据自己的规则在合适的时机执行中间件中相应的方法。请求过来，先经过所有的process_request(),到视图函数后，经过所有的process_response返回。
+但是如果中某一个process_request()有了返回值，找到它自己所对应的process_...
     
 
-        <a href="/2016/11/09/线程池、进程池/" class="post-more waves-effect waves-button">
-            阅读全文…
+        <a href="/2016/11/09/Django-中间件01/" class="post-more waves-effect waves-button">
+            閱讀全文…
         </a>
     </div>
     
     <div class="post-footer">
         
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Django/">Django</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-xss跨站脚本攻击 ，csrf跨站请求伪造"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2016-11-09 08:31:27" datetime="2016-11-09T00:31:27.000Z"  itemprop="datePublished">2016-11-09</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2016/11/09/xss跨站脚本攻击 ，csrf跨站请求伪造/">xss跨站脚本攻击 ，csrf跨站请求伪造</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+xss攻击 跨站脚本攻击
+
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657# views.pymsg = []def comment(request):    if request.method == &apos;GET&apo...
+    
+
+        <a href="/2016/11/09/xss跨站脚本攻击 ，csrf跨站请求伪造/" class="post-more waves-effect waves-button">
+            閱讀全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Django/">Django</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
 
     </div>
     
@@ -300,7 +408,7 @@ JQuery Ajax
     
 
         <a href="/2016/11/09/Ajax02/" class="post-more waves-effect waves-button">
-            阅读全文…
+            閱讀全文…
         </a>
     </div>
     
@@ -347,7 +455,7 @@ Form 验证123456789# login.html&lt;body&gt;&lt;form action=&quot;/login.html&qu
     
 
         <a href="/2016/11/09/From组件/" class="post-more waves-effect waves-button">
-            阅读全文…
+            閱讀全文…
         </a>
     </div>
     
@@ -412,13 +520,107 @@ Form 验证123456789# login.html&lt;body&gt;&lt;form action=&quot;/login.html&qu
     
 
         <a href="/2016/11/09/JSONP详解/" class="post-more waves-effect waves-button">
-            阅读全文…
+            閱讀全文…
         </a>
     </div>
     
     <div class="post-footer">
         
 	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-线程池、进程池"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2016-11-09 08:31:27" datetime="2016-11-09T00:31:27.000Z"  itemprop="datePublished">2016-11-09</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2016/11/09/线程池、进程池/">线程池、进程池</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+线程池
+12345678910111213import timefrom concurrent.futures import ThreadPoolExecutordef task(i):    time.sleep(1)    print(i)p = ThreadPoolExecutor(10)for row in range(100):    p.submit(task,row)
+
+进程...
+    
+
+        <a href="/2016/11/09/线程池、进程池/" class="post-more waves-effect waves-button">
+            閱讀全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-修复Bug，刷新无法动态显示数据库内容"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2016-11-09 08:31:27" datetime="2016-11-09T00:31:27.000Z"  itemprop="datePublished">2016-11-09</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2016/11/09/修复Bug，刷新无法动态显示数据库内容/">修复Bug，刷新无法动态显示数据库内容</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        123456789101112131415161718修复Bug，刷新无法动态显示数据库内容：	方式一：		class TeacherForm(Form):			tname = fields.CharField(min_length=2)			# xx = form_model.ModelMultipleChoiceField(queryset=models.Classes.objects....
+    
+
+        <a href="/2016/11/09/修复Bug，刷新无法动态显示数据库内容/" class="post-more waves-effect waves-button">
+            閱讀全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Django/">Django</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
 
     </div>
     
@@ -459,228 +661,7 @@ select_related() 查询主动做连表
     
 
         <a href="/2016/11/09/Django-ORM进阶操作02/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Django/">Django</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Django-ORM进阶操作01"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2016-11-08 09:31:27" datetime="2016-11-08T01:31:27.000Z"  itemprop="datePublished">2016-11-08</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/11/08/Django-ORM进阶操作01/">Django-ORM进阶操作01</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        
-1.增删改查
-2.一般操作:
-
-123456789models.UserInfo.objects.filter(id__gt=1)models.UserInfo.objects.filter(id__lt=1)models.UserInfo.objects.filter(id__lte=1)models.UserInfo.objects.filter(id__gte=1)models.Us...
-    
-
-        <a href="/2016/11/08/Django-ORM进阶操作01/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Django/">Django</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Django-模版"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2016-10-09 08:31:27" datetime="2016-10-09T00:31:27.000Z"  itemprop="datePublished">2016-10-09</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/10/09/Django-模版/">Django-模版</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        
-基本使用
-母版
-导入include
-函数 - &gt; 不用加() 自动执行
-模版自定义函数：
-simple_filter
-最多两个参数
-
-
-simple_tag
-参数个数限制
-
-
-simple_filter 可以做条件判断，simple_tag不行
-
-
-
-
-
-母版
-
-1234567891011121314151617181920212223242526272829303132333435...
-    
-
-        <a href="/2016/10/09/Django-模版/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Django/">Django</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Django-内置分页"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2016-10-09 08:31:27" datetime="2016-10-09T00:31:27.000Z"  itemprop="datePublished">2016-10-09</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/10/09/Django-内置分页/">Django-内置分页</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        123456789101112131415161718192021222324252627282930def test(request):    from django.core.paginator import Paginator, Page    current_page = request.GET.get(&apos;page&apos;)    user_list = models....
-    
-
-        <a href="/2016/10/09/Django-内置分页/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Django/">Django</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Django基础-ORM基本操作"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2016-10-09 08:31:27" datetime="2016-10-09T00:31:27.000Z"  itemprop="datePublished">2016-10-09</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/10/09/Django基础-ORM基本操作/">Django基础-ORM基本操作</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        ####ORM操作
-
-ORM：操作表：
-
-创建表
-修改表( 在SQLAchemy中不能进行修改表操作)
-删除表
-
-
-ORM：操作数据行：
-
-增删改查
-
-
-配置
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647481. 创建数据库2. 配置 修改 settings.pyDA...
-    
-
-        <a href="/2016/10/09/Django基础-ORM基本操作/" class="post-more waves-effect waves-button">
-            阅读全文…
+            閱讀全文…
         </a>
     </div>
     
@@ -723,7 +704,7 @@ ORM：操作数据行：
             
                 <span><a href="/autom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>本部落格係採用<a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh_TW">創用 CC 姓名標示 4.0 國際 授權條款授權</a></span>
         </p>
     </div>
     <div class="bottom">
@@ -844,8 +825,6 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 
 
 
-{% if theme.canvas_nest %}
 <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
-{% endif %}
 </body>
 </html>
