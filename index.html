@@ -16,7 +16,7 @@
     <title>summer&#39;博客 | It&#39;s my blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="theme-color" content="#3F51B5">
+    <meta name="theme-color" content="#00BCD4">
     
     
     <meta name="keywords" content="">
@@ -164,46 +164,6 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
-            <article id="post-hello-world"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2017-11-09 08:57:37" datetime="2017-11-09T00:57:37.000Z"  itemprop="datePublished">2017-11-09</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/11/09/hello-world/">Hello World</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Qu...
-    
-
-        <a href="/2017/11/09/hello-world/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
             <article id="post-实现popup"
   class="article-card article-type-post" itemprop="blogPost">
 
@@ -230,7 +190,7 @@ Qu...
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        1234567891011121314151617# views.pydef test(request):    user_group_list = models.Role.objects.all()    return render(request,&apos;test.html&apos;,&#123;&apos;user_group_list&apos;: user_group_lis...
+        -1234567891011121314151617# views.pydef test(request):    user_group_list = models.Role.objects.all()    return render(request,&apos;test.html&apos;,&#123;&apos;user_group_list&apos;: user_group_li...
     
 
         <a href="/2017/11/09/实现popup/" class="post-more waves-effect waves-button">
@@ -288,6 +248,52 @@ django 中的中间件（middleware），在django中，中间件其实就是一
     <div class="post-footer">
         
 	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-js|jauery 创建新标签"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017-11-09 08:31:27" datetime="2017-11-09T00:31:27.000Z"  itemprop="datePublished">2017-11-09</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2017/11/09/js|jauery 创建新标签/"> js/jauery创建新标签</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+js1234567891011121314151617181920var div = document.getElementById(&quot;div_1&quot;);var eleA =  document.createElement(&quot;a&quot;);eleA.setAttribute(&quot;href&quot;, &quot;http://www.baidu.c...
+    
+
+        <a href="/2017/11/09/js|jauery 创建新标签/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
 
     </div>
     
@@ -439,5 +445,8 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 
 
 
+{% if theme.canvas_nest %}
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+{% endif %}
 </body>
 </html>
