@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>Django-ORM进阶操作02 | summer&#39;博客 | It&#39;s my blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#00BCD4">
+    
+    
+    <meta name="keywords" content="Python,Django">
+    <meta name="description" content="select_related() 查询主动做连表 123456789101112131415161718q = models.UserInfo.objects.all().filter(id__lt=60)# for row in q:#     print(row.id,row.name,row.ut.title)# 这样进行查询性能不好，需要重新发sql请求在进行查询另外一张表中的数据，如果">
+<meta name="keywords" content="Python,Django">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Django-ORM进阶操作02">
+<meta property="og:url" content="http://yoursite.com/2016/11/09/Django-ORM进阶操作02/index.html">
+<meta property="og:site_name" content="summer&#39;博客">
+<meta property="og:description" content="select_related() 查询主动做连表 123456789101112131415161718q = models.UserInfo.objects.all().filter(id__lt=60)# for row in q:#     print(row.id,row.name,row.ut.title)# 这样进行查询性能不好，需要重新发sql请求在进行查询另外一张表中的数据，如果">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-11-09T09:14:48.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Django-ORM进阶操作02">
+<meta name="twitter:description" content="select_related() 查询主动做连表 123456789101112131415161718q = models.UserInfo.objects.all().filter(id__lt=60)# for row in q:#     print(row.id,row.name,row.ut.title)# 这样进行查询性能不好，需要重新发sql请求在进行查询另外一张表中的数据，如果">
+    
+        <link rel="alternate" type="application/atom+xml" title="summer&#39;博客" href="/autom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">summer</h5>
+          <a href="mailto:mcdull9393@outlook.com" title="mcdull9393@outlook.com" class="mail">mcdull9393@outlook.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/summer93" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.weibo.com/" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Django-ORM进阶操作02</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Django-ORM进阶操作02</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2016-11-08T23:31:27.000Z" itemprop="datePublished" class="page-time">
+  2016-11-09
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+<article id="post-Django-ORM进阶操作02"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Django-ORM进阶操作02</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2016-11-09 07:31:27" datetime="2016-11-08T23:31:27.000Z"  itemprop="datePublished">2016-11-09</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <ul>
+<li><p>select_related() 查询主动做连表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">q = models.UserInfo.objects.all().filter(id__lt=60)</span><br><span class="line"># for row in q:</span><br><span class="line">#     print(row.id,row.name,row.ut.title)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 这样进行查询性能不好，需要重新发sql请求在进行查询另外一张表中的数据，如果有10条数据就要进行11次查询</span><br><span class="line"></span><br><span class="line">q = models.UserInfo.objects.all().values(&apos;name&apos;,&apos;id&apos;,&apos;ut__title&apos;).filter(id__lt=60)</span><br><span class="line"># for i in q:</span><br><span class="line">#     print(i[&apos;name&apos;],i[&apos;ut__title&apos;])</span><br><span class="line"># 这样 进行了 优化 不回重复发送sql请求，到的结果内是字典</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">q = models.UserInfo.objects.all().select_related(&apos;ut&apos;).filter(id__lt=60)</span><br><span class="line">print(q.query)</span><br><span class="line"># for row in q:</span><br><span class="line">#     print(row.id,row.name,row.ut.title)</span><br><span class="line"># select_related(&apos;ut&apos;) 相当 于 inner join 先连成一张表再进行查询</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>prefetch_related() 不做连表，做多次查询</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">    q = models.UserInfo.objects.all().prefetch_related(&apos;ut&apos;).filter(id__lt=60)</span><br><span class="line">    for row in q:</span><br><span class="line">        print(row.id,row.name,row.ut.title)</span><br><span class="line"></span><br><span class="line"># 如果查询的数据比较多，查询的次数比较多就不建议用select_related进行连表查询，毕竟连表查询毕竟有损耗。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br></pre></td><td class="code"><pre><span class="line"># distinct()</span><br><span class="line">v = models.UserInfo.objects.values(&apos;age&apos;).distinct()</span><br><span class="line">for item in v:</span><br><span class="line">    print(item)</span><br><span class="line"></span><br><span class="line"># 在mysql,sqlite中distinct()括号里是不能传参数，</span><br><span class="line"># select distinct nid from userinfo;</span><br><span class="line"></span><br><span class="line"># 而在 PostgreSQL 中</span><br><span class="line"># models.UserInfo.objects.distinct(&apos;nid&apos;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># reverse()</span><br><span class="line">v = models.UserInfo.objects.all().order_by(&apos;id&apos;).reverse()</span><br><span class="line"># reverse() 必须在order_by()后使用不能单独使用。</span><br><span class="line">for i in v:</span><br><span class="line">    print(i.id)</span><br><span class="line"></span><br><span class="line">v = models.UserInfo.objects.all().order_by(&apos;-id&apos;,&apos;name&apos;).reverse()</span><br><span class="line"># 相当于order_by(&apos;id&apos;,&apos;-name&apos;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># only()</span><br><span class="line"></span><br><span class="line">v = models.UserInfo.objects.all()</span><br><span class="line"># [obj]</span><br><span class="line">v = models.UserInfo.objects.all().only(&apos;id&apos;,&apos;name&apos;)</span><br><span class="line"># [obj]</span><br><span class="line">for obj in v:</span><br><span class="line">    print(obj.name,obj.id,obj.age)</span><br><span class="line">    # 虽然加里only(),但是还能取出其他数据，但是不要这么取，会在再区表中进行查询影响效率,写几个取几个，不要多取</span><br><span class="line"></span><br><span class="line">v = models.UserInfo.objects.values(&apos;id&apos;,&apos;name&apos;).all()</span><br><span class="line"># [&#123;id,name&#125;]</span><br><span class="line">for i in v:</span><br><span class="line">    print(i)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># defer()</span><br><span class="line"># defer() 和only()相反，取括号内以外的数据</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># using()</span><br><span class="line"># 指定数据库</span><br><span class="line"># models.UserInfo.objects.all().using(&apos;db2&apos;)</span><br><span class="line"></span><br><span class="line"># setting.py</span><br><span class="line">&apos;&apos;&apos;</span><br><span class="line">DATABASES = &#123;</span><br><span class="line">    &apos;default&apos;: &#123;</span><br><span class="line">        &apos;ENGINE&apos;: &apos;django.db.backends.sqlite3&apos;,</span><br><span class="line">        &apos;NAME&apos;: os.path.join(BASE_DIR, &apos;db.sqlite3&apos;),</span><br><span class="line">    &#125;,</span><br><span class="line">    &apos;db2&apos;: &#123;</span><br><span class="line">        &apos;ENGINE&apos;: &apos;django.db.backends.mysql&apos;,</span><br><span class="line">        &apos;NAME&apos;: &apos;db2&apos;,</span><br><span class="line">        &apos;USER&apos;: &apos;root&apos;,</span><br><span class="line">        &apos;PASSWORD&apos;: &apos;&apos;,</span><br><span class="line">        &apos;HOST&apos;: &apos;&apos;,</span><br><span class="line">        &apos;PORT&apos;: &apos;&apos;,</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&apos;&apos;&apos;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># dates()</span><br><span class="line"></span><br><span class="line">    # # 根据时间进行某一部分进行去重查找并截取指定内容</span><br><span class="line">    # # kind只能是：&quot;year&quot;（年）, &quot;month&quot;（年-月）, &quot;day&quot;（年-月-日）</span><br><span class="line">    # # order只能是：&quot;ASC&quot;  &quot;DESC&quot;</span><br><span class="line">    # # 并获取转换后的时间</span><br><span class="line">    # - year: 年 - 01 - 01</span><br><span class="line">    # - month: 年 - 月 - 01</span><br><span class="line">    # - day: 年 - 月 - 日</span><br><span class="line"></span><br><span class="line"># models.DatePlus.objects.dates(&apos;ctime&apos;, &apos;day&apos;, &apos;DESC&apos;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># datetimes()</span><br><span class="line">    # 根据时间进行某一部分进行去重查找并截取指定内容，将时间转换为指定时区时间</span><br><span class="line">    # kind只能是 &quot;year&quot;, &quot;month&quot;, &quot;day&quot;, &quot;hour&quot;, &quot;minute&quot;, &quot;second&quot;</span><br><span class="line">    # order只能是：&quot;ASC&quot;  &quot;DESC&quot;</span><br><span class="line">    # tzinfo时区对象</span><br><span class="line">    # models.DDD.objects.datetimes(&apos;ctime&apos;, &apos;hour&apos;, tzinfo=pytz.UTC)</span><br><span class="line">    # models.DDD.objects.datetimes(&apos;ctime&apos;, &apos;hour&apos;, tzinfo=pytz.timezone(&apos;Asia/Shanghai&apos;))</span><br><span class="line"></span><br><span class="line">&apos;&apos;&apos;</span><br><span class="line">    pip3 install pytz</span><br><span class="line">    import pytz</span><br><span class="line">    pytz.all_timezones</span><br><span class="line">    pytz.timezone(‘Asia/Shanghai’)</span><br><span class="line"></span><br><span class="line">&apos;&apos;&apos;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># none()</span><br><span class="line"># 取空</span><br><span class="line"></span><br><span class="line">v = models.UserInfo.objects.none()</span><br><span class="line">print(v)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># aggregate()</span><br><span class="line"></span><br><span class="line">from django.db.models import Count,Avg,Max</span><br><span class="line"># 聚合整张表</span><br><span class="line">result = models.UserInfo.objects.aggregate(k=Count(&apos;id&apos;), n=Count(&apos;age&apos;))</span><br><span class="line">result = models.UserInfo.objects.aggregate(k=Count(&apos;id&apos;),n=Count(&apos;age&apos;,distinct=True))</span><br><span class="line">print(result)</span><br><span class="line"></span><br><span class="line"># count()</span><br><span class="line"># 计算个数</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># get()</span><br><span class="line">v = models.UserInfo.objects.all().first()</span><br><span class="line">v = models.UserInfo.objects.get(id=1) # 如果id=1 不存在 则会报错,找到多个也会报错</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># create()</span><br><span class="line"></span><br><span class="line">obj = models.UserInfo.objects.create(name=&apos;summer&apos;,age=23,pwd = &apos;ab456&apos;)</span><br><span class="line"># obj = models.UserInfo.objects.create(**&#123;&apos;name&apos;:&apos;summer&apos;,&apos;age&apos;:123,&apos;pwd&apos;:&apos;ab456&apos;&#125;)</span><br><span class="line">print(obj.id) #  可以获取添加数据的自增ID</span><br><span class="line"></span><br><span class="line"># 另外一种添加方法</span><br><span class="line">obj = models.UserInfo(name=&apos;autumn&apos;,age=23,pwd=&apos;ab123&apos;)</span><br><span class="line">obj.save()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># bulk_create() 批量添加</span><br><span class="line"></span><br><span class="line">objs = [</span><br><span class="line">    models.UserInfo(name=&apos;autumn&apos;,age=23,pwd=&apos;ab123&apos;),</span><br><span class="line">    models.UserInfo(name=&apos;autumn1&apos;, age=23, pwd=&apos;ab123&apos;)</span><br><span class="line">]</span><br><span class="line">models.UserInfo.objects.bulk_create(objs,10) # 10 代表一次提交10个对象 这个数最多别超过999</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># get_or_create()  如果纯在则获取，否者创建</span><br><span class="line">obj, created = models.UserInfo.objects.get_or_create(name=&apos;summer1&apos;,</span><br><span class="line">                                                       defaults=&#123;&apos;age&apos;:123,&apos;pwd&apos;:&apos;ab456&apos;&#125;)</span><br><span class="line"># 先根据条件去查，如果存在name=&apos;summer1&apos;，则后面的default无效不执行。</span><br><span class="line">print(obj,created) # created 为True或False</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># update_or_create() 如果存在，则更新，否则，创建</span><br><span class="line"></span><br><span class="line">obj, created = models.UserInfo.objects.update_or_create(name=&apos;summer1&apos;,</span><br><span class="line">                                                       defaults=&#123;&apos;age&apos;:123,&apos;pwd&apos;:&apos;ab456&apos;&#125;)</span><br><span class="line"></span><br><span class="line">print(obj,created)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># exists()</span><br><span class="line"># 检查查询结果是否存在，返回True或False</span><br><span class="line">result = models.UserInfo.objects.filter(id=1111).exists()</span><br><span class="line">print(result)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># in_bulk</span><br><span class="line"># 根据主键进行查询。</span><br><span class="line"></span><br><span class="line">res = models.UserInfo.objects.in_bulk([1,2,3])</span><br><span class="line"># 相当于</span><br><span class="line">res2 = models.UserInfo.objects.filter(id__in=[1,2,3])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 如果需要的sql语句Django这个没有提供，可以用下面3中方法解决</span><br><span class="line"># extra</span><br><span class="line"># 原生sql</span><br><span class="line"># raw</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># raw</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">res = models.UserInfo.objects.raw(&apos;select id,name,age from app01_userinfo  where id &lt; 10&apos;)</span><br><span class="line">for item in res:</span><br><span class="line">    print(item.age,item.name)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 为原生SQL设置参数</span><br><span class="line">models.UserInfo.objects.raw(&apos;select id as nid from userinfo where nid&gt;%s&apos;, params=[12,])</span><br><span class="line"></span><br><span class="line"># 将获取的到列名转换为指定列名</span><br><span class="line">name_map = &#123;&apos;age&apos;: &apos;new_age&apos;, &apos;name&apos;: &apos;new_name&apos;&#125;</span><br><span class="line">r = models.UserInfo.objects.raw(&apos;SELECT * FROM app01_userinfo&apos;, translations=name_map)</span><br><span class="line">for i in r:</span><br><span class="line">    print(i.new_age)</span><br><span class="line"></span><br><span class="line"># 指定数据库</span><br><span class="line"># models.UserInfo.objects.raw(&apos;select * from userinfo&apos;, using=&quot;default&quot;)</span><br></pre></td></tr></table></figure>
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-11-09T09:14:48.000Z" itemprop="dateUpdated">2017-11-09 17:14:48</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2016/11/09/Django-ORM进阶操作02/" target="_blank" rel="external">http://yoursite.com/2016/11/09/Django-ORM进阶操作02/</a>
+        
+    </div>
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="summer">
+            summer
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Django/">Django</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2016/11/09/Django-ORM进阶操作02/&title=《Django-ORM进阶操作02》 — summer'博客&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2016/11/09/Django-ORM进阶操作02/&title=《Django-ORM进阶操作02》 — summer'博客&source=分享极客生活 Not just Python!" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/11/09/Django-ORM进阶操作02/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Django-ORM进阶操作02》 — summer'博客&url=http://yoursite.com/2016/11/09/Django-ORM进阶操作02/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2016/11/09/Django-ORM进阶操作02/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2016/11/09/JSONP详解/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">JSONP详解</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2016/11/08/Django-ORM进阶操作01/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Django-ORM进阶操作01</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/autom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>summer &copy; 2015 - 2017</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2016/11/09/Django-ORM进阶操作02/&title=《Django-ORM进阶操作02》 — summer'博客&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2016/11/09/Django-ORM进阶操作02/&title=《Django-ORM进阶操作02》 — summer'博客&source=分享极客生活 Not just Python!" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/11/09/Django-ORM进阶操作02/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Django-ORM进阶操作02》 — summer'博客&url=http://yoursite.com/2016/11/09/Django-ORM进阶操作02/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2016/11/09/Django-ORM进阶操作02/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKUlEQVR42u3aS27DMAwFwNz/0u4B7NiPolLA0mhlNE6k6YLgR59PvI7TOn/67f3zO/e/c/77tIWBgfFaxnG77hn3W479cvLpxb4YGBgbML4dIn+nE1iT54czY2BgYARJXpLS5WklBgYGxtyAmyPvwXnqiYGBsScjKSYTahJSk6L3h7U4BgbGCxn5Bv///JP5BgYGxqsYR3FVt08C9/23olNhYGAszcgD3KyhZrV4zs+DgYGxNmNWGVkN2Xk4LhfGGBgYGzA6z9WRZPKvydNKDAyMVRl5GB0bJOQDy1b6iIGBsQEjSbmqpPzXqk09DAyM3RidyxOdVt3YeGBw4oqBgfFyxtx2f7U0zQP6Q4KIgYGxNGOsuTYWuPOSNQFgYGDswKjmj9XytZrwDY4QMDAwtmGM3VuoXrnoD0EfhpcYGBhLM5Lg208fq5ioSYeBgbEBo3PEsYsa/cHDRRGLgYGxKCM5XLVl3xlq5oCH+QYGBsaijLyVX00fqzOKsTCNgYGxA6N6haITKKuhOdoLAwNjA8bYlaxq+tgJ31ERi4GBsQGjWkDmQ4X86Mm3ChkuBgbGyxlHcVUb+tXkLx9hXsw3MDAwFmWMBbvOXaxO63+sDMbAwFiDkQfZTus/L1/za2EPm2FgYCzHmBX4fpdEPmAwMDAwYtKsRttg9oqBgYHRGDFWh5f5QAIDA2MfRj4MqLbs55K+vo+BgbE0o1U6xs21vAGXUzEwMDZg/AHlueTzwp//nAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+{% if theme.canvas_nest %}
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+{% endif %}
+</body>
+</html>
