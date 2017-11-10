@@ -20,18 +20,18 @@
     
     
     <meta name="keywords" content="Python">
-    <meta name="description" content="线程池 12345678910111213import timefrom concurrent.futures import ThreadPoolExecutordef task(i):    time.sleep(1)    print(i)p = ThreadPoolExecutor(10)for row in range(100):    p.submit(task,row)  进程池 1">
+    <meta name="description" content="线程池12345678910111213import timefrom concurrent.futures import ThreadPoolExecutordef task(i):    time.sleep(1)    print(i)p = ThreadPoolExecutor(10)for row in range(100):    p.submit(task,row) 进程池12345">
 <meta name="keywords" content="Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="线程池、进程池">
 <meta property="og:url" content="http://midsummer.com/2016/11/09/线程池、进程池/index.html">
 <meta property="og:site_name" content="summer&#39;博客">
-<meta property="og:description" content="线程池 12345678910111213import timefrom concurrent.futures import ThreadPoolExecutordef task(i):    time.sleep(1)    print(i)p = ThreadPoolExecutor(10)for row in range(100):    p.submit(task,row)  进程池 1">
+<meta property="og:description" content="线程池12345678910111213import timefrom concurrent.futures import ThreadPoolExecutordef task(i):    time.sleep(1)    print(i)p = ThreadPoolExecutor(10)for row in range(100):    p.submit(task,row) 进程池12345">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-09T08:31:40.000Z">
+<meta property="og:updated_time" content="2017-11-10T04:25:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="线程池、进程池">
-<meta name="twitter:description" content="线程池 12345678910111213import timefrom concurrent.futures import ThreadPoolExecutordef task(i):    time.sleep(1)    print(i)p = ThreadPoolExecutor(10)for row in range(100):    p.submit(task,row)  进程池 1">
+<meta name="twitter:description" content="线程池12345678910111213import timefrom concurrent.futures import ThreadPoolExecutordef task(i):    time.sleep(1)    print(i)p = ThreadPoolExecutor(10)for row in range(100):    p.submit(task,row) 进程池12345">
     
         <link rel="alternate" type="application/atom+xml" title="summer&#39;博客" href="/autom.xml">
     
@@ -168,6 +168,13 @@
 
 <div class="container body-wrap">
     
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#线程池"><span class="post-toc-number">1.</span> <span class="post-toc-text">线程池</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#进程池"><span class="post-toc-number">2.</span> <span class="post-toc-text">进程池</span></a></li></ol>
+        </nav>
+    </aside>
+    
 <article id="post-线程池、进程池"
   class="post-article article-type-post fade" itemprop="blogPost">
 
@@ -187,14 +194,8 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <ul>
-<li><p>线程池</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import time</span><br><span class="line">from concurrent.futures import ThreadPoolExecutor</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def task(i):</span><br><span class="line">    time.sleep(1)</span><br><span class="line">    print(i)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">p = ThreadPoolExecutor(10)</span><br><span class="line"></span><br><span class="line">for row in range(100):</span><br><span class="line">    p.submit(task,row)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>进程池</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import time</span><br><span class="line">from concurrent.futures import ThreadPoolExecutor,ProcessPoolExecutor</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def task(i):</span><br><span class="line">    time.sleep(1)</span><br><span class="line">    print(i)</span><br><span class="line">p = ProcessPoolExecutor(10)</span><br><span class="line"></span><br><span class="line">for row in range(100):</span><br><span class="line">    p.submit(task,row)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+            <h3 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import time</span><br><span class="line">from concurrent.futures import ThreadPoolExecutor</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def task(i):</span><br><span class="line">    time.sleep(1)</span><br><span class="line">    print(i)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">p = ThreadPoolExecutor(10)</span><br><span class="line"></span><br><span class="line">for row in range(100):</span><br><span class="line">    p.submit(task,row)</span><br></pre></td></tr></table></figure>
+<h3 id="进程池"><a href="#进程池" class="headerlink" title="进程池"></a>进程池</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import time</span><br><span class="line">from concurrent.futures import ThreadPoolExecutor,ProcessPoolExecutor</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def task(i):</span><br><span class="line">    time.sleep(1)</span><br><span class="line">    print(i)</span><br><span class="line">p = ProcessPoolExecutor(10)</span><br><span class="line"></span><br><span class="line">for row in range(100):</span><br><span class="line">    p.submit(task,row)</span><br></pre></td></tr></table></figure>
 
         </div>
 
@@ -202,7 +203,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2017-11-09T08:31:40.000Z" itemprop="dateUpdated">2017-11-09 16:31:40</time>
+    Last updated: <time datetime="2017-11-10T04:25:05.000Z" itemprop="dateUpdated">2017-11-10 12:25:05</time>
 </span><br>
 
 
@@ -283,18 +284,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2016/11/09/xss跨站脚本攻击 ，csrf跨站请求伪造/" id="post-prev" class="post-nav-link">
+      <a href="/2016/11/09/JSONP详解/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">xss跨站脚本攻击 ，csrf跨站请求伪造</h4>
+        <h4 class="title">JSONP详解</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2016/11/09/Ajax01/" id="post-next" class="post-nav-link">
+      <a href="/2016/11/09/修复Bug，刷新无法动态显示数据库内容/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ajax01</h4>
+        <h4 class="title">修复Bug，刷新无法动态显示数据库内容</h4>
       </a>
     </div>
   

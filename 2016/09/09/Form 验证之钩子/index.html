@@ -20,18 +20,18 @@
     
     
     <meta name="keywords" content="Python,Django">
-    <meta name="description" content="12345678910111213141516171819202122# From验证源码def _clean_fields(self):    for name, field in self.fields.items():        # value_from_datadict() gets the data from the data dictionaries.        # Each">
+    <meta name="description" content="Form 验证之钩子12345678910111213141516171819202122# From验证源码def _clean_fields(self):    for name, field in self.fields.items():        # value_from_datadict() gets the data from the data dictionaries.">
 <meta name="keywords" content="Python,Django">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Form 验证之钩子">
 <meta property="og:url" content="http://midsummer.com/2016/09/09/Form 验证之钩子/index.html">
 <meta property="og:site_name" content="summer&#39;博客">
-<meta property="og:description" content="12345678910111213141516171819202122# From验证源码def _clean_fields(self):    for name, field in self.fields.items():        # value_from_datadict() gets the data from the data dictionaries.        # Each">
+<meta property="og:description" content="Form 验证之钩子12345678910111213141516171819202122# From验证源码def _clean_fields(self):    for name, field in self.fields.items():        # value_from_datadict() gets the data from the data dictionaries.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-09T08:38:52.000Z">
+<meta property="og:updated_time" content="2017-11-10T04:25:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Form 验证之钩子">
-<meta name="twitter:description" content="12345678910111213141516171819202122# From验证源码def _clean_fields(self):    for name, field in self.fields.items():        # value_from_datadict() gets the data from the data dictionaries.        # Each">
+<meta name="twitter:description" content="Form 验证之钩子12345678910111213141516171819202122# From验证源码def _clean_fields(self):    for name, field in self.fields.items():        # value_from_datadict() gets the data from the data dictionaries.">
     
         <link rel="alternate" type="application/atom+xml" title="summer&#39;博客" href="/autom.xml">
     
@@ -168,6 +168,13 @@
 
 <div class="container body-wrap">
     
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Form-验证之钩子"><span class="post-toc-number">1.</span> <span class="post-toc-text">Form 验证之钩子</span></a></li></ol>
+        </nav>
+    </aside>
+    
 <article id="post-Form 验证之钩子"
   class="post-article article-type-post fade" itemprop="blogPost">
 
@@ -187,7 +194,7 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"># From验证源码</span><br><span class="line">def _clean_fields(self):</span><br><span class="line">    for name, field in self.fields.items():</span><br><span class="line">        # value_from_datadict() gets the data from the data dictionaries.</span><br><span class="line">        # Each widget type knows how to retrieve its own data, because some</span><br><span class="line">        # widgets split data over several HTML fields.</span><br><span class="line">        if field.disabled:</span><br><span class="line">            value = self.get_initial_for_field(field, name)</span><br><span class="line">        else:</span><br><span class="line">            value = field.widget.value_from_datadict(self.data, self.files, self.add_prefix(name))</span><br><span class="line">        try:</span><br><span class="line">            if isinstance(field, FileField):</span><br><span class="line">                initial = self.get_initial_for_field(field, name)</span><br><span class="line">                value = field.clean(value, initial)</span><br><span class="line">            else:</span><br><span class="line">                value = field.clean(value)</span><br><span class="line">            self.cleaned_data[name] = value</span><br><span class="line">            if hasattr(self, &apos;clean_%s&apos; % name):</span><br><span class="line">                value = getattr(self, &apos;clean_%s&apos; % name)()</span><br><span class="line">                self.cleaned_data[name] = value</span><br><span class="line">        except ValidationError as e:</span><br><span class="line">            self.add_error(name, e)</span><br></pre></td></tr></table></figure>
+            <h3 id="Form-验证之钩子"><a href="#Form-验证之钩子" class="headerlink" title="Form 验证之钩子"></a>Form 验证之钩子</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"># From验证源码</span><br><span class="line">def _clean_fields(self):</span><br><span class="line">    for name, field in self.fields.items():</span><br><span class="line">        # value_from_datadict() gets the data from the data dictionaries.</span><br><span class="line">        # Each widget type knows how to retrieve its own data, because some</span><br><span class="line">        # widgets split data over several HTML fields.</span><br><span class="line">        if field.disabled:</span><br><span class="line">            value = self.get_initial_for_field(field, name)</span><br><span class="line">        else:</span><br><span class="line">            value = field.widget.value_from_datadict(self.data, self.files, self.add_prefix(name))</span><br><span class="line">        try:</span><br><span class="line">            if isinstance(field, FileField):</span><br><span class="line">                initial = self.get_initial_for_field(field, name)</span><br><span class="line">                value = field.clean(value, initial)</span><br><span class="line">            else:</span><br><span class="line">                value = field.clean(value)</span><br><span class="line">            self.cleaned_data[name] = value</span><br><span class="line">            if hasattr(self, &apos;clean_%s&apos; % name):</span><br><span class="line">                value = getattr(self, &apos;clean_%s&apos; % name)()</span><br><span class="line">                self.cleaned_data[name] = value</span><br><span class="line">        except ValidationError as e:</span><br><span class="line">            self.add_error(name, e)</span><br></pre></td></tr></table></figure>
 <ul>
 <li>验证过程 每一个字段过来 先进行正则匹配，没有问题 然后 hasattr 检查是否存在该字段的函数，纯在就执行该函数。</li>
 </ul>
@@ -213,7 +220,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2017-11-09T08:38:52.000Z" itemprop="dateUpdated">2017-11-09 16:38:52</time>
+    Last updated: <time datetime="2017-11-10T04:25:05.000Z" itemprop="dateUpdated">2017-11-10 12:25:05</time>
 </span><br>
 
 

@@ -181,7 +181,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/12/09/js|jQuery 创建新标签/"> js/jQuery创建新标签</a>
+      <a class="post-title-link" href="/2016/12/09/js|jQuery 创建新标签/">js/jQuery创建新标签</a>
     </h3>
   
 
@@ -191,8 +191,8 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        
-js1234567891011121314151617181920var div = document.getElementById(&quot;div_1&quot;);var eleA =  document.createElement(&quot;a&quot;);eleA.setAttribute(&quot;href&quot;, &quot;http://www.baidu.c...
+        js/jQuery创建新标签
+js1234567891011121314151617181920var div = document.getElementById(&quot;div_1&quot;);var eleA =  document.createElement(&quot;a&quot;);eleA.setAttribute(&quot;href&quot;, &quot;http...
     
 
         <a href="/2016/12/09/js|jQuery 创建新标签/" class="post-more waves-effect waves-button">
@@ -237,12 +237,12 @@ js1234567891011121314151617181920var div = document.getElementById(&quot;div_1&q
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        
+        MySQl操作整理01
 连接数据库：
 12mysql -u [useename] -pmysql -u [username] -h [host] -p
 
 用户管理：
-1234567create user &apos;spring&apos;@&apos;192.168.1.1&apos; identified by &apos;123&apos;;create user &apos;spring&apos;@&a...
+1234567create user &apos;spring&apos;@&apos;192.168.1.1&apos; identified by &apos;123&apos;;create user &apos;spri...
     
 
         <a href="/2016/12/09/MySQl操作整理01.md/" class="post-more waves-effect waves-button">
@@ -287,12 +287,12 @@ js1234567891011121314151617181920var div = document.getElementById(&quot;div_1&q
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        
+        MySQL整理 -补充02
 备份：
 12345678备份：数据表结构＋数据mysqldump -u root db1 &gt; db1.sql -p备份：数据表结构mysqldump -u root -d db1 &gt; db1.sql -p执行文件：create database db2;mysql -u root -d db5 &lt; db1.sql -p;
 
 外键的变种
-123456789101112131...
+12345...
     
 
         <a href="/2016/12/09/MySQL整理 -补充02/" class="post-more waves-effect waves-button">
@@ -337,13 +337,13 @@ js1234567891011121314151617181920var div = document.getElementById(&quot;div_1&q
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        
+        MySQl-SQLAlchemy04
 ORM技术:  Object_Relational Mapping 把关系数据库的表结构映射到对象上。
 
 SQLAlchemy: SQLalchemy 是python编程语言下的一款ORM框架，该框架建立在数据库API之上，使用关系对象映射进行数据库操作，简言之便是：将对象转换成SQL，然后使用数据API执行SQL并获取执行结果。
 
 
-12345678910from sqlalchemy ...
+123456789...
     
 
         <a href="/2016/12/09/MySQL-SQLAchemy04/" class="post-more waves-effect waves-button">
@@ -388,7 +388,7 @@ SQLAlchemy: SQLalchemy 是python编程语言下的一款ORM框架，该框架建
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        
+        MySQL-索引03
 主键索引
 普通索引
 唯一索引
@@ -402,7 +402,7 @@ SQLAlchemy: SQLalchemy 是python编程语言下的一款ORM框架，该框架建
 －－－－－－－－－－－－－－－－－－－
 
 主键索引
-123456789101112131415161718create tabel tb1(	id int auto_increment priamry key,	name char(32) not null,	age int not null)e...
+123456789101112131415161718create tabel tb1(	id int auto_increment priamry key,	name char(32) not null,	age int ...
     
 
         <a href="/2016/12/09/MySQL-索引03/" class="post-more waves-effect waves-button">
@@ -494,7 +494,7 @@ SQLAlchemy: SQLalchemy 是python编程语言下的一款ORM框架，该框架建
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        123456789101112def custom(request):    current_Page = request.GET.get(&apos;page&apos;)    current_Page = int(current_Page)    per_page = 10    start = (current_Page - 1) * per_page    end = curren...
+        自定义分页123456789101112def custom(request):    current_Page = request.GET.get(&apos;page&apos;)    current_Page = int(current_Page)    per_page = 10    start = (current_Page - 1) * per_page    end = c...
     
 
         <a href="/2016/11/09/自定义分页/" class="post-more waves-effect waves-button">
@@ -542,12 +542,11 @@ SQLAlchemy: SQLalchemy 是python编程语言下的一款ORM框架，该框架建
         创建Django项目1dajngo-admin startproject mysite
  创建app
 12python manage.py startapp app01python manage.py startapp app02
+
 1.路由系统
-1.单一路由对应
-  seo 搜索引擎的录入权重
 
-
-12345678910&lt;ul&gt;    &#123;% for item in us...
+1.单一路由对应seo 搜索引擎的录入权重
+12345678910&lt;ul&gt;    &#123;% for item in user_...
     
 
         <a href="/2016/11/09/Django 基础- 路由系统/" class="post-more waves-effect waves-button">
@@ -592,15 +591,13 @@ SQLAlchemy: SQLalchemy 是python编程语言下的一款ORM框架，该框架建
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        对于多对多表
-
+        
+对于多对多表
 1.自定义第三张表，更加灵活
 2.ManyToManyField 自动生成第3张表 只能 有3列数据 不能自己添加。
 
 
-
-自定义第三张表
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364...
+自定义第三张表1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465...
     
 
         <a href="/2016/11/09/Django-ORM多对多查询/" class="post-more waves-effect waves-button">
@@ -645,7 +642,7 @@ SQLAlchemy: SQLalchemy 是python编程语言下的一款ORM框架，该框架建
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        
+        生成随机验证码图片
 安装 PIL模块
 pip3 install pillow
 
@@ -653,7 +650,7 @@ pip3 install pillow
 
 
 生成 图片
-12345678910from PIL import Imageimg = Image.new(mode=&apos;RGB&apos;,size=(120,30),color=(0,255,255))# 查看 图片# img.show()# 保存 图片 到本地with open(&apos;code.png&a...
+12345678910from PIL import Imageimg = Image.new(mode=&apos;RGB&apos;,size=(120,30),color=(0,255,255))# 查看 图片# img.show()# 保存 图片 到本地with open(&apos;c...
     
 
         <a href="/2016/11/09/生成随机验证码图片/" class="post-more waves-effect waves-button">

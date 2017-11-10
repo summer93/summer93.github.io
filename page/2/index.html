@@ -191,10 +191,7 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        
-xss攻击 跨站脚本攻击
-
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657# views.pymsg = []def comment(request):    if request.method == &apos;GET&apo...
+        xss攻击 跨站脚本攻击123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657# views.pymsg = []def comment(request):    if request.method == &apos;GET&apos;:...
     
 
         <a href="/2016/11/09/xss跨站脚本攻击 ，csrf跨站请求伪造/" class="post-more waves-effect waves-button">
@@ -213,7 +210,7 @@ xss攻击 跨站脚本攻击
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-线程池、进程池"
+            <article id="post-CBV|FBV"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
@@ -229,7 +226,7 @@ xss攻击 跨站脚本攻击
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/11/09/线程池、进程池/">线程池、进程池</a>
+      <a class="post-title-link" href="/2016/11/09/CBV|FBV/">Django-CBV，FBV</a>
     </h3>
   
 
@@ -239,21 +236,17 @@ xss攻击 跨站脚本攻击
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        
-线程池
-12345678910111213import timefrom concurrent.futures import ThreadPoolExecutordef task(i):    time.sleep(1)    print(i)p = ThreadPoolExecutor(10)for row in range(100):    p.submit(task,row)
-
-进程...
+        urls.pyfrom django.conf.urls import urlfrom django.contrib import adminfrom cbv import viewsurlpatterns = [    url(r’^admin/‘, admin.site.urls),    url(r’^Login.html$’, views.Login.as_view()),]1234...
     
 
-        <a href="/2016/11/09/线程池、进程池/" class="post-more waves-effect waves-button">
+        <a href="/2016/11/09/CBV|FBV/" class="post-more waves-effect waves-button">
             Continue reading...
         </a>
     </div>
     
     <div class="post-footer">
         
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Django/">Django</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
 
     </div>
     
@@ -262,7 +255,7 @@ xss攻击 跨站脚本攻击
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Ajax01"
+            <article id="post-Ajax02"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
@@ -278,7 +271,7 @@ xss攻击 跨站脚本攻击
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/11/09/Ajax01/">Ajax01</a>
+      <a class="post-title-link" href="/2016/11/09/Ajax02/">Ajax02 上传文件</a>
     </h3>
   
 
@@ -289,26 +282,20 @@ xss攻击 跨站脚本攻击
 
     
         
-1.Ajax
+Ajax 上传文件
 
-1.原生Ajax,XMLHttpRequest
-
-2.jQuery Ajax,内部基于’原生Ajax’
-
+原生Ajax
+JQuery Ajax
 
 
-
-2.伪Ajax，非XMLHttpRequest
-
-3.跨域Ajax，JSONP
+伪造Ajax上传
 
 
 
-1.Ajax
-JQuery Ajax12345678910111213141516171819202122232425262728293031323334353637383940...
+原生Ajax12345678910111213141516171819202122232425262728293031323334353637383940414243444546# views.pydef upload(request):    if request.method == &apos;GE...
     
 
-        <a href="/2016/11/09/Ajax01/" class="post-more waves-effect waves-button">
+        <a href="/2016/11/09/Ajax02/" class="post-more waves-effect waves-button">
             Continue reading...
         </a>
     </div>
@@ -371,7 +358,7 @@ django 中的中间件（middleware），在django中，中间件其实就是一
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Ajax02"
+            <article id="post-Ajax01"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
@@ -387,7 +374,7 @@ django 中的中间件（middleware），在django中，中间件其实就是一
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/11/09/Ajax02/">Ajax02 上传文件</a>
+      <a class="post-title-link" href="/2016/11/09/Ajax01/">Ajax01</a>
     </h3>
   
 
@@ -398,21 +385,24 @@ django 中的中间件（middleware），在django中，中间件其实就是一
 
     
         
-Ajax 上传文件
+1.Ajax
 
-原生Ajax
-JQuery Ajax
+1.原生Ajax,XMLHttpRequest
 
-
-伪造Ajax上传
+2.jQuery Ajax,内部基于’原生Ajax’
 
 
 
 
-原生Ajax12345678910111213141516171819202122232425262728293031323334353637383940414243444546# views.pydef upload(request):    if request.method == &apos;G...
+2.伪Ajax，非XMLHttpRequest
+
+3.跨域Ajax，JSONP
+
+
+1.AjaxJQuery Ajax12345678910111213141516171819202122232425262728293031323334353637383940# ...
     
 
-        <a href="/2016/11/09/Ajax02/" class="post-more waves-effect waves-button">
+        <a href="/2016/11/09/Ajax01/" class="post-more waves-effect waves-button">
             Continue reading...
         </a>
     </div>
@@ -455,8 +445,7 @@ JQuery Ajax
 
     
         Django 提供的Form组件
-
-Form 验证123456789# login.html&lt;body&gt;&lt;form action=&quot;/login.html&quot; method=&quot;POST&quot;&gt;    &#123;% csrf_token %&#125;    &lt;p&gt;姓名：&lt;input type=&quot;text&...
+Form 验证123456789# login.html&lt;body&gt;&lt;form action=&quot;/login.html&quot; method=&quot;POST&quot;&gt;    &#123;% csrf_token %&#125;    &lt;p&gt;姓名：&lt;input type=&quot;text&q...
     
 
         <a href="/2016/11/09/From组件/" class="post-more waves-effect waves-button">
@@ -501,7 +490,7 @@ Form 验证123456789# login.html&lt;body&gt;&lt;form action=&quot;/login.html&qu
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        
+        JSONP详解
 同源策略
 
 限制：Ajax
@@ -519,9 +508,7 @@ Form 验证123456789# login.html&lt;body&gt;&lt;form action=&quot;/login.html&qu
 
 
 
-浏览器直接发送请求【考虑同源】
-
-12...
+浏览器直接发送请求【考虑...
     
 
         <a href="/2016/11/09/JSONP详解/" class="post-more waves-effect waves-button">
@@ -540,7 +527,7 @@ Form 验证123456789# login.html&lt;body&gt;&lt;form action=&quot;/login.html&qu
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-CBV|FBV"
+            <article id="post-线程池、进程池"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
@@ -556,7 +543,7 @@ Form 验证123456789# login.html&lt;body&gt;&lt;form action=&quot;/login.html&qu
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/11/09/CBV|FBV/">Django-CBV，FBV</a>
+      <a class="post-title-link" href="/2016/11/09/线程池、进程池/">线程池、进程池</a>
     </h3>
   
 
@@ -566,17 +553,18 @@ Form 验证123456789# login.html&lt;body&gt;&lt;form action=&quot;/login.html&qu
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        urls.pyfrom django.conf.urls import urlfrom django.contrib import adminfrom cbv import viewsurlpatterns = [    url(r’^admin/‘, admin.site.urls),    url(r’^Login.html$’, views.Login.as_view()),]1234...
+        线程池12345678910111213import timefrom concurrent.futures import ThreadPoolExecutordef task(i):    time.sleep(1)    print(i)p = ThreadPoolExecutor(10)for row in range(100):    p.submit(task,row)
+进程池12...
     
 
-        <a href="/2016/11/09/CBV|FBV/" class="post-more waves-effect waves-button">
+        <a href="/2016/11/09/线程池、进程池/" class="post-more waves-effect waves-button">
             Continue reading...
         </a>
     </div>
     
     <div class="post-footer">
         
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Django/">Django</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
 
     </div>
     
@@ -611,7 +599,7 @@ Form 验证123456789# login.html&lt;body&gt;&lt;form action=&quot;/login.html&qu
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        123456789101112131415161718修复Bug，刷新无法动态显示数据库内容：	方式一：		class TeacherForm(Form):			tname = fields.CharField(min_length=2)			# xx = form_model.ModelMultipleChoiceField(queryset=models.Classes.objects....
+        修复Bug123456789101112131415161718修复Bug，刷新无法动态显示数据库内容：	方式一：		class TeacherForm(Form):			tname = fields.CharField(min_length=2)			# xx = form_model.ModelMultipleChoiceField(queryset=models.Classes.obj...
     
 
         <a href="/2016/11/09/修复Bug，刷新无法动态显示数据库内容/" class="post-more waves-effect waves-button">
@@ -656,9 +644,7 @@ Form 验证123456789# login.html&lt;body&gt;&lt;form action=&quot;/login.html&qu
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        
-select_related() 查询主动做连表
-123456789101112131415161718q = models.UserInfo.objects.all().filter(id__lt=60)# for row in q:#     print(row.id,row.name,row.ut.title)# 这样进行查询性能不好，需要重新发sql请求在进行查询另外一张表中的数据...
+        select_related() 查询主动做连表123456789101112131415161718q = models.UserInfo.objects.all().filter(id__lt=60)# for row in q:#     print(row.id,row.name,row.ut.title)# 这样进行查询性能不好，需要重新发sql请求在进行查询另外一张表中的数据，如...
     
 
         <a href="/2016/11/09/Django-ORM进阶操作02/" class="post-more waves-effect waves-button">

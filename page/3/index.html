@@ -191,11 +191,7 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        
-1.增删改查
-2.一般操作:
-
-123456789models.UserInfo.objects.filter(id__gt=1)models.UserInfo.objects.filter(id__lt=1)models.UserInfo.objects.filter(id__lte=1)models.UserInfo.objects.filter(id__gte=1)models.Us...
+        1.增删改查2.一般操作:123456789models.UserInfo.objects.filter(id__gt=1)models.UserInfo.objects.filter(id__lt=1)models.UserInfo.objects.filter(id__lte=1)models.UserInfo.objects.filter(id__gte=1)models.UserIn...
     
 
         <a href="/2016/11/08/Django-ORM进阶操作01/" class="post-more waves-effect waves-button">
@@ -240,7 +236,7 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        ####ORM操作
+        Django基础-ORM基本操作####ORM操作
 
 ORM：操作表：
 
@@ -255,7 +251,7 @@ ORM：操作数据行：
 
 
 配置
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647481. 创建数据库2. 配置 修改 settings.pyDA...
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647481. 创建数据库2. 配置 ...
     
 
         <a href="/2016/10/09/Django基础-ORM基本操作/" class="post-more waves-effect waves-button">
@@ -319,10 +315,7 @@ simple_filter 可以做条件判断，simple_tag不行
 
 
 
-
-母版
-
-1234567891011121314151617181920212223242526272829303132333435...
+母版1234567891011121314151617181920212223242526272829303132333435363...
     
 
         <a href="/2016/10/09/Django-模版/" class="post-more waves-effect waves-button">
@@ -367,7 +360,7 @@ simple_filter 可以做条件判断，simple_tag不行
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        123456789101112131415161718192021222324252627282930def test(request):    from django.core.paginator import Paginator, Page    current_page = request.GET.get(&apos;page&apos;)    user_list = models....
+        #123456789101112131415161718192021222324252627282930def test(request):    from django.core.paginator import Paginator, Page    current_page = request.GET.get(&apos;page&apos;)    user_list = models...
     
 
         <a href="/2016/10/09/Django-内置分页/" class="post-more waves-effect waves-button">
@@ -412,7 +405,7 @@ simple_filter 可以做条件判断，simple_tag不行
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        12345678910111213141516171819202122232425262728293031# upload_file.html&lt;body&gt;&lt;form action=&quot;/upload_file/&quot; method=&quot;POST&quot; enctype=&quot;multipart/form-data&quot;&gt;    &...
+        Form 文件上传12345678910111213141516171819202122232425262728293031# upload_file.html&lt;body&gt;&lt;form action=&quot;/upload_file/&quot; method=&quot;POST&quot; enctype=&quot;multipart/form-data&quot;...
     
 
         <a href="/2016/09/19/Form 文件上传/" class="post-more waves-effect waves-button">
@@ -457,7 +450,7 @@ simple_filter 可以做条件判断，simple_tag不行
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        123456789101112131415161718192021Select框：单选	cls_id = fields.IntegerField(		# widget=widgets.Select(choices=[(1,&apos;上海&apos;),(2,&apos;北京&apos;)])		widget=widgets.Select(choices=models.Classes.obj...
+        Form select 框123456789101112131415161718192021Select框：单选	cls_id = fields.IntegerField(		# widget=widgets.Select(choices=[(1,&apos;上海&apos;),(2,&apos;北京&apos;)])		widget=widgets.Select(choices=model...
     
 
         <a href="/2016/09/19/Form select 框/" class="post-more waves-effect waves-button">
@@ -502,7 +495,7 @@ simple_filter 可以做条件判断，simple_tag不行
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        12345678910111213141516171819202122# From验证源码def _clean_fields(self):    for name, field in self.fields.items():        # value_from_datadict() gets the data from the data dictionaries.        # Ea...
+        Form 验证之钩子12345678910111213141516171819202122# From验证源码def _clean_fields(self):    for name, field in self.fields.items():        # value_from_datadict() gets the data from the data dictionaries.  ...
     
 
         <a href="/2016/09/09/Form 验证之钩子/" class="post-more waves-effect waves-button">
@@ -547,7 +540,7 @@ simple_filter 可以做条件判断，simple_tag不行
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        -1234567891011121314151617# views.pydef test(request):    user_group_list = models.Role.objects.all()    return render(request,&apos;test.html&apos;,&#123;&apos;user_group_list&apos;: user_group_li...
+        实现popup-1234567891011121314151617# views.pydef test(request):    user_group_list = models.Role.objects.all()    return render(request,&apos;test.html&apos;,&#123;&apos;user_group_list&apos;: user_g...
     
 
         <a href="/2016/07/09/实现popup/" class="post-more waves-effect waves-button">

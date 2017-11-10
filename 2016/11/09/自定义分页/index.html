@@ -20,18 +20,18 @@
     
     
     <meta name="keywords" content="Python,Django">
-    <meta name="description" content="123456789101112def custom(request):    current_Page = request.GET.get(&amp;apos;page&amp;apos;)    current_Page = int(current_Page)    per_page = 10    start = (current_Page - 1) * per_page    end = current_P">
+    <meta name="description" content="自定义分页123456789101112def custom(request):    current_Page = request.GET.get(&amp;apos;page&amp;apos;)    current_Page = int(current_Page)    per_page = 10    start = (current_Page - 1) * per_page    end = curr">
 <meta name="keywords" content="Python,Django">
 <meta property="og:type" content="article">
 <meta property="og:title" content="自定义分页">
 <meta property="og:url" content="http://midsummer.com/2016/11/09/自定义分页/index.html">
 <meta property="og:site_name" content="summer&#39;博客">
-<meta property="og:description" content="123456789101112def custom(request):    current_Page = request.GET.get(&amp;apos;page&amp;apos;)    current_Page = int(current_Page)    per_page = 10    start = (current_Page - 1) * per_page    end = current_P">
+<meta property="og:description" content="自定义分页123456789101112def custom(request):    current_Page = request.GET.get(&amp;apos;page&amp;apos;)    current_Page = int(current_Page)    per_page = 10    start = (current_Page - 1) * per_page    end = curr">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-09T09:15:50.000Z">
+<meta property="og:updated_time" content="2017-11-10T04:25:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="自定义分页">
-<meta name="twitter:description" content="123456789101112def custom(request):    current_Page = request.GET.get(&amp;apos;page&amp;apos;)    current_Page = int(current_Page)    per_page = 10    start = (current_Page - 1) * per_page    end = current_P">
+<meta name="twitter:description" content="自定义分页123456789101112def custom(request):    current_Page = request.GET.get(&amp;apos;page&amp;apos;)    current_Page = int(current_Page)    per_page = 10    start = (current_Page - 1) * per_page    end = curr">
     
         <link rel="alternate" type="application/atom+xml" title="summer&#39;博客" href="/autom.xml">
     
@@ -168,6 +168,13 @@
 
 <div class="container body-wrap">
     
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#自定义分页"><span class="post-toc-number">1.</span> <span class="post-toc-text">自定义分页</span></a></li></ol>
+        </nav>
+    </aside>
+    
 <article id="post-自定义分页"
   class="post-article article-type-post fade" itemprop="blogPost">
 
@@ -187,7 +194,7 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">def custom(request):</span><br><span class="line">    current_Page = request.GET.get(&apos;page&apos;)</span><br><span class="line">    current_Page = int(current_Page)</span><br><span class="line"></span><br><span class="line">    per_page = 10</span><br><span class="line"></span><br><span class="line">    start = (current_Page - 1) * per_page</span><br><span class="line">    end = current_Page * per_page</span><br><span class="line"></span><br><span class="line">    user_list = models.UserInfo.objects.all()[start:end]</span><br><span class="line"></span><br><span class="line">    return render(request,&apos;custom.html&apos;,&#123;&apos;user_list&apos;:user_list&#125;)</span><br></pre></td></tr></table></figure>
+            <h3 id="自定义分页"><a href="#自定义分页" class="headerlink" title="自定义分页"></a>自定义分页</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">def custom(request):</span><br><span class="line">    current_Page = request.GET.get(&apos;page&apos;)</span><br><span class="line">    current_Page = int(current_Page)</span><br><span class="line"></span><br><span class="line">    per_page = 10</span><br><span class="line"></span><br><span class="line">    start = (current_Page - 1) * per_page</span><br><span class="line">    end = current_Page * per_page</span><br><span class="line"></span><br><span class="line">    user_list = models.UserInfo.objects.all()[start:end]</span><br><span class="line"></span><br><span class="line">    return render(request,&apos;custom.html&apos;,&#123;&apos;user_list&apos;:user_list&#125;)</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;h1&gt;用户列表&lt;/h1&gt;</span><br><span class="line"></span><br><span class="line">&lt;ul&gt;</span><br><span class="line">    &#123;% for row in user_list %&#125;</span><br><span class="line">        &lt;li&gt;&#123;&#123; row.name &#125;&#125;&lt;/li&gt;</span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
 <hr>
 <ul>
@@ -213,7 +220,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2017-11-09T09:15:50.000Z" itemprop="dateUpdated">2017-11-09 17:15:50</time>
+    Last updated: <time datetime="2017-11-10T04:25:05.000Z" itemprop="dateUpdated">2017-11-10 12:25:05</time>
 </span><br>
 
 

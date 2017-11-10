@@ -20,18 +20,18 @@
     
     
     <meta name="keywords" content="Python,Django">
-    <meta name="description" content="123456789101112131415161718修复Bug，刷新无法动态显示数据库内容：	方式一：		class TeacherForm(Form):			tname = fields.CharField(min_length=2)			# xx = form_model.ModelMultipleChoiceField(queryset=models.Classes.objects.all">
+    <meta name="description" content="修复Bug123456789101112131415161718修复Bug，刷新无法动态显示数据库内容：	方式一：		class TeacherForm(Form):			tname = fields.CharField(min_length=2)			# xx = form_model.ModelMultipleChoiceField(queryset=models.Classes.object">
 <meta name="keywords" content="Python,Django">
 <meta property="og:type" content="article">
 <meta property="og:title" content="修复Bug，刷新无法动态显示数据库内容">
 <meta property="og:url" content="http://midsummer.com/2016/11/09/修复Bug，刷新无法动态显示数据库内容/index.html">
 <meta property="og:site_name" content="summer&#39;博客">
-<meta property="og:description" content="123456789101112131415161718修复Bug，刷新无法动态显示数据库内容：	方式一：		class TeacherForm(Form):			tname = fields.CharField(min_length=2)			# xx = form_model.ModelMultipleChoiceField(queryset=models.Classes.objects.all">
+<meta property="og:description" content="修复Bug123456789101112131415161718修复Bug，刷新无法动态显示数据库内容：	方式一：		class TeacherForm(Form):			tname = fields.CharField(min_length=2)			# xx = form_model.ModelMultipleChoiceField(queryset=models.Classes.object">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-09T08:56:56.000Z">
+<meta property="og:updated_time" content="2017-11-10T04:25:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="修复Bug，刷新无法动态显示数据库内容">
-<meta name="twitter:description" content="123456789101112131415161718修复Bug，刷新无法动态显示数据库内容：	方式一：		class TeacherForm(Form):			tname = fields.CharField(min_length=2)			# xx = form_model.ModelMultipleChoiceField(queryset=models.Classes.objects.all">
+<meta name="twitter:description" content="修复Bug123456789101112131415161718修复Bug，刷新无法动态显示数据库内容：	方式一：		class TeacherForm(Form):			tname = fields.CharField(min_length=2)			# xx = form_model.ModelMultipleChoiceField(queryset=models.Classes.object">
     
         <link rel="alternate" type="application/atom+xml" title="summer&#39;博客" href="/autom.xml">
     
@@ -168,6 +168,13 @@
 
 <div class="container body-wrap">
     
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#修复Bug"><span class="post-toc-number">1.</span> <span class="post-toc-text">修复Bug</span></a></li></ol>
+        </nav>
+    </aside>
+    
 <article id="post-修复Bug，刷新无法动态显示数据库内容"
   class="post-article article-type-post fade" itemprop="blogPost">
 
@@ -187,14 +194,14 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">修复Bug，刷新无法动态显示数据库内容：</span><br><span class="line">	方式一：</span><br><span class="line">		class TeacherForm(Form):</span><br><span class="line">			tname = fields.CharField(min_length=2)</span><br><span class="line">			# xx = form_model.ModelMultipleChoiceField(queryset=models.Classes.objects.all())</span><br><span class="line">			# xx = form_model.ModelChoiceField(queryset=models.Classes.objects.all())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	方式二：</span><br><span class="line">		class TeacherForm(Form):</span><br><span class="line">			tname = fields.CharField(min_length=2)</span><br><span class="line"></span><br><span class="line">			xx = fields.MultipleChoiceField(</span><br><span class="line">				widget=widgets.SelectMultiple</span><br><span class="line">			)</span><br><span class="line">			def __init__(self,*args,**kwargs):</span><br><span class="line">				super(TeacherForm,self).__init__(*args,**kwargs)</span><br><span class="line">				self.fields[&apos;xx&apos;].choices = models.Classes.objects.values_list(&apos;id&apos;,&apos;title&apos;)</span><br></pre></td></tr></table></figure>
+            <h3 id="修复Bug"><a href="#修复Bug" class="headerlink" title="修复Bug"></a>修复Bug</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">修复Bug，刷新无法动态显示数据库内容：</span><br><span class="line">	方式一：</span><br><span class="line">		class TeacherForm(Form):</span><br><span class="line">			tname = fields.CharField(min_length=2)</span><br><span class="line">			# xx = form_model.ModelMultipleChoiceField(queryset=models.Classes.objects.all())</span><br><span class="line">			# xx = form_model.ModelChoiceField(queryset=models.Classes.objects.all())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	方式二：</span><br><span class="line">		class TeacherForm(Form):</span><br><span class="line">			tname = fields.CharField(min_length=2)</span><br><span class="line"></span><br><span class="line">			xx = fields.MultipleChoiceField(</span><br><span class="line">				widget=widgets.SelectMultiple</span><br><span class="line">			)</span><br><span class="line">			def __init__(self,*args,**kwargs):</span><br><span class="line">				super(TeacherForm,self).__init__(*args,**kwargs)</span><br><span class="line">				self.fields[&apos;xx&apos;].choices = models.Classes.objects.values_list(&apos;id&apos;,&apos;title&apos;)</span><br></pre></td></tr></table></figure>
         </div>
 
         <blockquote class="post-copyright">
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2017-11-09T08:56:56.000Z" itemprop="dateUpdated">2017-11-09 16:56:56</time>
+    Last updated: <time datetime="2017-11-10T04:25:05.000Z" itemprop="dateUpdated">2017-11-10 12:25:05</time>
 </span><br>
 
 
@@ -275,9 +282,9 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2016/11/09/CBV|FBV/" id="post-prev" class="post-nav-link">
+      <a href="/2016/11/09/线程池、进程池/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Django-CBV，FBV</h4>
+        <h4 class="title">线程池、进程池</h4>
       </a>
     </div>
   
