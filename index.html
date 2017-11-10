@@ -165,7 +165,7 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
-            <article id="post-MySQL整理 -补充02"
+            <article id="post-MySQl操作整理01.md"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
@@ -181,7 +181,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/12/09/MySQL整理 -补充02/">MySQL整理 -补充02</a>
+      <a class="post-title-link" href="/2016/12/09/MySQl操作整理01.md/">MySQl操作整理01</a>
     </h3>
   
 
@@ -192,14 +192,14 @@
 
     
         
-备份：
-12345678备份：数据表结构＋数据mysqldump -u root db1 &gt; db1.sql -p备份：数据表结构mysqldump -u root -d db1 &gt; db1.sql -p执行文件：create database db2;mysql -u root -d db5 &lt; db1.sql -p;
+连接数据库：
+12mysql -u [useename] -pmysql -u [username] -h [host] -p
 
-外键的变种
-123456789101112131...
+用户管理：
+1234567create user &apos;spring&apos;@&apos;192.168.1.1&apos; identified by &apos;123&apos;;create user &apos;spring&apos;@&a...
     
 
-        <a href="/2016/12/09/MySQL整理 -补充02/" class="post-more waves-effect waves-button">
+        <a href="/2016/12/09/MySQl操作整理01.md/" class="post-more waves-effect waves-button">
             Continue reading...
         </a>
     </div>
@@ -261,7 +261,7 @@ js1234567891011121314151617181920var div = document.getElementById(&quot;div_1&q
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-MySQl操作整理01.md"
+            <article id="post-MySQL整理 -补充02"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
@@ -277,7 +277,7 @@ js1234567891011121314151617181920var div = document.getElementById(&quot;div_1&q
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/12/09/MySQl操作整理01.md/">MySQl操作整理01</a>
+      <a class="post-title-link" href="/2016/12/09/MySQL整理 -补充02/">MySQL整理 -补充02</a>
     </h3>
   
 
@@ -288,14 +288,14 @@ js1234567891011121314151617181920var div = document.getElementById(&quot;div_1&q
 
     
         
-连接数据库：
-12mysql -u [useename] -pmysql -u [username] -h [host] -p
+备份：
+12345678备份：数据表结构＋数据mysqldump -u root db1 &gt; db1.sql -p备份：数据表结构mysqldump -u root -d db1 &gt; db1.sql -p执行文件：create database db2;mysql -u root -d db5 &lt; db1.sql -p;
 
-用户管理：
-1234567create user &apos;spring&apos;@&apos;192.168.1.1&apos; identified by &apos;123&apos;;create user &apos;spring&apos;@&a...
+外键的变种
+123456789101112131...
     
 
-        <a href="/2016/12/09/MySQl操作整理01.md/" class="post-more waves-effect waves-button">
+        <a href="/2016/12/09/MySQL整理 -补充02/" class="post-more waves-effect waves-button">
             Continue reading...
         </a>
     </div>
@@ -513,59 +513,6 @@ SQLAlchemy: SQLalchemy 是python编程语言下的一款ORM框架，该框架建
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Django-ORM多对多查询"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2016-11-09 09:31:27" datetime="2016-11-09T01:31:27.000Z"  itemprop="datePublished">2016-11-09</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/11/09/Django-ORM多对多查询/">Django-ORM多对多查询 (自定义第三张表&amp;ManyToManyField)</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        对于多对多表
-
-1.自定义第三张表，更加灵活
-2.ManyToManyField 自动生成第3张表 只能 有3列数据 不能自己添加。
-
-
-
-自定义第三张表
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364...
-    
-
-        <a href="/2016/11/09/Django-ORM多对多查询/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Django/">Django</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
             <article id="post-Django 基础- 路由系统"
   class="article-card article-type-post" itemprop="blogPost">
 
@@ -604,6 +551,59 @@ SQLAlchemy: SQLalchemy 是python编程语言下的一款ORM框架，该框架建
     
 
         <a href="/2016/11/09/Django 基础- 路由系统/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Django/">Django</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Django-ORM多对多查询"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2016-11-09 09:31:27" datetime="2016-11-09T01:31:27.000Z"  itemprop="datePublished">2016-11-09</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2016/11/09/Django-ORM多对多查询/">Django-ORM多对多查询 (自定义第三张表&amp;ManyToManyField)</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        对于多对多表
+
+1.自定义第三张表，更加灵活
+2.ManyToManyField 自动生成第3张表 只能 有3列数据 不能自己添加。
+
+
+
+自定义第三张表
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364...
+    
+
+        <a href="/2016/11/09/Django-ORM多对多查询/" class="post-more waves-effect waves-button">
             Continue reading...
         </a>
     </div>
