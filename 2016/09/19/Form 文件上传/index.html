@@ -315,6 +315,23 @@
 
 
 
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'summer9393@gmail.com',
+            repo: 'summer93.github.io',
+            oauth: {
+                client_id: 'adc3565159aba611cc56',
+                client_secret: '75b6937b84b5a629ef0c485c5d76b21a3ec0c60b',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
 
 
 

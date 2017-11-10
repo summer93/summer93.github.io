@@ -285,9 +285,9 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2016/11/09/修复Bug，刷新无法动态显示数据库内容/" id="post-prev" class="post-nav-link">
+      <a href="/2016/11/09/线程池、进程池/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">修复Bug，刷新无法动态显示数据库内容</h4>
+        <h4 class="title">线程池、进程池</h4>
       </a>
     </div>
   
@@ -321,6 +321,23 @@
 
 
 
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'summer9393@gmail.com',
+            repo: 'summer93.github.io',
+            oauth: {
+                client_id: 'adc3565159aba611cc56',
+                client_secret: '75b6937b84b5a629ef0c485c5d76b21a3ec0c60b',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
 
 
 
