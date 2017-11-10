@@ -213,6 +213,55 @@ xss攻击 跨站脚本攻击
         </li>
     
         <li class="post-list-item fade">
+            <article id="post-线程池、进程池"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2016-11-09 08:31:27" datetime="2016-11-09T00:31:27.000Z"  itemprop="datePublished">2016-11-09</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2016/11/09/线程池、进程池/">线程池、进程池</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+线程池
+12345678910111213import timefrom concurrent.futures import ThreadPoolExecutordef task(i):    time.sleep(1)    print(i)p = ThreadPoolExecutor(10)for row in range(100):    p.submit(task,row)
+
+进程...
+    
+
+        <a href="/2016/11/09/线程池、进程池/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
             <article id="post-Ajax01"
   class="article-card article-type-post" itemprop="blogPost">
 
@@ -275,145 +324,6 @@ JQuery Ajax123456789101112131415161718192021222324252627282930313233343536373839
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-线程池、进程池"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2016-11-09 08:31:27" datetime="2016-11-09T00:31:27.000Z"  itemprop="datePublished">2016-11-09</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/11/09/线程池、进程池/">线程池、进程池</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        
-线程池
-12345678910111213import timefrom concurrent.futures import ThreadPoolExecutordef task(i):    time.sleep(1)    print(i)p = ThreadPoolExecutor(10)for row in range(100):    p.submit(task,row)
-
-进程...
-    
-
-        <a href="/2016/11/09/线程池、进程池/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-修复Bug，刷新无法动态显示数据库内容"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2016-11-09 08:31:27" datetime="2016-11-09T00:31:27.000Z"  itemprop="datePublished">2016-11-09</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/11/09/修复Bug，刷新无法动态显示数据库内容/">修复Bug，刷新无法动态显示数据库内容</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        123456789101112131415161718修复Bug，刷新无法动态显示数据库内容：	方式一：		class TeacherForm(Form):			tname = fields.CharField(min_length=2)			# xx = form_model.ModelMultipleChoiceField(queryset=models.Classes.objects....
-    
-
-        <a href="/2016/11/09/修复Bug，刷新无法动态显示数据库内容/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Django/">Django</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-CBV|FBV"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2016-11-09 08:31:27" datetime="2016-11-09T00:31:27.000Z"  itemprop="datePublished">2016-11-09</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/11/09/CBV|FBV/">Django-CBV，FBV</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        urls.pyfrom django.conf.urls import urlfrom django.contrib import adminfrom cbv import viewsurlpatterns = [    url(r’^admin/‘, admin.site.urls),    url(r’^Login.html$’, views.Login.as_view()),]1234...
-    
-
-        <a href="/2016/11/09/CBV|FBV/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Django/">Django</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
             <article id="post-Django-中间件01"
   class="article-card article-type-post" itemprop="blogPost">
 
@@ -453,71 +363,6 @@ django 中的中间件（middleware），在django中，中间件其实就是一
     <div class="post-footer">
         
 	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Django/">Django</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-JSONP详解"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2016-11-09 08:31:27" datetime="2016-11-09T00:31:27.000Z"  itemprop="datePublished">2016-11-09</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/11/09/JSONP详解/">JSONP详解</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        
-同源策略
-
-限制：Ajax
-向别的网站发Ajax请求，在拿回数据的时候，已经在拿回来的时候，发送给浏览器，浏览器阻止了，请求已经发送给服务器并执行了
-
-
-不限制：有src属性的，如script 标签
-
-
-但是在开发过程中有这样的需求：向其他网站发送Http请求。
-
-浏览器直接发送请求【考虑同源】
-浏览器-&gt; 服务端 -&gt; 发送请求
-
-
-
-
-浏览器直接发送请求【考虑同源】
-
-12...
-    
-
-        <a href="/2016/11/09/JSONP详解/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
 
     </div>
     
@@ -615,6 +460,161 @@ Form 验证123456789# login.html&lt;body&gt;&lt;form action=&quot;/login.html&qu
     
 
         <a href="/2016/11/09/From组件/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Django/">Django</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-JSONP详解"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2016-11-09 08:31:27" datetime="2016-11-09T00:31:27.000Z"  itemprop="datePublished">2016-11-09</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2016/11/09/JSONP详解/">JSONP详解</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+同源策略
+
+限制：Ajax
+向别的网站发Ajax请求，在拿回数据的时候，已经在拿回来的时候，发送给浏览器，浏览器阻止了，请求已经发送给服务器并执行了
+
+
+不限制：有src属性的，如script 标签
+
+
+但是在开发过程中有这样的需求：向其他网站发送Http请求。
+
+浏览器直接发送请求【考虑同源】
+浏览器-&gt; 服务端 -&gt; 发送请求
+
+
+
+
+浏览器直接发送请求【考虑同源】
+
+12...
+    
+
+        <a href="/2016/11/09/JSONP详解/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-CBV|FBV"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2016-11-09 08:31:27" datetime="2016-11-09T00:31:27.000Z"  itemprop="datePublished">2016-11-09</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2016/11/09/CBV|FBV/">Django-CBV，FBV</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        urls.pyfrom django.conf.urls import urlfrom django.contrib import adminfrom cbv import viewsurlpatterns = [    url(r’^admin/‘, admin.site.urls),    url(r’^Login.html$’, views.Login.as_view()),]1234...
+    
+
+        <a href="/2016/11/09/CBV|FBV/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Django/">Django</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-修复Bug，刷新无法动态显示数据库内容"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2016-11-09 08:31:27" datetime="2016-11-09T00:31:27.000Z"  itemprop="datePublished">2016-11-09</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2016/11/09/修复Bug，刷新无法动态显示数据库内容/">修复Bug，刷新无法动态显示数据库内容</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        123456789101112131415161718修复Bug，刷新无法动态显示数据库内容：	方式一：		class TeacherForm(Form):			tname = fields.CharField(min_length=2)			# xx = form_model.ModelMultipleChoiceField(queryset=models.Classes.objects....
+    
+
+        <a href="/2016/11/09/修复Bug，刷新无法动态显示数据库内容/" class="post-more waves-effect waves-button">
             Continue reading...
         </a>
     </div>
