@@ -16,7 +16,7 @@
     <title>JSONP详解 | summer&#39;博客 | It&#39;s my blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="theme-color" content="#00BCD4">
+    <meta name="theme-color" content="#3F51B5">
     
     
     <meta name="keywords" content="前端">
@@ -24,7 +24,7 @@
 <meta name="keywords" content="前端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JSONP详解">
-<meta property="og:url" content="http://yoursite.com/2016/11/09/JSONP详解/index.html">
+<meta property="og:url" content="http://midsummer.com/2016/11/09/JSONP详解/index.html">
 <meta property="og:site_name" content="summer&#39;博客">
 <meta property="og:description" content="同源策略  限制：Ajax 向别的网站发Ajax请求，在拿回数据的时候，已经在拿回来的时候，发送给浏览器，浏览器阻止了，请求已经发送给服务器并执行了   不限制：有src属性的，如script 标签   但是在开发过程中有这样的需求：向其他网站发送Http请求。  浏览器直接发送请求【考虑同源】 浏览器-&amp;gt; 服务端 -&amp;gt; 发送请求     浏览器直接发送请求【考虑同源】  12345">
 <meta property="og:locale" content="zh-Hans">
@@ -132,7 +132,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="搜尋">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -241,16 +241,16 @@
     <div class="content">
         
 <span class="post-time">
-    最後更新時間：<time datetime="2017-11-09T08:43:12.000Z" itemprop="dateUpdated">2017-11-09 16:43:12</time>
+    Last updated: <time datetime="2017-11-09T08:43:12.000Z" itemprop="dateUpdated">2017-11-09 16:43:12</time>
 </span><br>
 
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2016/11/09/JSONP详解/" target="_blank" rel="external">http://yoursite.com/2016/11/09/JSONP详解/</a>
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2016/11/09/JSONP详解/" target="_blank" rel="external">http://midsummer.com/2016/11/09/JSONP详解/</a>
         
     </div>
     <footer>
-        <a href="http://yoursite.com">
+        <a href="http://midsummer.com">
             <img src="/img/avatar.jpg" alt="summer">
             summer
         </a>
@@ -276,7 +276,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2016/11/09/JSONP详解/&title=《JSONP详解》 — summer'博客&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://midsummer.com/2016/11/09/JSONP详解/&title=《JSONP详解》 — summer'博客&pic=http://midsummer.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -286,22 +286,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2016/11/09/JSONP详解/&title=《JSONP详解》 — summer'博客&source=分享极客生活 Not just Python!" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://midsummer.com/2016/11/09/JSONP详解/&title=《JSONP详解》 — summer'博客&source=分享极客生活 Not just Python!" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/11/09/JSONP详解/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://midsummer.com/2016/11/09/JSONP详解/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JSONP详解》 — summer'博客&url=http://yoursite.com/2016/11/09/JSONP详解/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JSONP详解》 — summer'博客&url=http://midsummer.com/2016/11/09/JSONP详解/&via=http://midsummer.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2016/11/09/JSONP详解/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://midsummer.com/2016/11/09/JSONP详解/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -324,18 +324,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2016/11/09/From组件/" id="post-prev" class="post-nav-link">
+      <a href="/2016/11/09/Django-中间件01/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Form组件</h4>
+        <h4 class="title">Django-中间件01</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2016/11/09/线程池、进程池/" id="post-next" class="post-nav-link">
+      <a href="/2016/11/09/Ajax02/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">线程池、进程池</h4>
+        <h4 class="title">Ajax02 上传文件</h4>
       </a>
     </div>
   
@@ -345,6 +345,15 @@
 
     
 
+
+<section class="comments" id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_shortname = 'disqus_shortname';
+    lazyScripts.push('//' + disqus_shortname + '.disqus.com/embed.js')
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
 
 
 
@@ -404,7 +413,7 @@
             
                 <span><a href="/autom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>本部落格係採用<a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh_TW">創用 CC 姓名標示 4.0 國際 授權條款授權</a></span>
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
         </p>
     </div>
     <div class="bottom">
@@ -426,7 +435,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2016/11/09/JSONP详解/&title=《JSONP详解》 — summer'博客&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://midsummer.com/2016/11/09/JSONP详解/&title=《JSONP详解》 — summer'博客&pic=http://midsummer.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -436,22 +445,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2016/11/09/JSONP详解/&title=《JSONP详解》 — summer'博客&source=分享极客生活 Not just Python!" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://midsummer.com/2016/11/09/JSONP详解/&title=《JSONP详解》 — summer'博客&source=分享极客生活 Not just Python!" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/11/09/JSONP详解/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://midsummer.com/2016/11/09/JSONP详解/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JSONP详解》 — summer'博客&url=http://yoursite.com/2016/11/09/JSONP详解/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JSONP详解》 — summer'博客&url=http://midsummer.com/2016/11/09/JSONP详解/&via=http://midsummer.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2016/11/09/JSONP详解/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://midsummer.com/2016/11/09/JSONP详解/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -462,7 +471,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLklEQVR42u3aQW7DMAwF0dz/0inQdS3NJ50ipsYrw2glPxdgSYqvF77ev9fV/foJf371M7ddMmTIeCzjvbz4q6/X7OyLqDJkyDiAkQZZsgIJqeSTrd9NhgwZMvhm5FXSV5QhQ4aM/nJog1KyKEOGDBmdYpKkgLXO2DqU31aLy5Ah44GM/sHA5+7/9XxDhgwZX8l4Ny7eeiMBtPM+MmTImM1IUzo+eLEerSD78oJWhgwZZzJ4w6vfhqs1+Da1uAwZMgYxOkGWhNS0ZZaOcciQIeNMRjo2kQ5h1ELtZh0ZMmQcyUgb95zHG3Y8xMuQIeMERrpl2kqrDYqR55fnGzJkyBjNWG/JZx54aphiZMiQcRqD51f9opQg+UfcFLQyZMgYx0jTsvS+M5wRDIjIkCFjKCMtRNPNyMppuP9jTRkyZBzASIex+nloWhJvVpYhQ8ZoRq3dT8LxOkx3Ajf6m8iQIWMco5bM8SBbW4d8yhtyUhkyZDyW0Slfa8GXrMDHOGTIkDGPwTdIByzSQjQ9eIjPYGXIkDGCwZtotTQxTfiK/yVkyJAxjlFbOg24vKDlzbVN8JUhQ8YIRq2tX0vv+KFpnKrKkCFjNKNzWHjXUFenlG2ddciQIeNRjLva9/w78eEzNMAqQ4aMYxj9EQeeRNaSvA1MhgwZMsJDSv67aUC/fGcZMmTISBcN08eP1NkyZMgYx0jHRjsHmf1ALEOGjNMY9wblWiAmYH6wKkOGjEGMHxxsvCqcGHdtAAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKElEQVR42u3aQW7DMAwEwPz/0ynQU4DUzpJ0gFoanYI2tTk6sBSpxyNez9/1+vn1J0fff/+r999WnzxaGBgYt2U8T9d7ENVQeluQx4aBgbEPo/q4SZJN3pXHhoGBgZE8ep5kk/diYGBg9BJutUA82oJkOzAwMDCSQ2ySNK86Bn/xLI6BgXFDxqRc+/bnr883MDAw/j3jWVzVQ2x1YNCMCgMDY2nGeVjVtHteulUB1WMtBgbGqoxqY2ueNOeMP2LDwMDYhhE134NTZN5cy69fNCcbGBgYSzCqZV9ej+WpPN8CDAyMPRm9KxHVgK66YHH4TAwMjKUZeUKsFoW9JDtp22FgYKzKqDbFrkrHvWbc4fZhYGBsw8jHmb1xwuQiGgYGBsZ8SJCXg3PM4e02DAyMpRnVIKplXJ6+q9/HwMDYgZEcNasvm2xHdWCAgYGxAyMfLvZGjL1G3nlT7/D/BgYGxtKMvFyrfnMOiCLEwMBYmtELNE/B87o1eTsGBsbajMmV096FjByWFIsYGBj7MJL22QVHzdbIszDfwMDAWJSRjx6rCXrSjOtd+MDAwFiV8SyuyQCgOi4tlJgYGBhLM/LVa+7nRV71XdV/FRgYGHdn9FJncuWit4vNGDAwMDZgVJtueZF37QH4wyATAwNje0avHKym114zDgMDAyMpDfNyMBlhlscJGBgYGzDyZn2vYzdv/X9IwRgYGEszqkH0rk3kG/RFDAYGxv0YP3Z/GQZ93tKRAAAAAElFTkSuQmCC" alt="微信分享二维码">
 </div>
 
 
