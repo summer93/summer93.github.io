@@ -20,18 +20,18 @@
     
     
     <meta name="keywords" content="Python,Django">
-    <meta name="description" content="1.增删改查2.一般操作:123456789models.UserInfo.objects.filter(id__gt=1)models.UserInfo.objects.filter(id__lt=1)models.UserInfo.objects.filter(id__lte=1)models.UserInfo.objects.filter(id__gte=1)models.UserInfo.">
+    <meta name="description" content="123456789models.UserInfo.objects.filter(id__gt=1)models.UserInfo.objects.filter(id__lt=1)models.UserInfo.objects.filter(id__lte=1)models.UserInfo.objects.filter(id__gte=1)models.UserInfo.objects.filte">
 <meta name="keywords" content="Python,Django">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Django-ORM进阶操作01">
 <meta property="og:url" content="http://midsummer.com/2016/11/08/Django-ORM进阶操作01/index.html">
 <meta property="og:site_name" content="summer&#39;博客">
-<meta property="og:description" content="1.增删改查2.一般操作:123456789models.UserInfo.objects.filter(id__gt=1)models.UserInfo.objects.filter(id__lt=1)models.UserInfo.objects.filter(id__lte=1)models.UserInfo.objects.filter(id__gte=1)models.UserInfo.">
+<meta property="og:description" content="123456789models.UserInfo.objects.filter(id__gt=1)models.UserInfo.objects.filter(id__lt=1)models.UserInfo.objects.filter(id__lte=1)models.UserInfo.objects.filter(id__gte=1)models.UserInfo.objects.filte">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-11-10T08:04:33.000Z">
+<meta property="og:updated_time" content="2017-11-15T02:45:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Django-ORM进阶操作01">
-<meta name="twitter:description" content="1.增删改查2.一般操作:123456789models.UserInfo.objects.filter(id__gt=1)models.UserInfo.objects.filter(id__lt=1)models.UserInfo.objects.filter(id__lte=1)models.UserInfo.objects.filter(id__gte=1)models.UserInfo.">
+<meta name="twitter:description" content="123456789models.UserInfo.objects.filter(id__gt=1)models.UserInfo.objects.filter(id__lt=1)models.UserInfo.objects.filter(id__lte=1)models.UserInfo.objects.filter(id__gte=1)models.UserInfo.objects.filte">
     
         <link rel="alternate" type="application/atom+xml" title="summer&#39;博客" href="/autom.xml">
     
@@ -196,7 +196,9 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="1-增删改查"><a href="#1-增删改查" class="headerlink" title="1.增删改查"></a>1.增删改查</h3><h3 id="2-一般操作"><a href="#2-一般操作" class="headerlink" title="2.一般操作:"></a>2.一般操作:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">models.UserInfo.objects.filter(id__gt=1)</span><br><span class="line">models.UserInfo.objects.filter(id__lt=1)</span><br><span class="line">models.UserInfo.objects.filter(id__lte=1)</span><br><span class="line">models.UserInfo.objects.filter(id__gte=1)</span><br><span class="line">models.UserInfo.objects.filter(id__in=[1,2,3])</span><br><span class="line">models.UserInfo.objects.filter(id__range=[1,2])</span><br><span class="line">models.UserInfo.objects.filter(name__startswith=&apos;au&apos;)</span><br><span class="line">models.UserInfo.objects.filter(name__contains=&apos;au&apos;) # 包含</span><br><span class="line">models.UserInfo.objects.exclude(id=1) # 排除，除去括号内的条件之外的内容。</span><br></pre></td></tr></table></figure>
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">models.UserInfo.objects.filter(id__gt=1)</span><br><span class="line">models.UserInfo.objects.filter(id__lt=1)</span><br><span class="line">models.UserInfo.objects.filter(id__lte=1)</span><br><span class="line">models.UserInfo.objects.filter(id__gte=1)</span><br><span class="line">models.UserInfo.objects.filter(id__in=[1,2,3])</span><br><span class="line">models.UserInfo.objects.filter(id__range=[1,2])</span><br><span class="line">models.UserInfo.objects.filter(name__startswith=&apos;au&apos;)</span><br><span class="line">models.UserInfo.objects.filter(name__contains=&apos;au&apos;) # 包含</span><br><span class="line">models.UserInfo.objects.exclude(id=1) # 排除，除去括号内的条件之外的内容。</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="1-增删改查"><a href="#1-增删改查" class="headerlink" title="1.增删改查"></a>1.增删改查</h3><h3 id="2-一般操作"><a href="#2-一般操作" class="headerlink" title="2.一般操作:"></a>2.一般操作:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">models.UserInfo.objects.filter(id__gt=1)</span><br><span class="line">models.UserInfo.objects.filter(id__lt=1)</span><br><span class="line">models.UserInfo.objects.filter(id__lte=1)</span><br><span class="line">models.UserInfo.objects.filter(id__gte=1)</span><br><span class="line">models.UserInfo.objects.filter(id__in=[1,2,3])</span><br><span class="line">models.UserInfo.objects.filter(id__range=[1,2])</span><br><span class="line">models.UserInfo.objects.filter(name__startswith=&apos;au&apos;)</span><br><span class="line">models.UserInfo.objects.filter(name__contains=&apos;au&apos;) # 包含</span><br><span class="line">models.UserInfo.objects.exclude(id=1) # 排除，除去括号内的条件之外的内容。</span><br></pre></td></tr></table></figure>
 <hr>
 <h3 id="3-排序"><a href="#3-排序" class="headerlink" title="3.排序:"></a>3.排序:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">user_object_list = models.UserInfo.objects.all().order_by(&apos;id&apos;) # asc</span><br><span class="line"></span><br><span class="line">user_object_list = models.UserInfo.objects.all().order_by(&apos;-id&apos;) # desc</span><br><span class="line"></span><br><span class="line">user_object_list = models.UserInfo.objects.all().order_by(&apos;-id&apos;,&apos;name&apos;) # 如果遇到id相等 按name从小到大排序</span><br></pre></td></tr></table></figure>
 <hr>
@@ -210,7 +212,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-11-10T08:04:33.000Z" itemprop="dateUpdated">2017-11-10 16:04:33</time>
+    最后更新时间：<time datetime="2017-11-15T02:45:16.000Z" itemprop="dateUpdated">2017-11-15 10:45:16</time>
 </span><br>
 
 
@@ -253,7 +255,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://midsummer.com/2016/11/08/Django-ORM进阶操作01/&title=《Django-ORM进阶操作01》 — summer'博客&source=分享极客生活 Not just Python!" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://midsummer.com/2016/11/08/Django-ORM进阶操作01/&title=《Django-ORM进阶操作01》 — summer'博客&source=123456789models.UserInfo.objects.filter(id__gt=1)models.UserInfo.objects.filt..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -403,7 +405,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://midsummer.com/2016/11/08/Django-ORM进阶操作01/&title=《Django-ORM进阶操作01》 — summer'博客&source=分享极客生活 Not just Python!" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://midsummer.com/2016/11/08/Django-ORM进阶操作01/&title=《Django-ORM进阶操作01》 — summer'博客&source=123456789models.UserInfo.objects.filter(id__gt=1)models.UserInfo.objects.filt..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>

@@ -20,18 +20,18 @@
     
     
     <meta name="keywords" content="Python,Django">
-    <meta name="description" content="#123456789101112131415161718192021222324252627282930def test(request):    from django.core.paginator import Paginator, Page    current_page = request.GET.get(&amp;apos;page&amp;apos;)    user_list = models.Us">
+    <meta name="description" content="def test(request):    from django.core.paginator import Paginator, Page current_page = request.GET.get(&amp;apos;page&amp;apos;)  user_list = models.UserInfo.objects.all() paginator = Paginator(user_list, 10)">
 <meta name="keywords" content="Python,Django">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Django-内置分页">
 <meta property="og:url" content="http://midsummer.com/2016/10/09/Django-内置分页/index.html">
 <meta property="og:site_name" content="summer&#39;博客">
-<meta property="og:description" content="#123456789101112131415161718192021222324252627282930def test(request):    from django.core.paginator import Paginator, Page    current_page = request.GET.get(&amp;apos;page&amp;apos;)    user_list = models.Us">
+<meta property="og:description" content="def test(request):    from django.core.paginator import Paginator, Page current_page = request.GET.get(&amp;apos;page&amp;apos;)  user_list = models.UserInfo.objects.all() paginator = Paginator(user_list, 10)">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-11-10T04:25:05.000Z">
+<meta property="og:updated_time" content="2017-11-15T03:54:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Django-内置分页">
-<meta name="twitter:description" content="#123456789101112131415161718192021222324252627282930def test(request):    from django.core.paginator import Paginator, Page    current_page = request.GET.get(&amp;apos;page&amp;apos;)    user_list = models.Us">
+<meta name="twitter:description" content="def test(request):    from django.core.paginator import Paginator, Page current_page = request.GET.get(&amp;apos;page&amp;apos;)  user_list = models.UserInfo.objects.all() paginator = Paginator(user_list, 10)">
     
         <link rel="alternate" type="application/atom+xml" title="summer&#39;博客" href="/autom.xml">
     
@@ -170,13 +170,6 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#"><span class="post-toc-number">1.</span> <span class="post-toc-text">#</span></a></li></ol>
-        </nav>
-    </aside>
-    
 <article id="post-Django-内置分页"
   class="post-article article-type-post fade" itemprop="blogPost">
 
@@ -196,8 +189,43 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id=""><a href="#" class="headerlink" title="#"></a>#</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">def test(request):</span><br><span class="line">    from django.core.paginator import Paginator, Page</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    current_page = request.GET.get(&apos;page&apos;)</span><br><span class="line"></span><br><span class="line">    user_list = models.UserInfo.objects.all()</span><br><span class="line">    paginator = Paginator(user_list, 10)</span><br><span class="line"></span><br><span class="line">    # per_page: 每页显示条目数量</span><br><span class="line">    # count:    数据总个数</span><br><span class="line">    # num_pages:总页数</span><br><span class="line">    # page_range:总页数的索引范围，如: (1,10),(1,200)</span><br><span class="line">    # page:     page对象</span><br><span class="line"></span><br><span class="line">    try:</span><br><span class="line">        posts = paginator.page(current_page)</span><br><span class="line">    except Exception as e:</span><br><span class="line">        posts = paginator.page(1)</span><br><span class="line"></span><br><span class="line">    # has_next              是否有下一页</span><br><span class="line">    # next_page_number      下一页页码</span><br><span class="line">    # has_previous          是否有上一页</span><br><span class="line">    # previous_page_number  上一页页码</span><br><span class="line">    # object_list           分页之后的数据列表</span><br><span class="line">    # number                当前页</span><br><span class="line">    # paginator             paginator对象</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    return render(request, &apos;test.html&apos;, &#123;&apos;posts&apos;: posts&#125;)</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"># test.html</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;ul&gt;</span><br><span class="line">    &#123;% for row in posts.object_list %&#125;</span><br><span class="line">        &lt;li&gt;&#123;&#123; row.id &#125;&#125; - &#123;&#123; row.name &#125;&#125; - &#123;&#123; row.ut.title &#125;&#125;&lt;/li&gt;</span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#123;% if posts.has_previous %&#125;</span><br><span class="line">    &lt;a href=&quot;/test/?page=&#123;&#123; posts.previous_page_number &#125;&#125;&quot;&gt;上一页&lt;/a&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% for num in posts.paginator.page_range %&#125;</span><br><span class="line">    &lt;a href=&quot;/test/?page=&#123;&#123; num &#125;&#125;&quot;&gt;&#123;&#123; num &#125;&#125;&lt;/a&gt;</span><br><span class="line">&#123;% endfor %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% if posts.has_next %&#125;</span><br><span class="line">    &lt;a href=&quot;/test/?page=&#123;&#123; posts.next_page_number &#125;&#125;&quot;&gt;下一页&lt;/a&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+            <p>def test(request):<br>    from django.core.paginator import Paginator, Page</p>
+<pre><code>current_page = request.GET.get(&apos;page&apos;)
+
+user_list = models.UserInfo.objects.all()
+paginator = Paginator(user_list, 10)
+
+# per_page: 每页显示条目数量
+# count:    数据总个数
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;!-- more --&gt;</span><br><span class="line">### ###</span><br></pre></td></tr></table></figure>
+<p>def test(request):<br>    from django.core.paginator import Paginator, Page</p>
+<pre><code>current_page = request.GET.get(&apos;page&apos;)
+
+user_list = models.UserInfo.objects.all()
+paginator = Paginator(user_list, 10)
+
+# per_page: 每页显示条目数量
+# count:    数据总个数
+# num_pages:总页数
+# page_range:总页数的索引范围，如: (1,10),(1,200)
+# page:     page对象
+
+try:
+    posts = paginator.page(current_page)
+except Exception as e:
+    posts = paginator.page(1)
+
+# has_next              是否有下一页
+# next_page_number      下一页页码
+# has_previous          是否有上一页
+# previous_page_number  上一页页码
+# object_list           分页之后的数据列表
+# number                当前页
+# paginator             paginator对象
+
+
+return render(request, &apos;test.html&apos;, {&apos;posts&apos;: posts})
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># test.html</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;ul&gt;</span><br><span class="line">    &#123;% for row in posts.object_list %&#125;</span><br><span class="line">        &lt;li&gt;&#123;&#123; row.id &#125;&#125; - &#123;&#123; row.name &#125;&#125; - &#123;&#123; row.ut.title &#125;&#125;&lt;/li&gt;</span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#123;% if posts.has_previous %&#125;</span><br><span class="line">    &lt;a href=&quot;/test/?page=&#123;&#123; posts.previous_page_number &#125;&#125;&quot;&gt;上一页&lt;/a&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% for num in posts.paginator.page_range %&#125;</span><br><span class="line">    &lt;a href=&quot;/test/?page=&#123;&#123; num &#125;&#125;&quot;&gt;&#123;&#123; num &#125;&#125;&lt;/a&gt;</span><br><span class="line">&#123;% endfor %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% if posts.has_next %&#125;</span><br><span class="line">    &lt;a href=&quot;/test/?page=&#123;&#123; posts.next_page_number &#125;&#125;&quot;&gt;下一页&lt;/a&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>Djnago内置的分页 具有局限性, 默认 只能 显示全部页码,只适用于 上一页下一页。</li>
 </ul>
@@ -208,7 +236,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-11-10T04:25:05.000Z" itemprop="dateUpdated">2017-11-10 12:25:05</time>
+    最后更新时间：<time datetime="2017-11-15T03:54:42.000Z" itemprop="dateUpdated">2017-11-15 11:54:42</time>
 </span><br>
 
 

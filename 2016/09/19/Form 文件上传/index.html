@@ -20,18 +20,18 @@
     
     
     <meta name="keywords" content="Python,Django">
-    <meta name="description" content="Form 文件上传12345678910111213141516171819202122232425262728293031# upload_file.html&amp;lt;body&amp;gt;&amp;lt;form action=&amp;quot;/upload_file/&amp;quot; method=&amp;quot;POST&amp;quot; enctype=&amp;quot;multipart/form-data&amp;quot;&amp;gt">
+    <meta name="description" content="123456789# upload_file.html&amp;lt;body&amp;gt;&amp;lt;form action=&amp;quot;/upload_file/&amp;quot; method=&amp;quot;POST&amp;quot; enctype=&amp;quot;multipart/form-data&amp;quot;&amp;gt;    &amp;#123;% csrf_token %&amp;#125;    &amp;lt;input type=&amp;qu">
 <meta name="keywords" content="Python,Django">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Form 文件上传">
 <meta property="og:url" content="http://midsummer.com/2016/09/19/Form 文件上传/index.html">
 <meta property="og:site_name" content="summer&#39;博客">
-<meta property="og:description" content="Form 文件上传12345678910111213141516171819202122232425262728293031# upload_file.html&amp;lt;body&amp;gt;&amp;lt;form action=&amp;quot;/upload_file/&amp;quot; method=&amp;quot;POST&amp;quot; enctype=&amp;quot;multipart/form-data&amp;quot;&amp;gt">
+<meta property="og:description" content="123456789# upload_file.html&amp;lt;body&amp;gt;&amp;lt;form action=&amp;quot;/upload_file/&amp;quot; method=&amp;quot;POST&amp;quot; enctype=&amp;quot;multipart/form-data&amp;quot;&amp;gt;    &amp;#123;% csrf_token %&amp;#125;    &amp;lt;input type=&amp;qu">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-11-10T04:25:05.000Z">
+<meta property="og:updated_time" content="2017-11-15T03:57:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Form 文件上传">
-<meta name="twitter:description" content="Form 文件上传12345678910111213141516171819202122232425262728293031# upload_file.html&amp;lt;body&amp;gt;&amp;lt;form action=&amp;quot;/upload_file/&amp;quot; method=&amp;quot;POST&amp;quot; enctype=&amp;quot;multipart/form-data&amp;quot;&amp;gt">
+<meta name="twitter:description" content="123456789# upload_file.html&amp;lt;body&amp;gt;&amp;lt;form action=&amp;quot;/upload_file/&amp;quot; method=&amp;quot;POST&amp;quot; enctype=&amp;quot;multipart/form-data&amp;quot;&amp;gt;    &amp;#123;% csrf_token %&amp;#125;    &amp;lt;input type=&amp;qu">
     
         <link rel="alternate" type="application/atom+xml" title="summer&#39;博客" href="/autom.xml">
     
@@ -196,7 +196,9 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="Form-文件上传"><a href="#Form-文件上传" class="headerlink" title="Form 文件上传"></a>Form 文件上传</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"># upload_file.html</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;form action=&quot;/upload_file/&quot; method=&quot;POST&quot; enctype=&quot;multipart/form-data&quot;&gt;</span><br><span class="line">    &#123;% csrf_token %&#125;</span><br><span class="line">    &lt;input type=&quot;file&quot; name=&quot;fafafa&quot; /&gt;</span><br><span class="line">    &lt;input type=&quot;submit&quot; value=&quot;提交&quot; /&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># views.py</span><br><span class="line">def upload_file(request):</span><br><span class="line">    if request.method == &apos;GET&apos;:</span><br><span class="line">        return render(request,&apos;upload_file.html&apos;)</span><br><span class="line">    else:</span><br><span class="line">        print(request.FILES)</span><br><span class="line">        print(request.FILES.get(&apos;fafafa&apos;))</span><br><span class="line"></span><br><span class="line">        file_obj = request.FILES.get(&apos;fafafa&apos;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        print(file_obj.name)</span><br><span class="line">        print(file_obj.size)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        f = open(os.path.join(&apos;static&apos;,file_obj.name),&apos;wb&apos;)</span><br><span class="line">        for chunk in file_obj.chunks():</span><br><span class="line">            f.write(chunk)</span><br><span class="line">        f.close()</span><br><span class="line">        return render(request, &apos;upload_file.html&apos;)</span><br></pre></td></tr></table></figure>
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># upload_file.html</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;form action=&quot;/upload_file/&quot; method=&quot;POST&quot; enctype=&quot;multipart/form-data&quot;&gt;</span><br><span class="line">    &#123;% csrf_token %&#125;</span><br><span class="line">    &lt;input type=&quot;file&quot; name=&quot;fafafa&quot; /&gt;</span><br><span class="line">    &lt;input type=&quot;submit&quot; value=&quot;提交&quot; /&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="Form-文件上传"><a href="#Form-文件上传" class="headerlink" title="Form 文件上传"></a>Form 文件上传</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"># upload_file.html</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;form action=&quot;/upload_file/&quot; method=&quot;POST&quot; enctype=&quot;multipart/form-data&quot;&gt;</span><br><span class="line">    &#123;% csrf_token %&#125;</span><br><span class="line">    &lt;input type=&quot;file&quot; name=&quot;fafafa&quot; /&gt;</span><br><span class="line">    &lt;input type=&quot;submit&quot; value=&quot;提交&quot; /&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># views.py</span><br><span class="line">def upload_file(request):</span><br><span class="line">    if request.method == &apos;GET&apos;:</span><br><span class="line">        return render(request,&apos;upload_file.html&apos;)</span><br><span class="line">    else:</span><br><span class="line">        print(request.FILES)</span><br><span class="line">        print(request.FILES.get(&apos;fafafa&apos;))</span><br><span class="line"></span><br><span class="line">        file_obj = request.FILES.get(&apos;fafafa&apos;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        print(file_obj.name)</span><br><span class="line">        print(file_obj.size)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        f = open(os.path.join(&apos;static&apos;,file_obj.name),&apos;wb&apos;)</span><br><span class="line">        for chunk in file_obj.chunks():</span><br><span class="line">            f.write(chunk)</span><br><span class="line">        f.close()</span><br><span class="line">        return render(request, &apos;upload_file.html&apos;)</span><br></pre></td></tr></table></figure>
 
         </div>
 
@@ -204,7 +206,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-11-10T04:25:05.000Z" itemprop="dateUpdated">2017-11-10 12:25:05</time>
+    最后更新时间：<time datetime="2017-11-15T03:57:06.000Z" itemprop="dateUpdated">2017-11-15 11:57:06</time>
 </span><br>
 
 
@@ -247,7 +249,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://midsummer.com/2016/09/19/Form 文件上传/&title=《Form 文件上传》 — summer'博客&source=分享极客生活 Not just Python!" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://midsummer.com/2016/09/19/Form 文件上传/&title=《Form 文件上传》 — summer'博客&source=123456789# upload_file.html&lt;body&gt;&lt;form action=&quot;/upload_file/&qu..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -397,7 +399,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://midsummer.com/2016/09/19/Form 文件上传/&title=《Form 文件上传》 — summer'博客&source=分享极客生活 Not just Python!" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://midsummer.com/2016/09/19/Form 文件上传/&title=《Form 文件上传》 — summer'博客&source=123456789# upload_file.html&lt;body&gt;&lt;form action=&quot;/upload_file/&qu..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>

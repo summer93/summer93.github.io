@@ -20,18 +20,18 @@
     
     
     <meta name="keywords" content="Python,Django">
-    <meta name="description" content="对于多对多表 1.自定义第三张表，更加灵活 2.ManyToManyField 自动生成第3张表 只能 有3列数据 不能自己添加。   自定义第三张表1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666">
+    <meta name="description" content="对于多对多表 1.自定义第三张表，更加灵活 2.ManyToManyField 自动生成第3张表 只能 有3列数据 不能自己添加。">
 <meta name="keywords" content="Python,Django">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Django-ORM多对多查询 (自定义第三张表&amp;ManyToManyField)">
 <meta property="og:url" content="http://midsummer.com/2016/11/09/Django-ORM多对多查询/index.html">
 <meta property="og:site_name" content="summer&#39;博客">
-<meta property="og:description" content="对于多对多表 1.自定义第三张表，更加灵活 2.ManyToManyField 自动生成第3张表 只能 有3列数据 不能自己添加。   自定义第三张表1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666">
+<meta property="og:description" content="对于多对多表 1.自定义第三张表，更加灵活 2.ManyToManyField 自动生成第3张表 只能 有3列数据 不能自己添加。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-11-10T04:18:48.000Z">
+<meta property="og:updated_time" content="2017-11-15T02:45:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Django-ORM多对多查询 (自定义第三张表&amp;ManyToManyField)">
-<meta name="twitter:description" content="对于多对多表 1.自定义第三张表，更加灵活 2.ManyToManyField 自动生成第3张表 只能 有3列数据 不能自己添加。   自定义第三张表1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666">
+<meta name="twitter:description" content="对于多对多表 1.自定义第三张表，更加灵活 2.ManyToManyField 自动生成第3张表 只能 有3列数据 不能自己添加。">
     
         <link rel="alternate" type="application/atom+xml" title="summer&#39;博客" href="/autom.xml">
     
@@ -201,6 +201,12 @@
 <li>1.自定义第三张表，更加灵活</li>
 <li>2.ManyToManyField 自动生成第3张表 只能 有3列数据 不能自己添加。</li>
 </ul>
+<a id="more"></a>
+<ul>
+<li>对于多对多表</li>
+<li>1.自定义第三张表，更加灵活</li>
+<li>2.ManyToManyField 自动生成第3张表 只能 有3列数据 不能自己添加。</li>
+</ul>
 <hr>
 <h3 id="自定义第三张表"><a href="#自定义第三张表" class="headerlink" title="自定义第三张表"></a>自定义第三张表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"># models.py</span><br><span class="line"></span><br><span class="line">class Boy(models.Model):</span><br><span class="line">    name = models.CharField(max_length=32)</span><br><span class="line"></span><br><span class="line">class Girl(models.Model):</span><br><span class="line">    name = models.CharField(max_length=32)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class Love(models.Model):</span><br><span class="line">    b = models.ForeignKey(&apos;Boy&apos;)</span><br><span class="line">    g = models.ForeignKey(&apos;Girl&apos;)</span><br><span class="line"></span><br><span class="line">    # 创建联合唯一索引</span><br><span class="line">    # class Meta:</span><br><span class="line">    #     unique_together = [</span><br><span class="line">    #         (&apos;b&apos;,&apos;g&apos;)，</span><br><span class="line">    #     ]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># views.py</span><br><span class="line"></span><br><span class="line">def test(request):</span><br><span class="line">    # objs = [</span><br><span class="line">    #     models.Boy(name=&apos;summer&apos;),</span><br><span class="line">    #     models.Boy(name=&apos;spring&apos;),</span><br><span class="line">    #     models.Boy(name=&apos;autumn&apos;),</span><br><span class="line">    # ]</span><br><span class="line">    # models.Boy.objects.bulk_create(objs,5)</span><br><span class="line"></span><br><span class="line">    # objs = [</span><br><span class="line">    #     models.Girl(name=&apos;小于&apos;),</span><br><span class="line">    #     models.Girl(name=&apos;小秋&apos;),</span><br><span class="line">    #     models.Girl(name=&apos;小夏&apos;),</span><br><span class="line">    # ]</span><br><span class="line">    # models.Girl.objects.bulk_create(objs,5)</span><br><span class="line"></span><br><span class="line"># 查询和girl小于有关系的boy</span><br><span class="line"></span><br><span class="line"># 1 通过girl表进行反向查找</span><br><span class="line">    obj = models.Girl.objects.filter(name=&apos;小于&apos;).first().love_set.all()</span><br><span class="line">    # obj = models.Girl.objects.filter(name=&apos;小于&apos;).first().love_set.select_related(&apos;b&apos;).all()</span><br><span class="line">    for i in obj:</span><br><span class="line">        print(i.b.name)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    print(&apos; &apos;.center(60,&apos;=&apos;))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 2 通过Love表进行查找</span><br><span class="line"></span><br><span class="line">    obj = models.Love.objects.filter(g__name=&apos;小于&apos;).all()</span><br><span class="line">    for i in obj:</span><br><span class="line">        print(i.b.name)</span><br><span class="line"></span><br><span class="line">    # 这样进行查询性能不好，需要重新发sql请求在进行查询另外一张表中的数据</span><br><span class="line"></span><br><span class="line">    boy_list = models.Love.objects.filter(g__name=&apos;小于&apos;).values(&apos;b__name&apos;)</span><br><span class="line">    for i in boy_list:</span><br><span class="line">        print(i[&apos;b__name&apos;])</span><br><span class="line"></span><br><span class="line">    # 这样 进行了 优化 不会重复发送sql请求，查询到的结果内是字典</span><br><span class="line"></span><br><span class="line">    boy_obj = models.Love.objects.filter(g__name=&apos;小于&apos;).select_related(&apos;b&apos;).all()</span><br><span class="line">    for i in boy_obj:</span><br><span class="line">        print(i.b.name)</span><br><span class="line">    # select_related(&apos;ut&apos;) 相当 于 inner join 先连成一张表再进行查询</span><br><span class="line"></span><br><span class="line">    return HttpResponse(&apos;insert ok ....&apos;)</span><br></pre></td></tr></table></figure>
 <h3 id="ManyToManyField"><a href="#ManyToManyField" class="headerlink" title="ManyToManyField"></a>ManyToManyField</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"># models.py</span><br><span class="line">from django.db import models</span><br><span class="line"></span><br><span class="line">class Boy(models.Model):</span><br><span class="line">    name = models.CharField(max_length=32)</span><br><span class="line">    # m = models.ManyToManyField(&apos;Girl&apos;)</span><br><span class="line"></span><br><span class="line">class Girl(models.Model):</span><br><span class="line">    name = models.CharField(max_length=32)</span><br><span class="line">    m = models.ManyToManyField(&apos;Boy&apos;)</span><br><span class="line"></span><br><span class="line"># views.py</span><br><span class="line"></span><br><span class="line">def test(request):</span><br><span class="line">    # objs = [</span><br><span class="line">    #     models.Boy(name=&apos;summer&apos;),</span><br><span class="line">    #     models.Boy(name=&apos;spring&apos;),</span><br><span class="line">    #     models.Boy(name=&apos;autumn&apos;),</span><br><span class="line">    # ]</span><br><span class="line">    # models.Boy.objects.bulk_create(objs,5)</span><br><span class="line"></span><br><span class="line">    # objs = [</span><br><span class="line">    #     models.Girl(name=&apos;小于&apos;),</span><br><span class="line">    #     models.Girl(name=&apos;小秋&apos;),</span><br><span class="line">    #     models.Girl(name=&apos;小夏&apos;),</span><br><span class="line">    # ]</span><br><span class="line">    # models.Girl.objects.bulk_create(objs,5)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    # ManyToManyField</span><br><span class="line"></span><br><span class="line">    obj = models.Girl.objects.filter(name=&apos;小秋&apos;).first()</span><br><span class="line"></span><br><span class="line">    # 增</span><br><span class="line">    # obj.m.add(3)</span><br><span class="line">    # obj.m.add(3,4)</span><br><span class="line">    # obj.m.add(*[1,2])</span><br><span class="line"></span><br><span class="line">    # 删</span><br><span class="line">    # obj.m.remove(3)</span><br><span class="line">    # obj.m.remove(3,4)</span><br><span class="line">    # obj.m.remove(*[1,2])</span><br><span class="line"></span><br><span class="line">    # 改</span><br><span class="line">    # obj.m.set([1,2,])</span><br><span class="line"></span><br><span class="line">    # boy_obj = obj.m.all()</span><br><span class="line">    # for row in boy_obj:</span><br><span class="line">    #     print(row.id,row.name)</span><br><span class="line">    # 清除</span><br><span class="line">    # obj.m.clear()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    # 反向查 在没有 ManyToManyField 字段的表中查</span><br><span class="line">    obj = models.Boy.objects.filter(name=&apos;summer&apos;).first()</span><br><span class="line">    girl_obj = obj.girl_set.all()</span><br><span class="line">	# 增删改查</span><br><span class="line">    obj.girl_set.set([1,2,3])</span><br><span class="line"></span><br><span class="line">    for row in girl_list:</span><br><span class="line">        print(row.id,row.name)</span><br><span class="line"></span><br><span class="line">    return HttpResponse(&apos;ok&apos;)</span><br></pre></td></tr></table></figure>
@@ -212,7 +218,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-11-10T04:18:48.000Z" itemprop="dateUpdated">2017-11-10 12:18:48</time>
+    最后更新时间：<time datetime="2017-11-15T02:45:16.000Z" itemprop="dateUpdated">2017-11-15 10:45:16</time>
 </span><br>
 
 
@@ -255,7 +261,11 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://midsummer.com/2016/11/09/Django-ORM多对多查询/&title=《Django-ORM多对多查询 (自定义第三张表&ManyToManyField)》 — summer'博客&source=分享极客生活 Not just Python!" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://midsummer.com/2016/11/09/Django-ORM多对多查询/&title=《Django-ORM多对多查询 (自定义第三张表&ManyToManyField)》 — summer'博客&source=
+对于多对多表
+1.自定义第三张表，更加灵活
+2.ManyToManyField 自动生成第3张表 只能 有3列数据 不能自己添加。
+" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -293,9 +303,9 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2016/11/09/Django 基础- 路由系统/" id="post-prev" class="post-nav-link">
+      <a href="/2016/11/09/自定义分页/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Django 基础- 路由系统</h4>
+        <h4 class="title">自定义分页</h4>
       </a>
     </div>
   
@@ -405,7 +415,11 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://midsummer.com/2016/11/09/Django-ORM多对多查询/&title=《Django-ORM多对多查询 (自定义第三张表&ManyToManyField)》 — summer'博客&source=分享极客生活 Not just Python!" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://midsummer.com/2016/11/09/Django-ORM多对多查询/&title=《Django-ORM多对多查询 (自定义第三张表&ManyToManyField)》 — summer'博客&source=
+对于多对多表
+1.自定义第三张表，更加灵活
+2.ManyToManyField 自动生成第3张表 只能 有3列数据 不能自己添加。
+" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>

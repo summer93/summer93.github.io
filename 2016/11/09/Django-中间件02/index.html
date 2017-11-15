@@ -20,18 +20,18 @@
     
     
     <meta name="keywords" content="Python,Django">
-    <meta name="description" content="接着Django-中间件01  应用12345678910111213141516171819202122232425262728293031323334353637383940from django.utils.deprecation import MiddlewareMixinfrom django.shortcuts import HttpResponseclass M1(Middlewar">
+    <meta name="description" content="12345from django.utils.deprecation import MiddlewareMixinfrom django.shortcuts import HttpResponseclass M1(MiddlewareMixin):    def process_request(self,request):        print(&amp;apos;m1.process_request">
 <meta name="keywords" content="Python,Django">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Django-中间件02">
 <meta property="og:url" content="http://midsummer.com/2016/11/09/Django-中间件02/index.html">
 <meta property="og:site_name" content="summer&#39;博客">
-<meta property="og:description" content="接着Django-中间件01  应用12345678910111213141516171819202122232425262728293031323334353637383940from django.utils.deprecation import MiddlewareMixinfrom django.shortcuts import HttpResponseclass M1(Middlewar">
+<meta property="og:description" content="12345from django.utils.deprecation import MiddlewareMixinfrom django.shortcuts import HttpResponseclass M1(MiddlewareMixin):    def process_request(self,request):        print(&amp;apos;m1.process_request">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-11-10T04:25:05.000Z">
+<meta property="og:updated_time" content="2017-11-15T03:54:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Django-中间件02">
-<meta name="twitter:description" content="接着Django-中间件01  应用12345678910111213141516171819202122232425262728293031323334353637383940from django.utils.deprecation import MiddlewareMixinfrom django.shortcuts import HttpResponseclass M1(Middlewar">
+<meta name="twitter:description" content="12345from django.utils.deprecation import MiddlewareMixinfrom django.shortcuts import HttpResponseclass M1(MiddlewareMixin):    def process_request(self,request):        print(&amp;apos;m1.process_request">
     
         <link rel="alternate" type="application/atom+xml" title="summer&#39;博客" href="/autom.xml">
     
@@ -196,7 +196,9 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>接着Django-中间件01</p>
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">from django.utils.deprecation import MiddlewareMixin</span><br><span class="line">from django.shortcuts import HttpResponse</span><br><span class="line">class M1(MiddlewareMixin):</span><br><span class="line">    def process_request(self,request):</span><br><span class="line">        print(&apos;m1.process_request&apos;)</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>接着Django-中间件01</p>
 <hr>
 <h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">from django.utils.deprecation import MiddlewareMixin</span><br><span class="line">from django.shortcuts import HttpResponse</span><br><span class="line">class M1(MiddlewareMixin):</span><br><span class="line">    def process_request(self,request):</span><br><span class="line">        print(&apos;m1.process_request&apos;)</span><br><span class="line">    def process_view(self, request, callback, callback_args, callback_kwargs):</span><br><span class="line">        print(&apos;m1.process_view&apos;)</span><br><span class="line">        # response = callback(request,*callback_args, **callback_kwargs)</span><br><span class="line">        # return response</span><br><span class="line">    def process_response(self,request,response):</span><br><span class="line">        print(&apos;m1.process_response&apos;)</span><br><span class="line">        return response</span><br><span class="line">    def process_exception(self, request, exception):</span><br><span class="line">        print(&apos;m1.process_exception&apos;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class M2(MiddlewareMixin):</span><br><span class="line">    def process_request(self, request):</span><br><span class="line">        print(&apos;m2.process_request&apos;)</span><br><span class="line">    def process_view(self, request, callback, callback_args, callback_kwargs):</span><br><span class="line">        print(&apos;m2.process_view&apos;)</span><br><span class="line">    def process_response(self, request, response):</span><br><span class="line">        print(&apos;m2.process_response&apos;)</span><br><span class="line">        return response</span><br><span class="line">    def process_exception(self, request, exception):</span><br><span class="line">        print(&apos;m2.process_exception&apos;)</span><br><span class="line">        return HttpResponse(&apos;有错误！&apos;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 不会报错</span><br><span class="line"></span><br><span class="line"># 输出结果</span><br><span class="line">m1.process_request</span><br><span class="line">m2.process_request</span><br><span class="line">m1.process_view</span><br><span class="line">m2.process_view</span><br><span class="line">ok</span><br><span class="line">m2.process_exception</span><br><span class="line">m2.process_response</span><br><span class="line">m1.process_response</span><br></pre></td></tr></table></figure>
 <h3 id="process-template-response"><a href="#process-template-response" class="headerlink" title="process_template_response()"></a>process_template_response()</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"># 对视图函数的返回值有一定的要求，在函数返回值中有render方法才执行。</span><br><span class="line"></span><br><span class="line"># views.py</span><br><span class="line">from django.shortcuts import render,redirect,HttpResponse</span><br><span class="line"></span><br><span class="line"># Create your views here.</span><br><span class="line"></span><br><span class="line">class JsonResponse:</span><br><span class="line">    def __init__(self,req,status,msg):</span><br><span class="line">        self.req = req</span><br><span class="line">        self.status = status</span><br><span class="line">        self.msg = msg</span><br><span class="line">    def render(self):</span><br><span class="line">        import json</span><br><span class="line">        ret = &#123;</span><br><span class="line">            &apos;status&apos;: self.status,</span><br><span class="line">            &apos;msg&apos;: self.msg</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        return HttpResponse(json.dumps(ret))</span><br><span class="line"></span><br><span class="line">def test(request):</span><br><span class="line"></span><br><span class="line">    return JsonResponse(request,True,&apos;错误信息！&apos;)</span><br><span class="line"></span><br><span class="line"># md.py</span><br><span class="line">from django.utils.deprecation import MiddlewareMixin</span><br><span class="line">from django.shortcuts import HttpResponse</span><br><span class="line">class M1(MiddlewareMixin):</span><br><span class="line">    def process_request(self,request):</span><br><span class="line">        print(&apos;m1.process_request&apos;)</span><br><span class="line">    def process_view(self, request, callback, callback_args, callback_kwargs):</span><br><span class="line">        print(&apos;m1.process_view&apos;)</span><br><span class="line">        # response = callback(request,*callback_args, **callback_kwargs)</span><br><span class="line">        # return response</span><br><span class="line">    def process_response(self,request,response):</span><br><span class="line">        print(&apos;m1.process_response&apos;)</span><br><span class="line">        return response</span><br><span class="line">    def process_exception(self, request, exception):</span><br><span class="line">        print(&apos;m1.process_exception&apos;)</span><br><span class="line">    def process_template_response(self,request,response):</span><br><span class="line">        print(&apos;m1.process_template_response&apos;)</span><br><span class="line">        return response</span><br><span class="line"></span><br><span class="line">class M2(MiddlewareMixin):</span><br><span class="line">    def process_request(self, request):</span><br><span class="line">        print(&apos;m2.process_request&apos;)</span><br><span class="line">    def process_view(self, request, callback, callback_args, callback_kwargs):</span><br><span class="line">        print(&apos;m2.process_view&apos;)</span><br><span class="line">    def process_response(self, request, response):</span><br><span class="line">        print(&apos;m2.process_response&apos;)</span><br><span class="line">        return response</span><br><span class="line">    def process_exception(self, request, exception):</span><br><span class="line">        print(&apos;m2.process_exception&apos;)</span><br><span class="line">        return HttpResponse(&apos;有错误！&apos;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 输出结果</span><br><span class="line"></span><br><span class="line">m1.process_request</span><br><span class="line">m2.process_request</span><br><span class="line">m1.process_view</span><br><span class="line">m2.process_view</span><br><span class="line">m1.process_template_response</span><br><span class="line">m2.process_response</span><br><span class="line">m1.process_response</span><br></pre></td></tr></table></figure>
@@ -206,7 +208,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-11-10T04:25:05.000Z" itemprop="dateUpdated">2017-11-10 12:25:05</time>
+    最后更新时间：<time datetime="2017-11-15T03:54:42.000Z" itemprop="dateUpdated">2017-11-15 11:54:42</time>
 </span><br>
 
 
@@ -249,7 +251,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://midsummer.com/2016/11/09/Django-中间件02/&title=《Django-中间件02》 — summer'博客&source=分享极客生活 Not just Python!" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://midsummer.com/2016/11/09/Django-中间件02/&title=《Django-中间件02》 — summer'博客&source=12345from django.utils.deprecation import MiddlewareMixinfrom django.shortcut..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -287,18 +289,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2016/12/09/MySQL-索引03/" id="post-prev" class="post-nav-link">
+      <a href="/2016/12/09/MySQl操作整理01.md/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">MySQL-索引03</h4>
+        <h4 class="title">MySQl操作整理01</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2016/11/09/自定义分页/" id="post-next" class="post-nav-link">
+      <a href="/2016/11/09/Django 基础- 路由系统/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">自定义分页</h4>
+        <h4 class="title">Django 基础- 路由系统</h4>
       </a>
     </div>
   
@@ -399,7 +401,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://midsummer.com/2016/11/09/Django-中间件02/&title=《Django-中间件02》 — summer'博客&source=分享极客生活 Not just Python!" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://midsummer.com/2016/11/09/Django-中间件02/&title=《Django-中间件02》 — summer'博客&source=12345from django.utils.deprecation import MiddlewareMixinfrom django.shortcut..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>

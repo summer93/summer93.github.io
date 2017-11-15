@@ -20,18 +20,18 @@
     
     
     <meta name="keywords" content="Python,Django">
-    <meta name="description" content="基本使用 母版 导入include 函数 - &amp;gt; 不用加() 自动执行 模版自定义函数： simple_filter 最多两个参数   simple_tag 参数个数限制   simple_filter 可以做条件判断，simple_tag不行     母版1234567891011121314151617181920212223242526272829303132333435363738">
+    <meta name="description" content="基本使用 母版 导入include 函数 - &amp;gt; 不用加() 自动执行 模版自定义函数： simple_filter 最多两个参数   simple_tag 参数个数限制   simple_filter 可以做条件判断，simple_tag不行">
 <meta name="keywords" content="Python,Django">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Django-模版">
 <meta property="og:url" content="http://midsummer.com/2016/10/09/Django-模版/index.html">
 <meta property="og:site_name" content="summer&#39;博客">
-<meta property="og:description" content="基本使用 母版 导入include 函数 - &amp;gt; 不用加() 自动执行 模版自定义函数： simple_filter 最多两个参数   simple_tag 参数个数限制   simple_filter 可以做条件判断，simple_tag不行     母版1234567891011121314151617181920212223242526272829303132333435363738">
+<meta property="og:description" content="基本使用 母版 导入include 函数 - &amp;gt; 不用加() 自动执行 模版自定义函数： simple_filter 最多两个参数   simple_tag 参数个数限制   simple_filter 可以做条件判断，simple_tag不行">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-11-10T04:25:05.000Z">
+<meta property="og:updated_time" content="2017-11-15T03:54:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Django-模版">
-<meta name="twitter:description" content="基本使用 母版 导入include 函数 - &amp;gt; 不用加() 自动执行 模版自定义函数： simple_filter 最多两个参数   simple_tag 参数个数限制   simple_filter 可以做条件判断，simple_tag不行     母版1234567891011121314151617181920212223242526272829303132333435363738">
+<meta name="twitter:description" content="基本使用 母版 导入include 函数 - &amp;gt; 不用加() 自动执行 模版自定义函数： simple_filter 最多两个参数   simple_tag 参数个数限制   simple_filter 可以做条件判断，simple_tag不行">
     
         <link rel="alternate" type="application/atom+xml" title="summer&#39;博客" href="/autom.xml">
     
@@ -214,6 +214,25 @@
 </ul>
 </li>
 </ul>
+<a id="more"></a>
+<ul>
+<li>基本使用</li>
+<li>母版</li>
+<li>导入include</li>
+<li>函数 - &gt; 不用加() 自动执行</li>
+<li>模版自定义函数：<ul>
+<li>simple_filter<ul>
+<li>最多两个参数</li>
+</ul>
+</li>
+<li>simple_tag<ul>
+<li>参数个数限制</li>
+</ul>
+</li>
+<li>simple_filter 可以做条件判断，simple_tag不行</li>
+</ul>
+</li>
+</ul>
 <hr>
 <h3 id="母版"><a href="#母版" class="headerlink" title="母版"></a>母版</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"># menu.html 母版</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;h3&gt;这是一个组件&lt;/h3&gt;</span><br><span class="line">        &lt;div class=&quot;title&quot;&gt;标题：&lt;/div&gt;</span><br><span class="line">        &#123;% block xx %&#125;&#123;%  endblock %&#125;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br><span class="line"># test.html</span><br><span class="line"></span><br><span class="line">&#123;%  extends &apos;menu.html&apos; %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% block xx %&#125;</span><br><span class="line">    &lt;p&gt;hello!!&lt;/p&gt;</span><br><span class="line">&#123;% endblock %&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 一般写3个block:css一个，内容一个，js一个</span><br><span class="line"></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">    &#123;% block css %&#125;&#123;% endblock %&#125;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;h3&gt;这是一个组件&lt;/h3&gt;</span><br><span class="line">        &lt;div class=&quot;title&quot;&gt;标题：&lt;/div&gt;</span><br><span class="line">        &#123;% block xx %&#125;&#123;%  endblock %&#125;</span><br><span class="line"></span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &#123;% block js %&#125;&#123;% endblock %&#125;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 <hr>
@@ -241,7 +260,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-11-10T04:25:05.000Z" itemprop="dateUpdated">2017-11-10 12:25:05</time>
+    最后更新时间：<time datetime="2017-11-15T03:54:42.000Z" itemprop="dateUpdated">2017-11-15 11:54:42</time>
 </span><br>
 
 
@@ -284,7 +303,17 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://midsummer.com/2016/10/09/Django-模版/&title=《Django-模版》 — summer'博客&source=分享极客生活 Not just Python!" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://midsummer.com/2016/10/09/Django-模版/&title=《Django-模版》 — summer'博客&source=
+基本使用
+母版
+导入include
+函数 - &gt; 不用加() 自动执行
+模版自定义函数：
+simple_filter
+最多两个参数
+
+
+simpl..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -434,7 +463,17 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://midsummer.com/2016/10/09/Django-模版/&title=《Django-模版》 — summer'博客&source=分享极客生活 Not just Python!" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://midsummer.com/2016/10/09/Django-模版/&title=《Django-模版》 — summer'博客&source=
+基本使用
+母版
+导入include
+函数 - &gt; 不用加() 自动执行
+模版自定义函数：
+simple_filter
+最多两个参数
+
+
+simpl..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>

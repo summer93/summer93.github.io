@@ -193,7 +193,7 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        1.增删改查2.一般操作:123456789models.UserInfo.objects.filter(id__gt=1)models.UserInfo.objects.filter(id__lt=1)models.UserInfo.objects.filter(id__lte=1)models.UserInfo.objects.filter(id__gte=1)models.UserIn...
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">models.UserInfo.objects.filter(id__gt=1)</span><br><span class="line">models.UserInfo.objects.filter(id__lt=1)</span><br><span class="line">models.UserInfo.objects.filter(id__lte=1)</span><br><span class="line">models.UserInfo.objects.filter(id__gte=1)</span><br><span class="line">models.UserInfo.objects.filter(id__in=[1,2,3])</span><br><span class="line">models.UserInfo.objects.filter(id__range=[1,2])</span><br><span class="line">models.UserInfo.objects.filter(name__startswith=&apos;au&apos;)</span><br><span class="line">models.UserInfo.objects.filter(name__contains=&apos;au&apos;) # 包含</span><br><span class="line">models.UserInfo.objects.exclude(id=1) # 排除，除去括号内的条件之外的内容。</span><br></pre></td></tr></table></figure>
     
 
         <a href="/2016/11/08/Django-ORM进阶操作01/" class="post-more waves-effect waves-button">
@@ -238,22 +238,22 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        Django基础-ORM基本操作####ORM操作
-
-ORM：操作表：
-
-创建表
-修改表( 在SQLAchemy中不能进行修改表操作)
-删除表
-
-
-ORM：操作数据行：
-
-增删改查
-
-
-配置
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647481. 创建数据库2. 配置 ...
+        <ul>
+<li><p>ORM：操作表：</p>
+<ul>
+<li>创建表</li>
+<li>修改表( 在SQLAchemy中不能进行修改表操作)</li>
+<li>删除表</li>
+</ul>
+</li>
+<li><p>ORM：操作数据行：</p>
+<ul>
+<li>增删改查</li>
+</ul>
+</li>
+<li><p>配置</p>
+</li>
+</ul>
     
 
         <a href="/2016/10/09/Django基础-ORM基本操作/" class="post-more waves-effect waves-button">
@@ -298,26 +298,24 @@ ORM：操作数据行：
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        
-基本使用
-母版
-导入include
-函数 - &gt; 不用加() 自动执行
-模版自定义函数：
-simple_filter
-最多两个参数
-
-
-simple_tag
-参数个数限制
-
-
-simple_filter 可以做条件判断，simple_tag不行
-
-
-
-
-母版1234567891011121314151617181920212223242526272829303132333435363...
+        <ul>
+<li>基本使用</li>
+<li>母版</li>
+<li>导入include</li>
+<li>函数 - &gt; 不用加() 自动执行</li>
+<li>模版自定义函数：<ul>
+<li>simple_filter<ul>
+<li>最多两个参数</li>
+</ul>
+</li>
+<li>simple_tag<ul>
+<li>参数个数限制</li>
+</ul>
+</li>
+<li>simple_filter 可以做条件判断，simple_tag不行</li>
+</ul>
+</li>
+</ul>
     
 
         <a href="/2016/10/09/Django-模版/" class="post-more waves-effect waves-button">
@@ -362,7 +360,47 @@ simple_filter 可以做条件判断，simple_tag不行
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        #123456789101112131415161718192021222324252627282930def test(request):    from django.core.paginator import Paginator, Page    current_page = request.GET.get(&apos;page&apos;)    user_list = models...
+        <p>def test(request):<br>    from django.core.paginator import Paginator, Page</p>
+<pre><code>current_page = request.GET.get(&apos;page&apos;)
+
+user_list = models.UserInfo.objects.all()
+paginator = Paginator(user_list, 10)
+
+# per_page: 每页显示条目数量
+# count:    数据总个数
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;!-- more --&gt;</span><br><span class="line">### ###</span><br></pre></td></tr></table></figure>
+<p>def test(request):<br>    from django.core.paginator import Paginator, Page</p>
+<pre><code>current_page = request.GET.get(&apos;page&apos;)
+
+user_list = models.UserInfo.objects.all()
+paginator = Paginator(user_list, 10)
+
+# per_page: 每页显示条目数量
+# count:    数据总个数
+# num_pages:总页数
+# page_range:总页数的索引范围，如: (1,10),(1,200)
+# page:     page对象
+
+try:
+    posts = paginator.page(current_page)
+except Exception as e:
+    posts = paginator.page(1)
+
+# has_next              是否有下一页
+# next_page_number      下一页页码
+# has_previous          是否有上一页
+# previous_page_number  上一页页码
+# object_list           分页之后的数据列表
+# number                当前页
+# paginator             paginator对象
+
+
+return render(request, &apos;test.html&apos;, {&apos;posts&apos;: posts})
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># test.html</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;ul&gt;</span><br><span class="line">    &#123;% for row in posts.object_list %&#125;</span><br><span class="line">        &lt;li&gt;&#123;&#123; row.id &#125;&#125; - &#123;&#123; row.name &#125;&#125; - &#123;&#123; row.ut.title &#125;&#125;&lt;/li&gt;</span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#123;% if posts.has_previous %&#125;</span><br><span class="line">    &lt;a href=&quot;/test/?page=&#123;&#123; posts.previous_page_number &#125;&#125;&quot;&gt;上一页&lt;/a&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% for num in posts.paginator.page_range %&#125;</span><br><span class="line">    &lt;a href=&quot;/test/?page=&#123;&#123; num &#125;&#125;&quot;&gt;&#123;&#123; num &#125;&#125;&lt;/a&gt;</span><br><span class="line">&#123;% endfor %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% if posts.has_next %&#125;</span><br><span class="line">    &lt;a href=&quot;/test/?page=&#123;&#123; posts.next_page_number &#125;&#125;&quot;&gt;下一页&lt;/a&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Djnago内置的分页 具有局限性, 默认 只能 显示全部页码,只适用于 上一页下一页。</li>
+</ul>
+
     
 
         <a href="/2016/10/09/Django-内置分页/" class="post-more waves-effect waves-button">
@@ -407,7 +445,7 @@ simple_filter 可以做条件判断，simple_tag不行
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        Form 文件上传12345678910111213141516171819202122232425262728293031# upload_file.html&lt;body&gt;&lt;form action=&quot;/upload_file/&quot; method=&quot;POST&quot; enctype=&quot;multipart/form-data&quot;...
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># upload_file.html</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;form action=&quot;/upload_file/&quot; method=&quot;POST&quot; enctype=&quot;multipart/form-data&quot;&gt;</span><br><span class="line">    &#123;% csrf_token %&#125;</span><br><span class="line">    &lt;input type=&quot;file&quot; name=&quot;fafafa&quot; /&gt;</span><br><span class="line">    &lt;input type=&quot;submit&quot; value=&quot;提交&quot; /&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
     
 
         <a href="/2016/09/19/Form 文件上传/" class="post-more waves-effect waves-button">
@@ -452,7 +490,7 @@ simple_filter 可以做条件判断，simple_tag不行
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        Form select 框123456789101112131415161718192021Select框：单选	cls_id = fields.IntegerField(		# widget=widgets.Select(choices=[(1,&apos;上海&apos;),(2,&apos;北京&apos;)])		widget=widgets.Select(choices=model...
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Select框：</span><br><span class="line">单选</span><br><span class="line">	cls_id = fields.IntegerField(</span><br><span class="line">		# widget=widgets.Select(choices=[(1,&apos;上海&apos;),(2,&apos;北京&apos;)])</span><br><span class="line">		widget=widgets.Select(choices=models.Classes.objects.values_list(&apos;id&apos;,&apos;title&apos;),attrs=&#123;&apos;class&apos;: &apos;form-control&apos;&#125;)</span><br><span class="line">	)</span><br></pre></td></tr></table></figure>
     
 
         <a href="/2016/09/19/Form select 框/" class="post-more waves-effect waves-button">
@@ -497,7 +535,7 @@ simple_filter 可以做条件判断，simple_tag不行
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        Form 验证之钩子12345678910111213141516171819202122# From验证源码def _clean_fields(self):    for name, field in self.fields.items():        # value_from_datadict() gets the data from the data dictionaries.  ...
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># From验证源码</span><br><span class="line">def _clean_fields(self):</span><br><span class="line">    for name, field in self.fields.items():</span><br><span class="line">        # value_from_datadict() gets the data from the data dictionaries.</span><br><span class="line">        # Each widget type knows how to retrieve its own data, because some</span><br><span class="line">        # widgets split data over several HTML fields.</span><br><span class="line">        if field.disabled:</span><br><span class="line">            value = self.get_initial_for_field(field, name)</span><br><span class="line">        else:</span><br><span class="line">            value = field.widget.value_from_datadict(self.data, self.files, self.add_prefix(name))</span><br><span class="line">        try:</span><br></pre></td></tr></table></figure>
     
 
         <a href="/2016/09/09/Form 验证之钩子/" class="post-more waves-effect waves-button">
@@ -542,7 +580,7 @@ simple_filter 可以做条件判断，simple_tag不行
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        实现popup-1234567891011121314151617# views.pydef test(request):    user_group_list = models.Role.objects.all()    return render(request,&apos;test.html&apos;,&#123;&apos;user_group_list&apos;: user_g...
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"># views.py</span><br><span class="line"></span><br><span class="line">def test(request):</span><br><span class="line">    user_group_list = models.Role.objects.all()</span><br><span class="line">    return render(request,&apos;test.html&apos;,&#123;&apos;user_group_list&apos;: user_group_list&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def add_test(request):</span><br><span class="line">    if request.method == &apos;GET&apos;:</span><br><span class="line">        return render(request,&apos;add_test.html&apos;)</span><br><span class="line">    else:</span><br><span class="line">        popid = request.GET.get(&apos;popup&apos;)</span><br><span class="line">        if popid:</span><br><span class="line">            title = request.POST.get(&apos;title&apos;)</span><br><span class="line">            print(title,&apos;---------&apos;)</span><br><span class="line">            obj = models.Role.objects.create(name=title)</span><br><span class="line">            return render(request,&apos;popup_response.html&apos;,&#123;&apos;id&apos;:obj.id,&apos;title&apos;:obj.name,&apos;popid&apos;:popid&#125;)</span><br></pre></td></tr></table></figure>
     
 
         <a href="/2016/07/09/实现popup/" class="post-more waves-effect waves-button">
