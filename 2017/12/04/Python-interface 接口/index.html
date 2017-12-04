@@ -13,25 +13,25 @@
     
     
     
-    <title>线程池、进程池 | summer&#39;博客 | It&#39;s my blog</title>
+    <title>Python-interface 接口 | summer&#39;博客 | It&#39;s my blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#2196f3">
     
     
     <meta name="keywords" content="Python">
-    <meta name="description" content="线程池12345678910import timefrom concurrent.futures import ThreadPoolExecutordef task(i):    time.sleep(1)    print(i)p = ThreadPoolExecutor(10)">
+    <meta name="description" content="在python中并没有像java中有interface接口，在python中只能用类来模拟接口的概念, 用抽象类来实现，用abc模块实现1234from abc import ABCMeta, abstractmethodclass IStream(metaclass=ABCMeta):    @abstractmethod">
 <meta name="keywords" content="Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="线程池、进程池">
-<meta property="og:url" content="http://midsummer.com/2016/11/09/线程池、进程池/index.html">
+<meta property="og:title" content="Python-interface 接口">
+<meta property="og:url" content="http://midsummer.com/2017/12/04/Python-interface 接口/index.html">
 <meta property="og:site_name" content="summer&#39;博客">
-<meta property="og:description" content="线程池12345678910import timefrom concurrent.futures import ThreadPoolExecutordef task(i):    time.sleep(1)    print(i)p = ThreadPoolExecutor(10)">
+<meta property="og:description" content="在python中并没有像java中有interface接口，在python中只能用类来模拟接口的概念, 用抽象类来实现，用abc模块实现1234from abc import ABCMeta, abstractmethodclass IStream(metaclass=ABCMeta):    @abstractmethod">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-11-15T03:54:42.000Z">
+<meta property="og:updated_time" content="2017-12-04T02:57:17.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="线程池、进程池">
-<meta name="twitter:description" content="线程池12345678910import timefrom concurrent.futures import ThreadPoolExecutordef task(i):    time.sleep(1)    print(i)p = ThreadPoolExecutor(10)">
+<meta name="twitter:title" content="Python-interface 接口">
+<meta name="twitter:description" content="在python中并没有像java中有interface接口，在python中只能用类来模拟接口的概念, 用抽象类来实现，用abc模块实现1234from abc import ABCMeta, abstractmethodclass IStream(metaclass=ABCMeta):    @abstractmethod">
     
         <link rel="alternate" type="application/atom+xml" title="summer&#39;博客" href="/autom.xml">
     
@@ -128,7 +128,7 @@
           <i class="icon icon-lg icon-navicon"></i>
         </a>
 
-        <div class="flex-col header-title ellipsis">线程池、进程池</div>
+        <div class="flex-col header-title ellipsis">Python-interface 接口</div>
 
         
         <div class="search-wrap" id="search-wrap">
@@ -151,11 +151,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">线程池、进程池</h1>
+        <h1 class="title">Python-interface 接口</h1>
         <h5 class="subtitle">
             
-                <time datetime="2016-11-09T00:31:27.000Z" itemprop="datePublished" class="page-time">
-  2016-11-09
+                <time datetime="2017-12-04T02:48:27.000Z" itemprop="datePublished" class="page-time">
+  2017-12-04
 </time>
 
 
@@ -170,20 +170,13 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#线程池"><span class="post-toc-number">1.</span> <span class="post-toc-text">线程池</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#线程池-1"><span class="post-toc-number">2.</span> <span class="post-toc-text">线程池</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#进程池"><span class="post-toc-number">3.</span> <span class="post-toc-text">进程池</span></a></li></ol>
-        </nav>
-    </aside>
-    
-<article id="post-线程池、进程池"
+<article id="post-Python-interface 接口"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">线程池、进程池</h1>
+        <h1 class="post-card-title">Python-interface 接口</h1>
         <div class="post-meta">
-            <time class="post-time" title="2016-11-09 08:31:27" datetime="2016-11-09T00:31:27.000Z"  itemprop="datePublished">2016-11-09</time>
+            <time class="post-time" title="2017-12-04 10:48:27" datetime="2017-12-04T02:48:27.000Z"  itemprop="datePublished">2017-12-04</time>
 
             
 
@@ -196,10 +189,14 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import time</span><br><span class="line">from concurrent.futures import ThreadPoolExecutor</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def task(i):</span><br><span class="line">    time.sleep(1)</span><br><span class="line">    print(i)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">p = ThreadPoolExecutor(10)</span><br></pre></td></tr></table></figure>
+            <ul>
+<li>在python中并没有像java中有interface接口，在python中只能用类来模拟接口的概念, 用抽象类来实现，用abc模块实现<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from abc import ABCMeta, abstractmethod</span><br><span class="line"></span><br><span class="line">class IStream(metaclass=ABCMeta):</span><br><span class="line">    @abstractmethod</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 <a id="more"></a>
-<h3 id="线程池-1"><a href="#线程池-1" class="headerlink" title="线程池"></a>线程池</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import time</span><br><span class="line">from concurrent.futures import ThreadPoolExecutor</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def task(i):</span><br><span class="line">    time.sleep(1)</span><br><span class="line">    print(i)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">p = ThreadPoolExecutor(10)</span><br><span class="line"></span><br><span class="line">for row in range(100):</span><br><span class="line">    p.submit(task,row)</span><br></pre></td></tr></table></figure>
-<h3 id="进程池"><a href="#进程池" class="headerlink" title="进程池"></a>进程池</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import time</span><br><span class="line">from concurrent.futures import ThreadPoolExecutor,ProcessPoolExecutor</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def task(i):</span><br><span class="line">    time.sleep(1)</span><br><span class="line">    print(i)</span><br><span class="line">p = ProcessPoolExecutor(10)</span><br><span class="line"></span><br><span class="line">for row in range(100):</span><br><span class="line">    p.submit(task,row)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在python中并没有像java中有interface接口，在python中只能用类来模拟接口的概念, 用抽象类来实现，用abc模块实现<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">from abc import ABCMeta, abstractmethod</span><br><span class="line"></span><br><span class="line">class IStream(metaclass=ABCMeta):</span><br><span class="line">    @abstractmethod</span><br><span class="line">    def read(self):</span><br><span class="line">        pass</span><br><span class="line">    @abstractmethod</span><br><span class="line">    def write(self):</span><br><span class="line">        pass</span><br><span class="line"></span><br><span class="line">class SocketStream(IStream):</span><br><span class="line"></span><br><span class="line">    def read(self):</span><br><span class="line">        return &quot;It&apos;s read&quot;</span><br><span class="line"></span><br><span class="line">    def write(self):</span><br><span class="line">        return &quot;It&apos;s write&quot;</span><br></pre></td></tr></table></figure></li>
+</ul>
 
         </div>
 
@@ -207,7 +204,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-11-15T03:54:42.000Z" itemprop="dateUpdated">2017-11-15 11:54:42</time>
+    最后更新时间：<time datetime="2017-12-04T02:57:17.000Z" itemprop="dateUpdated">2017-12-04 10:57:17</time>
 </span><br>
 
 
@@ -240,7 +237,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://midsummer.com/2016/11/09/线程池、进程池/&title=《线程池、进程池》 — summer'博客&pic=http://midsummer.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://midsummer.com/2017/12/04/Python-interface 接口/&title=《Python-interface 接口》 — summer'博客&pic=http://midsummer.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -250,22 +247,23 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://midsummer.com/2016/11/09/线程池、进程池/&title=《线程池、进程池》 — summer'博客&source=线程池12345678910import timefrom concurrent.futures import ThreadPoolExecutordef..." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://midsummer.com/2017/12/04/Python-interface 接口/&title=《Python-interface 接口》 — summer'博客&source=
+在python中并没有像java中有interface接口，在python中只能用类来模拟接口的概念, 用抽象类来实现，用abc模块实现1234from..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://midsummer.com/2016/11/09/线程池、进程池/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://midsummer.com/2017/12/04/Python-interface 接口/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《线程池、进程池》 — summer'博客&url=http://midsummer.com/2016/11/09/线程池、进程池/&via=http://midsummer.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Python-interface 接口》 — summer'博客&url=http://midsummer.com/2017/12/04/Python-interface 接口/&via=http://midsummer.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://midsummer.com/2016/11/09/线程池、进程池/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://midsummer.com/2017/12/04/Python-interface 接口/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -285,21 +283,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2016/11/09/修复Bug，刷新无法动态显示数据库内容/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">修复Bug，刷新无法动态显示数据库内容</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2016/11/09/Ajax01/" id="post-next" class="post-nav-link">
+      <a href="/2017/01/08/生成随机验证码图片/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ajax01</h4>
+        <h4 class="title">生成随机验证码图片</h4>
       </a>
     </div>
   
@@ -390,7 +381,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://midsummer.com/2016/11/09/线程池、进程池/&title=《线程池、进程池》 — summer'博客&pic=http://midsummer.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://midsummer.com/2017/12/04/Python-interface 接口/&title=《Python-interface 接口》 — summer'博客&pic=http://midsummer.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -400,22 +391,23 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://midsummer.com/2016/11/09/线程池、进程池/&title=《线程池、进程池》 — summer'博客&source=线程池12345678910import timefrom concurrent.futures import ThreadPoolExecutordef..." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://midsummer.com/2017/12/04/Python-interface 接口/&title=《Python-interface 接口》 — summer'博客&source=
+在python中并没有像java中有interface接口，在python中只能用类来模拟接口的概念, 用抽象类来实现，用abc模块实现1234from..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://midsummer.com/2016/11/09/线程池、进程池/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://midsummer.com/2017/12/04/Python-interface 接口/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《线程池、进程池》 — summer'博客&url=http://midsummer.com/2016/11/09/线程池、进程池/&via=http://midsummer.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Python-interface 接口》 — summer'博客&url=http://midsummer.com/2017/12/04/Python-interface 接口/&via=http://midsummer.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://midsummer.com/2016/11/09/线程池、进程池/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://midsummer.com/2017/12/04/Python-interface 接口/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -426,7 +418,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKElEQVR42u3awY7DIAxF0fz/TzNStxmR++ymEnBZVSkNHBYuxlwXbuPT7k/uz+/f3nuS59cbTYYMGcsyxrTdGXyK6Sh8rH+oMmTIOIAxD7IkaPI+ZCw+NxkyZMggfeYBmv9KhgwZMt4LuLw/SZJlyJAho5PE1lJcvhA/ysVlyJCxICMtDPzy84v1DRkyZCzCGGFLk9h0szhKTYYMGXsz5q+bT5pvCkl4TZcjuA8iQ4aMxRlk4M6R2XuJrgwZMk5jpAdqaQkznlaYscqQIUMGGbh2YYLDHhZChgwZBzD6WzT+njQxRiUKGTJkbM3g4ZJPhRy39cO0DBkyTmZ0rmp1CpNk9OI+V4YMGYsz+IHat66L1dLgh+WTIUPGwQz+ba14wMsAD38MMmTI2JpRuyTRmSjHx/1lyJCxKSO9fjpPJnnxgCe3aIspQ4aMAxhkeJJY8lIBfw8qdsqQIeMYBt+o1UInD7s8MW7d15AhQ8YijM6xWi1EBmE0facMGTI2ZfDwx/vw6xq15DZYCRkyZGzEIBOtXeTqH+qhwqcMGTK2ZqSJInkd75NO9GETKUOGjE0ZI2xkM1e7KNYqpsqQIWNrBm/9I7laWCfLJ0OGjBMYPMj2E1dSMEivaMiQIeMcBgmyHFnDp0FfhgwZMsheMg2a6VYyCNYyZMiQMR24FpQ7ae3XAq4MGTKWYqSH9XxanXJCEOhlyJCxNaNTGKhdleAT7SycDBkytmD8ASthx2Vlur/dAAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACNklEQVR42u3a0W7CMAwFUP7/p5m0V0Z7bXfTcE+eqoqGnCKZxPbjEY/n93i9Pr7zOo5ne/3kxQMDA+NjGc/DkSw9X0qy0HezvVsbBgbGfRj5dL3AmuCT4P72PgYGBkZMyreS1e/FwMDAqG7Rjpc1ObhiYGBgTA6x1WUlM+Tfe9lZHAMD4wMZk8LAb1//UX0DAwPjHzOexTEP0L05T74RAwNjNSNvnsi3fb1kXG9L+kg6PjAwMFYwkiVWm8N68ySM8jYRAwNjEaMXgquFhDxxVr2PgYGxlZFsvPIjay8ezosQGBgYuxm9BH2vbWLSnJHgMTAwtjJ6Cf1J69hVybvofwMDA2MFI4rH4z6OXom091oxMDD2MfIp8rfSO+JWSwIYGBh3Y1QbVfOS57wMGQViDAyM1YxekK0WOwtLiYupGBgY92FUp0i2dJOGjLx4+UPWEAMDYymjehzNe7F6zyav9aTZAgMDYx0jLwBUCwa99FwSgk8awjAwMNYxqhMlDRCT9q88EGNgYNyHcW1rRa9do9APkvwOGBgYSxnJpJMSQu+68BQGBsZqxmQDlxQpk6Dc22hG/x4YGBgrGL0j6+RQmgfr/FkMDIzdjOoBtdc8UW3U6L0yDAyM3YxqkK0my6pvsRfoMTAw7sDoBdM8iT8vQpx8EgMDA6OYbuuBewdpDAwMjGTpF2zsgt6Jy7aGGBgYH8uoJuvzRfSawKoFAwwMjN2M6gGyl0pLNpp5wfKCEiYGBsZnML4AmdhW5LnLfC0AAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 

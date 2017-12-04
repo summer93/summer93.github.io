@@ -167,6 +167,105 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
+            <article id="post-自定义分页"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2016-11-09 09:31:27" datetime="2016-11-09T01:31:27.000Z"  itemprop="datePublished">2016-11-09</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2016/11/09/自定义分页/">自定义分页</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">def custom(request):</span><br><span class="line">    current_Page = request.GET.get(&apos;page&apos;)</span><br><span class="line">    current_Page = int(current_Page)</span><br><span class="line"></span><br><span class="line">    per_page = 10</span><br><span class="line"></span><br><span class="line">    start = (current_Page - 1) * per_page</span><br><span class="line">    end = current_Page * per_page</span><br><span class="line"></span><br><span class="line">    user_list = models.UserInfo.objects.all()[start:end]</span><br><span class="line"></span><br><span class="line">    return render(request,&apos;custom.html&apos;,&#123;&apos;user_list&apos;:user_list&#125;)</span><br></pre></td></tr></table></figure>
+    
+
+        <a href="/2016/11/09/自定义分页/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Django/">Django</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Ajax02"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2016-11-09 08:31:27" datetime="2016-11-09T00:31:27.000Z"  itemprop="datePublished">2016-11-09</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2016/11/09/Ajax02/">Ajax02 上传文件</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        <ul>
+<li><p>Ajax 上传文件</p>
+<ul>
+<li>原生Ajax</li>
+<li>JQuery Ajax</li>
+</ul>
+</li>
+<li><p>伪造Ajax上传</p>
+</li>
+</ul>
+    
+
+        <a href="/2016/11/09/Ajax02/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
             <article id="post-修复Bug，刷新无法动态显示数据库内容"
   class="article-card article-type-post" itemprop="blogPost">
 
@@ -197,51 +296,6 @@
     
 
         <a href="/2016/11/09/修复Bug，刷新无法动态显示数据库内容/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Django/">Django</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-xss跨站脚本攻击 ，csrf跨站请求伪造"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2016-11-09 08:31:27" datetime="2016-11-09T00:31:27.000Z"  itemprop="datePublished">2016-11-09</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/11/09/xss跨站脚本攻击 ，csrf跨站请求伪造/">xss跨站脚本攻击 ，csrf跨站请求伪造</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># views.py</span><br><span class="line"></span><br><span class="line">msg = []</span><br><span class="line">def comment(request):</span><br><span class="line">    if request.method == &apos;GET&apos;:</span><br><span class="line">        return render(request,&apos;comment.html&apos;)</span><br><span class="line">    else:</span><br><span class="line">        v = request.POST.get(&apos;content&apos;)</span><br><span class="line">        msg.append(v)</span><br><span class="line">        return render(request, &apos;comment.html&apos;)</span><br><span class="line">def show(request):</span><br><span class="line">    return render(request, &apos;index.html&apos;, &#123;&apos;msg&apos;: msg&#125;)</span><br><span class="line"></span><br><span class="line"># comment.html</span><br></pre></td></tr></table></figure>
-    
-
-        <a href="/2016/11/09/xss跨站脚本攻击 ，csrf跨站请求伪造/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -302,7 +356,7 @@
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Django-中间件01"
+            <article id="post-Ajax01"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
@@ -318,7 +372,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/11/09/Django-中间件01/">Django-中间件01</a>
+      <a class="post-title-link" href="/2016/11/09/Ajax01/">Ajax01</a>
     </h3>
   
 
@@ -329,67 +383,22 @@
 
     
         <ul>
-<li>django 中的中间件（middleware），在django中，中间件其实就是一个类，在请求到来和结束后，django会根据自己的规则在合适的时机执行中间件中相应的方法。请求过来，先经过所有的process_request(),到视图函数后，经过所有的process_response返回。</li>
-<li>但是如果中某一个process_request()有了返回值，找到它自己所对应的process_respons()直接返回。</li>
-<li>1.10版本之后都是这样的流程，之前的版本，如果process_request()有了返回值，会到最后一个process_respons()，然后返回 。<br>###5个方法</li>
-</ul>
-    
-
-        <a href="/2016/11/09/Django-中间件01/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Django/">Django</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Ajax02"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2016-11-09 08:31:27" datetime="2016-11-09T00:31:27.000Z"  itemprop="datePublished">2016-11-09</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/11/09/Ajax02/">Ajax02 上传文件</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        <ul>
-<li><p>Ajax 上传文件</p>
+<li><p>1.Ajax</p>
 <ul>
-<li>原生Ajax</li>
-<li>JQuery Ajax</li>
+<li><p>1.原生Ajax,XMLHttpRequest</p>
+<ul>
+<li>2.jQuery Ajax,内部基于’原生Ajax’</li>
 </ul>
 </li>
-<li><p>伪造Ajax上传</p>
+</ul>
 </li>
+<li><p>2.伪Ajax，非XMLHttpRequest</p>
+</li>
+<li>3.跨域Ajax，JSONP</li>
 </ul>
     
 
-        <a href="/2016/11/09/Ajax02/" class="post-more waves-effect waves-button">
+        <a href="/2016/11/09/Ajax01/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -469,6 +478,51 @@
         </li>
     
         <li class="post-list-item fade">
+            <article id="post-CBV|FBV"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2016-11-09 08:31:27" datetime="2016-11-09T00:31:27.000Z"  itemprop="datePublished">2016-11-09</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2016/11/09/CBV|FBV/">Django-CBV，FBV</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"># views.py</span><br><span class="line"></span><br><span class="line">from django.shortcuts import render,redirect,HttpResponse</span><br><span class="line"></span><br><span class="line"># Create your views here.</span><br><span class="line">from django.views import View</span><br><span class="line"></span><br><span class="line">class Login(View):</span><br><span class="line"></span><br><span class="line">    def dispatch(self, request, *args, **kwargs):</span><br><span class="line">        print(&apos;before&apos;)</span><br><span class="line">        obj = super(Login,self).dispatch(request, *args, **kwargs)</span><br><span class="line">        print(&apos;after&apos;)</span><br><span class="line">        return obj</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    def get(self,request):</span><br><span class="line">        return HttpResponse(&apos;Login...get&apos;)</span><br><span class="line"></span><br><span class="line">    def post(self,request):</span><br><span class="line">        user = request.POST.get(&apos;user&apos;)</span><br><span class="line">        print(user)</span><br><span class="line">        return HttpResponse(&apos;Login...post&apos;)</span><br></pre></td></tr></table></figure>
+    
+
+        <a href="/2016/11/09/CBV|FBV/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Django/">Django</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
             <article id="post-From组件"
   class="article-card article-type-post" itemprop="blogPost">
 
@@ -517,7 +571,7 @@
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Ajax01"
+            <article id="post-Django-中间件01"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
@@ -533,7 +587,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/11/09/Ajax01/">Ajax01</a>
+      <a class="post-title-link" href="/2016/11/09/Django-中间件01/">Django-中间件01</a>
     </h3>
   
 
@@ -544,67 +598,13 @@
 
     
         <ul>
-<li><p>1.Ajax</p>
-<ul>
-<li><p>1.原生Ajax,XMLHttpRequest</p>
-<ul>
-<li>2.jQuery Ajax,内部基于’原生Ajax’</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>2.伪Ajax，非XMLHttpRequest</p>
-</li>
-<li>3.跨域Ajax，JSONP</li>
+<li>django 中的中间件（middleware），在django中，中间件其实就是一个类，在请求到来和结束后，django会根据自己的规则在合适的时机执行中间件中相应的方法。请求过来，先经过所有的process_request(),到视图函数后，经过所有的process_response返回。</li>
+<li>但是如果中某一个process_request()有了返回值，找到它自己所对应的process_respons()直接返回。</li>
+<li>1.10版本之后都是这样的流程，之前的版本，如果process_request()有了返回值，会到最后一个process_respons()，然后返回 。<br>###5个方法</li>
 </ul>
     
 
-        <a href="/2016/11/09/Ajax01/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-CBV|FBV"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2016-11-09 08:31:27" datetime="2016-11-09T00:31:27.000Z"  itemprop="datePublished">2016-11-09</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/11/09/CBV|FBV/">Django-CBV，FBV</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"># views.py</span><br><span class="line"></span><br><span class="line">from django.shortcuts import render,redirect,HttpResponse</span><br><span class="line"></span><br><span class="line"># Create your views here.</span><br><span class="line">from django.views import View</span><br><span class="line"></span><br><span class="line">class Login(View):</span><br><span class="line"></span><br><span class="line">    def dispatch(self, request, *args, **kwargs):</span><br><span class="line">        print(&apos;before&apos;)</span><br><span class="line">        obj = super(Login,self).dispatch(request, *args, **kwargs)</span><br><span class="line">        print(&apos;after&apos;)</span><br><span class="line">        return obj</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    def get(self,request):</span><br><span class="line">        return HttpResponse(&apos;Login...get&apos;)</span><br><span class="line"></span><br><span class="line">    def post(self,request):</span><br><span class="line">        user = request.POST.get(&apos;user&apos;)</span><br><span class="line">        print(user)</span><br><span class="line">        return HttpResponse(&apos;Login...post&apos;)</span><br></pre></td></tr></table></figure>
-    
-
-        <a href="/2016/11/09/CBV|FBV/" class="post-more waves-effect waves-button">
+        <a href="/2016/11/09/Django-中间件01/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -620,11 +620,11 @@
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Django-ORM进阶操作02"
+            <article id="post-xss跨站脚本攻击 ，csrf跨站请求伪造"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2016-11-09 07:31:27" datetime="2016-11-08T23:31:27.000Z"  itemprop="datePublished">2016-11-09</time>
+        <time class="post-time" title="2016-11-09 08:31:27" datetime="2016-11-09T00:31:27.000Z"  itemprop="datePublished">2016-11-09</time>
 
         
 
@@ -636,7 +636,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/11/09/Django-ORM进阶操作02/">Django-ORM进阶操作02</a>
+      <a class="post-title-link" href="/2016/11/09/xss跨站脚本攻击 ，csrf跨站请求伪造/">xss跨站脚本攻击 ，csrf跨站请求伪造</a>
     </h3>
   
 
@@ -646,10 +646,10 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">q = models.UserInfo.objects.all().filter(id__lt=60)</span><br><span class="line"># for row in q:</span><br><span class="line">#     print(row.id,row.name,row.ut.title)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 这样进行查询性能不好，需要重新发sql请求在进行查询另外一张表中的数据，如果有10条数据就要进行11次查询</span><br><span class="line"></span><br><span class="line">q = models.UserInfo.objects.all().values(&apos;name&apos;,&apos;id&apos;,&apos;ut__title&apos;).filter(id__lt=60)</span><br><span class="line"># for i in q:</span><br><span class="line">#     print(i[&apos;name&apos;],i[&apos;ut__title&apos;])</span><br><span class="line"># 这样 进行了 优化 不回重复发送sql请求，到的结果内是字典</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">q = models.UserInfo.objects.all().select_related(&apos;ut&apos;).filter(id__lt=60)</span><br><span class="line">print(q.query)</span><br><span class="line"># for row in q:</span><br><span class="line">#     print(row.id,row.name,row.ut.title)</span><br><span class="line"># select_related(&apos;ut&apos;) 相当 于 inner join 先连成一张表再进行查询</span><br></pre></td></tr></table></figure>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># views.py</span><br><span class="line"></span><br><span class="line">msg = []</span><br><span class="line">def comment(request):</span><br><span class="line">    if request.method == &apos;GET&apos;:</span><br><span class="line">        return render(request,&apos;comment.html&apos;)</span><br><span class="line">    else:</span><br><span class="line">        v = request.POST.get(&apos;content&apos;)</span><br><span class="line">        msg.append(v)</span><br><span class="line">        return render(request, &apos;comment.html&apos;)</span><br><span class="line">def show(request):</span><br><span class="line">    return render(request, &apos;index.html&apos;, &#123;&apos;msg&apos;: msg&#125;)</span><br><span class="line"></span><br><span class="line"># comment.html</span><br></pre></td></tr></table></figure>
     
 
-        <a href="/2016/11/09/Django-ORM进阶操作02/" class="post-more waves-effect waves-button">
+        <a href="/2016/11/09/xss跨站脚本攻击 ，csrf跨站请求伪造/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
