@@ -167,6 +167,54 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
+            <article id="post-Python字符编码"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017-12-07 08:07:27" datetime="2017-12-07T00:07:27.000Z"  itemprop="datePublished">2017-12-07</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2017/12/07/Python字符编码/">Python-interface 接口</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        <ul>
+<li>在python2 中str存的是bytes数据，unicode存的是unicdoe编码后的二进制数据，</li>
+<li>在python3 中str存的是unicode数据，bytes存的是bytes数据</li>
+</ul>
+    
+
+        <a href="/2017/12/07/Python字符编码/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
             <article id="post-Python-interface 接口"
   class="article-card article-type-post" itemprop="blogPost">
 
@@ -269,7 +317,7 @@
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-MySQL-索引03"
+            <article id="post-MySQL-SQLAchemy04"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
@@ -285,7 +333,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/12/09/MySQL-索引03/">MySQL-索引03</a>
+      <a class="post-title-link" href="/2016/12/09/MySQL-SQLAchemy04/">MySQl-SQLAlchemy04</a>
     </h3>
   
 
@@ -296,19 +344,21 @@
 
     
         <ul>
-<li>主键索引<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">create tabel tb1(</span><br><span class="line">	id int auto_increment priamry key,</span><br><span class="line">	name char(32) not null,</span><br><span class="line">	age int not null</span><br><span class="line">)engine=innodb default utf8;</span><br><span class="line"></span><br><span class="line">create tabel tb1(</span><br><span class="line">	id int auto_increment,</span><br><span class="line">	name char(32) not null,</span><br><span class="line">	age int not null，</span><br><span class="line">	primary key (id)</span><br><span class="line">)engine=innodb default utf8;</span><br><span class="line"></span><br><span class="line">添加主键:</span><br><span class="line">	   alter table 表名 add primary key(列名)</span><br><span class="line">删除主键:</span><br><span class="line">	   alter table 表名 drop primary key;</span><br><span class="line">	   alter table 表名 modify 列名 int, drop primary key;</span><br></pre></td></tr></table></figure>
+<li><p>ORM技术:<br>  Object_Relational Mapping 把关系数据库的表结构映射到对象上。</p>
+</li>
+<li><p>SQLAlchemy:<br> SQLalchemy 是python编程语言下的一款ORM框架，该框架建立在数据库API之上，使用关系对象映射进行数据库操作，简言之便是：将对象转换成SQL，然后使用数据API执行SQL并获取执行结果。</p>
 </li>
 </ul>
     
 
-        <a href="/2016/12/09/MySQL-索引03/" class="post-more waves-effect waves-button">
+        <a href="/2016/12/09/MySQL-SQLAchemy04/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
     
     <div class="post-footer">
         
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
 
     </div>
     
@@ -369,56 +419,6 @@
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-MySQL-SQLAchemy04"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2016-12-09 08:30:27" datetime="2016-12-09T00:30:27.000Z"  itemprop="datePublished">2016-12-09</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/12/09/MySQL-SQLAchemy04/">MySQl-SQLAlchemy04</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        <ul>
-<li><p>ORM技术:<br>  Object_Relational Mapping 把关系数据库的表结构映射到对象上。</p>
-</li>
-<li><p>SQLAlchemy:<br> SQLalchemy 是python编程语言下的一款ORM框架，该框架建立在数据库API之上，使用关系对象映射进行数据库操作，简言之便是：将对象转换成SQL，然后使用数据API执行SQL并获取执行结果。</p>
-</li>
-</ul>
-    
-
-        <a href="/2016/12/09/MySQL-SQLAchemy04/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
             <article id="post-MySQL整理 -补充02"
   class="article-card article-type-post" itemprop="blogPost">
 
@@ -452,6 +452,54 @@
     
 
         <a href="/2016/12/09/MySQL整理 -补充02/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-MySQL-索引03"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2016-12-09 08:30:27" datetime="2016-12-09T00:30:27.000Z"  itemprop="datePublished">2016-12-09</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2016/12/09/MySQL-索引03/">MySQL-索引03</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        <ul>
+<li>主键索引<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">create tabel tb1(</span><br><span class="line">	id int auto_increment priamry key,</span><br><span class="line">	name char(32) not null,</span><br><span class="line">	age int not null</span><br><span class="line">)engine=innodb default utf8;</span><br><span class="line"></span><br><span class="line">create tabel tb1(</span><br><span class="line">	id int auto_increment,</span><br><span class="line">	name char(32) not null,</span><br><span class="line">	age int not null，</span><br><span class="line">	primary key (id)</span><br><span class="line">)engine=innodb default utf8;</span><br><span class="line"></span><br><span class="line">添加主键:</span><br><span class="line">	   alter table 表名 add primary key(列名)</span><br><span class="line">删除主键:</span><br><span class="line">	   alter table 表名 drop primary key;</span><br><span class="line">	   alter table 表名 modify 列名 int, drop primary key;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+    
+
+        <a href="/2016/12/09/MySQL-索引03/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -594,55 +642,6 @@
     
 
         <a href="/2016/11/09/Django 基础- 路由系统/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Django/">Django</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Django-ORM多对多查询"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2016-11-09 09:31:27" datetime="2016-11-09T01:31:27.000Z"  itemprop="datePublished">2016-11-09</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/11/09/Django-ORM多对多查询/">Django-ORM多对多查询 (自定义第三张表&amp;ManyToManyField)</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        <ul>
-<li>对于多对多表</li>
-<li>1.自定义第三张表，更加灵活</li>
-<li>2.ManyToManyField 自动生成第3张表 只能 有3列数据 不能自己添加。</li>
-</ul>
-    
-
-        <a href="/2016/11/09/Django-ORM多对多查询/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>

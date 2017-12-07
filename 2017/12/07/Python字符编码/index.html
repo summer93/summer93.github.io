@@ -13,25 +13,25 @@
     
     
     
-    <title>Form select 框 | summer&#39;博客 | It&#39;s my blog</title>
+    <title>Python-interface 接口 | summer&#39;博客 | It&#39;s my blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#2196f3">
     
     
-    <meta name="keywords" content="Python,Django">
-    <meta name="description" content="123456Select框：单选	cls_id = fields.IntegerField(		# widget=widgets.Select(choices=[(1,&amp;apos;上海&amp;apos;),(2,&amp;apos;北京&amp;apos;)])		widget=widgets.Select(choices=models.Classes.objects.values_list(&amp;apos;id&amp;apos">
-<meta name="keywords" content="Python,Django">
+    <meta name="keywords" content="Python">
+    <meta name="description" content="在python2 中str存的是bytes数据，unicode存的是unicdoe编码后的二进制数据， 在python3 中str存的是unicode数据，bytes存的是bytes数据">
+<meta name="keywords" content="Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Form select 框">
-<meta property="og:url" content="http://midsummer.com/2016/09/19/Form select 框/index.html">
+<meta property="og:title" content="Python-interface 接口">
+<meta property="og:url" content="http://midsummer.com/2017/12/07/Python字符编码/index.html">
 <meta property="og:site_name" content="summer&#39;博客">
-<meta property="og:description" content="123456Select框：单选	cls_id = fields.IntegerField(		# widget=widgets.Select(choices=[(1,&amp;apos;上海&amp;apos;),(2,&amp;apos;北京&amp;apos;)])		widget=widgets.Select(choices=models.Classes.objects.values_list(&amp;apos;id&amp;apos">
+<meta property="og:description" content="在python2 中str存的是bytes数据，unicode存的是unicdoe编码后的二进制数据， 在python3 中str存的是unicode数据，bytes存的是bytes数据">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-11-15T03:57:06.000Z">
+<meta property="og:updated_time" content="2017-12-07T12:08:58.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Form select 框">
-<meta name="twitter:description" content="123456Select框：单选	cls_id = fields.IntegerField(		# widget=widgets.Select(choices=[(1,&amp;apos;上海&amp;apos;),(2,&amp;apos;北京&amp;apos;)])		widget=widgets.Select(choices=models.Classes.objects.values_list(&amp;apos;id&amp;apos">
+<meta name="twitter:title" content="Python-interface 接口">
+<meta name="twitter:description" content="在python2 中str存的是bytes数据，unicode存的是unicdoe编码后的二进制数据， 在python3 中str存的是unicode数据，bytes存的是bytes数据">
     
         <link rel="alternate" type="application/atom+xml" title="summer&#39;博客" href="/autom.xml">
     
@@ -128,7 +128,7 @@
           <i class="icon icon-lg icon-navicon"></i>
         </a>
 
-        <div class="flex-col header-title ellipsis">Form select 框</div>
+        <div class="flex-col header-title ellipsis">Python-interface 接口</div>
 
         
         <div class="search-wrap" id="search-wrap">
@@ -151,11 +151,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Form select 框</h1>
+        <h1 class="title">Python-interface 接口</h1>
         <h5 class="subtitle">
             
-                <time datetime="2016-09-19T00:31:27.000Z" itemprop="datePublished" class="page-time">
-  2016-09-19
+                <time datetime="2017-12-07T00:07:27.000Z" itemprop="datePublished" class="page-time">
+  2017-12-07
 </time>
 
 
@@ -170,20 +170,13 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Form-select-框"><span class="post-toc-number">1.</span> <span class="post-toc-text">Form select 框</span></a></li></ol>
-        </nav>
-    </aside>
-    
-<article id="post-Form select 框"
+<article id="post-Python字符编码"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Form select 框</h1>
+        <h1 class="post-card-title">Python-interface 接口</h1>
         <div class="post-meta">
-            <time class="post-time" title="2016-09-19 08:31:27" datetime="2016-09-19T00:31:27.000Z"  itemprop="datePublished">2016-09-19</time>
+            <time class="post-time" title="2017-12-07 08:07:27" datetime="2017-12-07T00:07:27.000Z"  itemprop="datePublished">2017-12-07</time>
 
             
 
@@ -196,16 +189,24 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Select框：</span><br><span class="line">单选</span><br><span class="line">	cls_id = fields.IntegerField(</span><br><span class="line">		# widget=widgets.Select(choices=[(1,&apos;上海&apos;),(2,&apos;北京&apos;)])</span><br><span class="line">		widget=widgets.Select(choices=models.Classes.objects.values_list(&apos;id&apos;,&apos;title&apos;),attrs=&#123;&apos;class&apos;: &apos;form-control&apos;&#125;)</span><br><span class="line">	)</span><br></pre></td></tr></table></figure>
+            <ul>
+<li>在python2 中str存的是bytes数据，unicode存的是unicdoe编码后的二进制数据，</li>
+<li>在python3 中str存的是unicode数据，bytes存的是bytes数据</li>
+</ul>
 <a id="more"></a>
-<h3 id="Form-select-框"><a href="#Form-select-框" class="headerlink" title="Form select 框"></a>Form select 框</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">Select框：</span><br><span class="line">单选</span><br><span class="line">	cls_id = fields.IntegerField(</span><br><span class="line">		# widget=widgets.Select(choices=[(1,&apos;上海&apos;),(2,&apos;北京&apos;)])</span><br><span class="line">		widget=widgets.Select(choices=models.Classes.objects.values_list(&apos;id&apos;,&apos;title&apos;),attrs=&#123;&apos;class&apos;: &apos;form-control&apos;&#125;)</span><br><span class="line">	)</span><br><span class="line"></span><br><span class="line">	cls_id = fields.ChoiceField(</span><br><span class="line">		choices=models.Classes.objects.values_list(&apos;id&apos;,&apos;title&apos;),</span><br><span class="line">		widget=widgets.Select(attrs=&#123;&apos;class&apos;: &apos;form-control&apos;&#125;)</span><br><span class="line">	)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	obj = FooForm(&#123;&apos;cls_id&apos;:1&#125;)</span><br><span class="line">多选</span><br><span class="line">	xx = fields.MultipleChoiceField(</span><br><span class="line">		choices=models.Classes.objects.values_list(&apos;id&apos;,&apos;title&apos;),</span><br><span class="line">		widget=widgets.SelectMultiple</span><br><span class="line">	)</span><br><span class="line"></span><br><span class="line">	obj = FooForm(&#123;&apos;cls_id&apos;:[1,2,3]&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在python2 中str存的是bytes数据，unicode存的是unicdoe编码后的二进制数据，</li>
+<li>在python3 中str存的是unicode数据，bytes存的是bytes数据</li>
+</ul>
+<p>在python2 中混淆了bytes 和 unicode数据，u’hello’ + ‘hi’ 不会报错，结果为一个unicode数据<br>而在python3中严格区分了unicode和bytes数据，字节和字符类型，再混用直接报错，’hello’ + b’hi’ 不能相加 会报错</p>
+
         </div>
 
         <blockquote class="post-copyright">
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-11-15T03:57:06.000Z" itemprop="dateUpdated">2017-11-15 11:57:06</time>
+    最后更新时间：<time datetime="2017-12-07T12:08:58.000Z" itemprop="dateUpdated">2017-12-07 20:08:58</time>
 </span><br>
 
 
@@ -228,7 +229,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Django/">Django</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
 
 
             
@@ -238,7 +239,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://midsummer.com/2016/09/19/Form select 框/&title=《Form select 框》 — summer'博客&pic=http://midsummer.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://midsummer.com/2017/12/07/Python字符编码/&title=《Python-interface 接口》 — summer'博客&pic=http://midsummer.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -248,22 +249,24 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://midsummer.com/2016/09/19/Form select 框/&title=《Form select 框》 — summer'博客&source=123456Select框：单选	cls_id = fields.IntegerField(		# widget=widgets.Select(choic..." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://midsummer.com/2017/12/07/Python字符编码/&title=《Python-interface 接口》 — summer'博客&source=
+在python2 中str存的是bytes数据，unicode存的是unicdoe编码后的二进制数据，
+在python3 中str存的是unicode数..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://midsummer.com/2016/09/19/Form select 框/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://midsummer.com/2017/12/07/Python字符编码/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Form select 框》 — summer'博客&url=http://midsummer.com/2016/09/19/Form select 框/&via=http://midsummer.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Python-interface 接口》 — summer'博客&url=http://midsummer.com/2017/12/07/Python字符编码/&via=http://midsummer.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://midsummer.com/2016/09/19/Form select 框/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://midsummer.com/2017/12/07/Python字符编码/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -283,21 +286,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2016/10/09/Django-内置分页/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Django-内置分页</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2016/09/19/Form 文件上传/" id="post-next" class="post-nav-link">
+      <a href="/2017/12/04/Python-interface 接口/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Form 文件上传</h4>
+        <h4 class="title">Python-interface 接口</h4>
       </a>
     </div>
   
@@ -388,7 +384,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://midsummer.com/2016/09/19/Form select 框/&title=《Form select 框》 — summer'博客&pic=http://midsummer.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://midsummer.com/2017/12/07/Python字符编码/&title=《Python-interface 接口》 — summer'博客&pic=http://midsummer.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -398,22 +394,24 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://midsummer.com/2016/09/19/Form select 框/&title=《Form select 框》 — summer'博客&source=123456Select框：单选	cls_id = fields.IntegerField(		# widget=widgets.Select(choic..." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://midsummer.com/2017/12/07/Python字符编码/&title=《Python-interface 接口》 — summer'博客&source=
+在python2 中str存的是bytes数据，unicode存的是unicdoe编码后的二进制数据，
+在python3 中str存的是unicode数..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://midsummer.com/2016/09/19/Form select 框/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://midsummer.com/2017/12/07/Python字符编码/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Form select 框》 — summer'博客&url=http://midsummer.com/2016/09/19/Form select 框/&via=http://midsummer.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Python-interface 接口》 — summer'博客&url=http://midsummer.com/2017/12/07/Python字符编码/&via=http://midsummer.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://midsummer.com/2016/09/19/Form select 框/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://midsummer.com/2017/12/07/Python字符编码/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -424,7 +422,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACL0lEQVR42u3aQW7DMAwF0dz/0u62i1qZT9oFRI1WAeq4eirAUiQ/H7yuX+vup+vn+ee73/LAkiFDxraMa7nWz9wxyEGs38/3JkOGjHMY6zCaklJYekAyZMiQsWZ0gilJN2XIkCHjKUaaUNaCtQwZMmT0UzRekkvf8+JdXIYMGRsyeNX9/z+/0t+QIUPGVowrXJxKUsNakP1jVzJkyBjN6Kd9abGMpJ7F/ciQIWMoIx19IPlYOpzBy3O3xydDhoxjGJ3C2ZrdCcHkuzJkyDiHURuV4JfYdCCDhPu4FihDhowNGWmQ5aW0NASTQ0HXXRkyZIxjdMa20hGuTsEu/gvIkCFjHCMNgvx62Ukrg8aDDBkyRjPS4Yb+6FiaaPIxDhkyZJzD6Pwazq61Ab7sVoYMGQcw0g2lhbY3hs++dDlkyJAxgsHbADxAp01KDohnRmTIkDGIwQv6fIQrDbK8VFc8VxkyZAxi1EpscWksbJd+ORoZMmSMZtQCXzr+1UkQ4yuxDBkyhjJ4cS29gvJrLT+OYNhChgwZ4xhPvZpfg/lA2GP9DRkyZGzOIEX5fquSHxP/rgwZMmYzrnDxRK12xU3fH3QwZMiQsS2jM2DBg2a6FfJ80OCUIUPGCEYt4asV92vpI9mDDBkyTmC8MYrKSfw/wO3zMmTIkIGf6QxtpLuSIUOGjM6QxFPDGcVOrAwZMoYyas2ANHF86soqQ4aM0xj86sivlCSkEh5pTsiQIWM04wf1TDf1LFzYHgAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACOElEQVR42u3a227CQAwFwP7/T1OpT1RAOLaTquxOniJIs5lUMuvL11d83H6O+/P7T46vebz++PzxzqcdGBgYH8u4HR6Pi71aMr/++EGT1/HkDhgYGBswqrdLQuQVr+Pl5xgYGBhBiMyDY/ItBgYGxjzg5t8eh9ckrcXAwMDIk9jj5ZOFq6tckotjYGB8IKPXGPib88v7GxgYGP+ecSseecms2gTNg+yTp8LAwFiaMdneVduTvQQ4eYkYGBg7MOYFr15jsprEnraHxcDA+ChGb3giOc/D6ySdxsDA2IdRHZiYNC/PSnF/nWNgYCzNyBPFZDwiT30naeqbchsGBsbSjOojTsYmJoH75cvFwMBYlJGX+Ku3Th5rgn/SicXAwFiUkZT15yG1iu9tNzEwMHZglHeUxeZlXm7LWxEYGBj7MHpltbwB2XyU+McAAwNjbcYkvew1Faqk6M4YGBhLM6rFsupoRb7hy4Nv1OzEwMBYlFEdcagG1qRslwT06P+AgYGxKOOKka98zKIw/oWBgbEZI9/2VQNuvgXsNS/L+1kMDIwPZ1Q/mTcvJ0G8MC2CgYGxBCPfLeYhOH/EakP0zV9hYGAsypg0AHojYucW4DAwMHZg5Ec1Ha2G0d4YGQYGxj6MvNxW3UrmG80kpL5ZFwMDYwNGr5FZ3aI1e6oYGBgYMaNagOsNZFR/ADAwMDB6qWYvfI+aoxgYGBsw8mJ9tbjfw+RlPgwMjB0Yk8ZAXkrLA3Rvu4mBgbEo4xu7L6h2s6w43AAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 
