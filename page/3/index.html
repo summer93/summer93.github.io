@@ -167,7 +167,7 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
-            <article id="post-xss跨站脚本攻击 ，csrf跨站请求伪造"
+            <article id="post-修复Bug，刷新无法动态显示数据库内容"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
@@ -183,7 +183,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/11/09/xss跨站脚本攻击 ，csrf跨站请求伪造/">xss跨站脚本攻击 ，csrf跨站请求伪造</a>
+      <a class="post-title-link" href="/2016/11/09/修复Bug，刷新无法动态显示数据库内容/">修复Bug，刷新无法动态显示数据库内容</a>
     </h3>
   
 
@@ -193,10 +193,10 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># views.py</span><br><span class="line"></span><br><span class="line">msg = []</span><br><span class="line">def comment(request):</span><br><span class="line">    if request.method == &apos;GET&apos;:</span><br><span class="line">        return render(request,&apos;comment.html&apos;)</span><br><span class="line">    else:</span><br><span class="line">        v = request.POST.get(&apos;content&apos;)</span><br><span class="line">        msg.append(v)</span><br><span class="line">        return render(request, &apos;comment.html&apos;)</span><br><span class="line">def show(request):</span><br><span class="line">    return render(request, &apos;index.html&apos;, &#123;&apos;msg&apos;: msg&#125;)</span><br><span class="line"></span><br><span class="line"># comment.html</span><br></pre></td></tr></table></figure>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">修复Bug，刷新无法动态显示数据库内容：</span><br><span class="line">	方式一：</span><br><span class="line">		class TeacherForm(Form):</span><br><span class="line">			tname = fields.CharField(min_length=2)</span><br><span class="line">			# xx = form_model.ModelMultipleChoiceField(queryset=models.Classes.objects.all())</span><br><span class="line">			# xx = form_model.ModelChoiceField(queryset=models.Classes.objects.all())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	方式二：</span><br><span class="line">		class TeacherForm(Form):</span><br><span class="line">			tname = fields.CharField(min_length=2)</span><br><span class="line"></span><br><span class="line">			xx = fields.MultipleChoiceField(</span><br><span class="line">				widget=widgets.SelectMultiple</span><br><span class="line">			)</span><br><span class="line">			def __init__(self,*args,**kwargs):</span><br><span class="line">				super(TeacherForm,self).__init__(*args,**kwargs)</span><br><span class="line">				self.fields[&apos;xx&apos;].choices = models.Classes.objects.values_list(&apos;id&apos;,&apos;title&apos;)</span><br></pre></td></tr></table></figure>
     
 
-        <a href="/2016/11/09/xss跨站脚本攻击 ，csrf跨站请求伪造/" class="post-more waves-effect waves-button">
+        <a href="/2016/11/09/修复Bug，刷新无法动态显示数据库内容/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -204,6 +204,64 @@
     <div class="post-footer">
         
 	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Django/">Django</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Ajax01"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2016-11-09 08:31:27" datetime="2016-11-09T00:31:27.000Z"  itemprop="datePublished">2016-11-09</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2016/11/09/Ajax01/">Ajax01</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        <ul>
+<li><p>1.Ajax</p>
+<ul>
+<li><p>1.原生Ajax,XMLHttpRequest</p>
+<ul>
+<li>2.jQuery Ajax,内部基于’原生Ajax’</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>2.伪Ajax，非XMLHttpRequest</p>
+</li>
+<li>3.跨域Ajax，JSONP</li>
+</ul>
+    
+
+        <a href="/2016/11/09/Ajax01/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
 
     </div>
     
@@ -287,6 +345,128 @@
     
 
         <a href="/2016/11/08/Django-ORM进阶操作01/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Django/">Django</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Django基础-ORM基本操作"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2016-10-09 08:31:27" datetime="2016-10-09T00:31:27.000Z"  itemprop="datePublished">2016-10-09</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2016/10/09/Django基础-ORM基本操作/">Django基础-ORM基本操作</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        <ul>
+<li><p>ORM：操作表：</p>
+<ul>
+<li>创建表</li>
+<li>修改表( 在SQLAchemy中不能进行修改表操作)</li>
+<li>删除表</li>
+</ul>
+</li>
+<li><p>ORM：操作数据行：</p>
+<ul>
+<li>增删改查</li>
+</ul>
+</li>
+<li><p>配置</p>
+</li>
+</ul>
+    
+
+        <a href="/2016/10/09/Django基础-ORM基本操作/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Django/">Django</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Django-模版"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2016-10-09 08:31:27" datetime="2016-10-09T00:31:27.000Z"  itemprop="datePublished">2016-10-09</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2016/10/09/Django-模版/">Django-模版</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        <ul>
+<li>基本使用</li>
+<li>母版</li>
+<li>导入include</li>
+<li>函数 - &gt; 不用加() 自动执行</li>
+<li>模版自定义函数：<ul>
+<li>simple_filter<ul>
+<li>最多两个参数</li>
+</ul>
+</li>
+<li>simple_tag<ul>
+<li>参数个数限制</li>
+</ul>
+</li>
+<li>simple_filter 可以做条件判断，simple_tag不行</li>
+</ul>
+</li>
+</ul>
+    
+
+        <a href="/2016/10/09/Django-模版/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -387,11 +567,11 @@ return render(request, &apos;test.html&apos;, {&apos;posts&apos;: posts})
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Django-模版"
+            <article id="post-Form select 框"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2016-10-09 08:31:27" datetime="2016-10-09T00:31:27.000Z"  itemprop="datePublished">2016-10-09</time>
+        <time class="post-time" title="2016-09-19 08:31:27" datetime="2016-09-19T00:31:27.000Z"  itemprop="datePublished">2016-09-19</time>
 
         
 
@@ -403,7 +583,7 @@ return render(request, &apos;test.html&apos;, {&apos;posts&apos;: posts})
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/10/09/Django-模版/">Django-模版</a>
+      <a class="post-title-link" href="/2016/09/19/Form select 框/">Form select 框</a>
     </h3>
   
 
@@ -413,87 +593,10 @@ return render(request, &apos;test.html&apos;, {&apos;posts&apos;: posts})
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        <ul>
-<li>基本使用</li>
-<li>母版</li>
-<li>导入include</li>
-<li>函数 - &gt; 不用加() 自动执行</li>
-<li>模版自定义函数：<ul>
-<li>simple_filter<ul>
-<li>最多两个参数</li>
-</ul>
-</li>
-<li>simple_tag<ul>
-<li>参数个数限制</li>
-</ul>
-</li>
-<li>simple_filter 可以做条件判断，simple_tag不行</li>
-</ul>
-</li>
-</ul>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Select框：</span><br><span class="line">单选</span><br><span class="line">	cls_id = fields.IntegerField(</span><br><span class="line">		# widget=widgets.Select(choices=[(1,&apos;上海&apos;),(2,&apos;北京&apos;)])</span><br><span class="line">		widget=widgets.Select(choices=models.Classes.objects.values_list(&apos;id&apos;,&apos;title&apos;),attrs=&#123;&apos;class&apos;: &apos;form-control&apos;&#125;)</span><br><span class="line">	)</span><br></pre></td></tr></table></figure>
     
 
-        <a href="/2016/10/09/Django-模版/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Django/">Django</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-Django基础-ORM基本操作"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2016-10-09 08:31:27" datetime="2016-10-09T00:31:27.000Z"  itemprop="datePublished">2016-10-09</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/10/09/Django基础-ORM基本操作/">Django基础-ORM基本操作</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        <ul>
-<li><p>ORM：操作表：</p>
-<ul>
-<li>创建表</li>
-<li>修改表( 在SQLAchemy中不能进行修改表操作)</li>
-<li>删除表</li>
-</ul>
-</li>
-<li><p>ORM：操作数据行：</p>
-<ul>
-<li>增删改查</li>
-</ul>
-</li>
-<li><p>配置</p>
-</li>
-</ul>
-    
-
-        <a href="/2016/10/09/Django基础-ORM基本操作/" class="post-more waves-effect waves-button">
+        <a href="/2016/09/19/Form select 框/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
@@ -554,51 +657,6 @@ return render(request, &apos;test.html&apos;, {&apos;posts&apos;: posts})
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Form select 框"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2016-09-19 08:31:27" datetime="2016-09-19T00:31:27.000Z"  itemprop="datePublished">2016-09-19</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/09/19/Form select 框/">Form select 框</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Select框：</span><br><span class="line">单选</span><br><span class="line">	cls_id = fields.IntegerField(</span><br><span class="line">		# widget=widgets.Select(choices=[(1,&apos;上海&apos;),(2,&apos;北京&apos;)])</span><br><span class="line">		widget=widgets.Select(choices=models.Classes.objects.values_list(&apos;id&apos;,&apos;title&apos;),attrs=&#123;&apos;class&apos;: &apos;form-control&apos;&#125;)</span><br><span class="line">	)</span><br></pre></td></tr></table></figure>
-    
-
-        <a href="/2016/09/19/Form select 框/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Django/">Django</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
             <article id="post-Form 验证之钩子"
   class="article-card article-type-post" itemprop="blogPost">
 
@@ -643,57 +701,12 @@ return render(request, &apos;test.html&apos;, {&apos;posts&apos;: posts})
 
         </li>
     
-        <li class="post-list-item fade">
-            <article id="post-实现popup"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2016-07-09 08:45:57" datetime="2016-07-09T00:45:57.000Z"  itemprop="datePublished">2016-07-09</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/07/09/实现popup/">实现popup</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"># views.py</span><br><span class="line"></span><br><span class="line">def test(request):</span><br><span class="line">    user_group_list = models.Role.objects.all()</span><br><span class="line">    return render(request,&apos;test.html&apos;,&#123;&apos;user_group_list&apos;: user_group_list&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def add_test(request):</span><br><span class="line">    if request.method == &apos;GET&apos;:</span><br><span class="line">        return render(request,&apos;add_test.html&apos;)</span><br><span class="line">    else:</span><br><span class="line">        popid = request.GET.get(&apos;popup&apos;)</span><br><span class="line">        if popid:</span><br><span class="line">            title = request.POST.get(&apos;title&apos;)</span><br><span class="line">            print(title,&apos;---------&apos;)</span><br><span class="line">            obj = models.Role.objects.create(name=title)</span><br><span class="line">            return render(request,&apos;popup_response.html&apos;,&#123;&apos;id&apos;:obj.id,&apos;title&apos;:obj.name,&apos;popid&apos;:popid&#125;)</span><br></pre></td></tr></table></figure>
-    
-
-        <a href="/2016/07/09/实现popup/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Django/">Django</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
     </ul>
 
     
 <nav id="page-nav">
     <div class="inner">
-    <a class="extend prev" rel="prev" href="/page/2/">上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    <a class="extend prev" rel="prev" href="/page/2/">上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">下一页</a>
     </div>
 </nav>
 
@@ -721,7 +734,7 @@ return render(request, &apos;test.html&apos;, {&apos;posts&apos;: posts})
         </p>
     </div>
     <div class="bottom">
-        <p><span>summer &copy; 2015 - 2017</span>
+        <p><span>summer &copy; 2015 - 2018</span>
             <span>
                 
                 Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>

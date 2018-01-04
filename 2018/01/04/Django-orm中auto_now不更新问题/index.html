@@ -13,25 +13,25 @@
     
     
     
-    <title>修复Bug，刷新无法动态显示数据库内容 | summer&#39;博客 | It&#39;s my blog</title>
+    <title>Django-orm中auto_now不更新问题 | summer&#39;博客 | It&#39;s my blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#2196f3">
     
     
     <meta name="keywords" content="Python,Django">
-    <meta name="description" content="123456789101112131415161718修复Bug，刷新无法动态显示数据库内容：	方式一：		class TeacherForm(Form):			tname = fields.CharField(min_length=2)			# xx = form_model.ModelMultipleChoiceField(queryset=models.Classes.objects.all">
+    <meta name="description" content="在django的model层给字段添加auto_now之后,再使用save()方法更新数据库时会自动更新当时的时间. 如果使用update来更新数据，则是直接调用sql语句不通过 model层, 所以不会自动更新带有auto_now的字段">
 <meta name="keywords" content="Python,Django">
 <meta property="og:type" content="article">
-<meta property="og:title" content="修复Bug，刷新无法动态显示数据库内容">
-<meta property="og:url" content="http://midsummer.com/2016/11/09/修复Bug，刷新无法动态显示数据库内容/index.html">
+<meta property="og:title" content="Django-orm中auto_now不更新问题">
+<meta property="og:url" content="http://midsummer.com/2018/01/04/Django-orm中auto_now不更新问题/index.html">
 <meta property="og:site_name" content="summer&#39;博客">
-<meta property="og:description" content="123456789101112131415161718修复Bug，刷新无法动态显示数据库内容：	方式一：		class TeacherForm(Form):			tname = fields.CharField(min_length=2)			# xx = form_model.ModelMultipleChoiceField(queryset=models.Classes.objects.all">
+<meta property="og:description" content="在django的model层给字段添加auto_now之后,再使用save()方法更新数据库时会自动更新当时的时间. 如果使用update来更新数据，则是直接调用sql语句不通过 model层, 所以不会自动更新带有auto_now的字段">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-11-15T03:54:42.000Z">
+<meta property="og:updated_time" content="2018-01-04T07:06:37.830Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="修复Bug，刷新无法动态显示数据库内容">
-<meta name="twitter:description" content="123456789101112131415161718修复Bug，刷新无法动态显示数据库内容：	方式一：		class TeacherForm(Form):			tname = fields.CharField(min_length=2)			# xx = form_model.ModelMultipleChoiceField(queryset=models.Classes.objects.all">
+<meta name="twitter:title" content="Django-orm中auto_now不更新问题">
+<meta name="twitter:description" content="在django的model层给字段添加auto_now之后,再使用save()方法更新数据库时会自动更新当时的时间. 如果使用update来更新数据，则是直接调用sql语句不通过 model层, 所以不会自动更新带有auto_now的字段">
     
         <link rel="alternate" type="application/atom+xml" title="summer&#39;博客" href="/autom.xml">
     
@@ -128,7 +128,7 @@
           <i class="icon icon-lg icon-navicon"></i>
         </a>
 
-        <div class="flex-col header-title ellipsis">修复Bug，刷新无法动态显示数据库内容</div>
+        <div class="flex-col header-title ellipsis">Django-orm中auto_now不更新问题</div>
 
         
         <div class="search-wrap" id="search-wrap">
@@ -151,11 +151,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">修复Bug，刷新无法动态显示数据库内容</h1>
+        <h1 class="title">Django-orm中auto_now不更新问题</h1>
         <h5 class="subtitle">
             
-                <time datetime="2016-11-09T00:31:27.000Z" itemprop="datePublished" class="page-time">
-  2016-11-09
+                <time datetime="2018-01-04T07:03:26.000Z" itemprop="datePublished" class="page-time">
+  2018-01-04
 </time>
 
 
@@ -170,20 +170,13 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#修复Bug"><span class="post-toc-number">1.</span> <span class="post-toc-text">修复Bug</span></a></li></ol>
-        </nav>
-    </aside>
-    
-<article id="post-修复Bug，刷新无法动态显示数据库内容"
+<article id="post-Django-orm中auto_now不更新问题"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">修复Bug，刷新无法动态显示数据库内容</h1>
+        <h1 class="post-card-title">Django-orm中auto_now不更新问题</h1>
         <div class="post-meta">
-            <time class="post-time" title="2016-11-09 08:31:27" datetime="2016-11-09T00:31:27.000Z"  itemprop="datePublished">2016-11-09</time>
+            <time class="post-time" title="2018-01-04 15:03:26" datetime="2018-01-04T07:03:26.000Z"  itemprop="datePublished">2018-01-04</time>
 
             
 
@@ -196,16 +189,26 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">修复Bug，刷新无法动态显示数据库内容：</span><br><span class="line">	方式一：</span><br><span class="line">		class TeacherForm(Form):</span><br><span class="line">			tname = fields.CharField(min_length=2)</span><br><span class="line">			# xx = form_model.ModelMultipleChoiceField(queryset=models.Classes.objects.all())</span><br><span class="line">			# xx = form_model.ModelChoiceField(queryset=models.Classes.objects.all())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	方式二：</span><br><span class="line">		class TeacherForm(Form):</span><br><span class="line">			tname = fields.CharField(min_length=2)</span><br><span class="line"></span><br><span class="line">			xx = fields.MultipleChoiceField(</span><br><span class="line">				widget=widgets.SelectMultiple</span><br><span class="line">			)</span><br><span class="line">			def __init__(self,*args,**kwargs):</span><br><span class="line">				super(TeacherForm,self).__init__(*args,**kwargs)</span><br><span class="line">				self.fields[&apos;xx&apos;].choices = models.Classes.objects.values_list(&apos;id&apos;,&apos;title&apos;)</span><br></pre></td></tr></table></figure>
+            <ul>
+<li>在django的model层给字段添加auto_now之后,再使用save()方法更新数据库时会自动更新当时的时间.</li>
+<li>如果使用update来更新数据，则是直接调用sql语句不通过 model层, 所以不会自动更新带有auto_now的字段</li>
+</ul>
 <a id="more"></a>
-<h3 id="修复Bug"><a href="#修复Bug" class="headerlink" title="修复Bug"></a>修复Bug</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">修复Bug，刷新无法动态显示数据库内容：</span><br><span class="line">	方式一：</span><br><span class="line">		class TeacherForm(Form):</span><br><span class="line">			tname = fields.CharField(min_length=2)</span><br><span class="line">			# xx = form_model.ModelMultipleChoiceField(queryset=models.Classes.objects.all())</span><br><span class="line">			# xx = form_model.ModelChoiceField(queryset=models.Classes.objects.all())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	方式二：</span><br><span class="line">		class TeacherForm(Form):</span><br><span class="line">			tname = fields.CharField(min_length=2)</span><br><span class="line"></span><br><span class="line">			xx = fields.MultipleChoiceField(</span><br><span class="line">				widget=widgets.SelectMultiple</span><br><span class="line">			)</span><br><span class="line">			def __init__(self,*args,**kwargs):</span><br><span class="line">				super(TeacherForm,self).__init__(*args,**kwargs)</span><br><span class="line">				self.fields[&apos;xx&apos;].choices = models.Classes.objects.values_list(&apos;id&apos;,&apos;title&apos;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在django的model层给字段添加auto_now之后,再使用save()方法更新数据库时会自动更新当时的时间.</li>
+<li>如果使用update来更新数据，则是直接调用sql语句不通过 model层, 所以不会自动更新带有auto_now的字段</li>
+</ul>
+<ul>
+<li>如果使用了update来更新，需要手动跟新时间update(modified_date_time=datetime.datetime.now())</li>
+</ul>
+
         </div>
 
         <blockquote class="post-copyright">
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-11-15T03:54:42.000Z" itemprop="dateUpdated">2017-11-15 11:54:42</time>
+    最后更新时间：<time datetime="2018-01-04T07:06:37.830Z" itemprop="dateUpdated">2018-01-04 15:06:37</time>
 </span><br>
 
 
@@ -238,7 +241,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://midsummer.com/2016/11/09/修复Bug，刷新无法动态显示数据库内容/&title=《修复Bug，刷新无法动态显示数据库内容》 — summer'博客&pic=http://midsummer.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://midsummer.com/2018/01/04/Django-orm中auto_now不更新问题/&title=《Django-orm中auto_now不更新问题》 — summer'博客&pic=http://midsummer.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -248,22 +251,24 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://midsummer.com/2016/11/09/修复Bug，刷新无法动态显示数据库内容/&title=《修复Bug，刷新无法动态显示数据库内容》 — summer'博客&source=123456789101112131415161718修复Bug，刷新无法动态显示数据库内容：	方式一：		class TeacherForm(Form)..." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://midsummer.com/2018/01/04/Django-orm中auto_now不更新问题/&title=《Django-orm中auto_now不更新问题》 — summer'博客&source=
+在django的model层给字段添加auto_now之后,再使用save()方法更新数据库时会自动更新当时的时间.
+如果使用update来更新数据，则..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://midsummer.com/2016/11/09/修复Bug，刷新无法动态显示数据库内容/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://midsummer.com/2018/01/04/Django-orm中auto_now不更新问题/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《修复Bug，刷新无法动态显示数据库内容》 — summer'博客&url=http://midsummer.com/2016/11/09/修复Bug，刷新无法动态显示数据库内容/&via=http://midsummer.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Django-orm中auto_now不更新问题》 — summer'博客&url=http://midsummer.com/2018/01/04/Django-orm中auto_now不更新问题/&via=http://midsummer.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://midsummer.com/2016/11/09/修复Bug，刷新无法动态显示数据库内容/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://midsummer.com/2018/01/04/Django-orm中auto_now不更新问题/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -283,21 +288,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2016/11/09/xss跨站脚本攻击 ，csrf跨站请求伪造/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">xss跨站脚本攻击 ，csrf跨站请求伪造</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2016/11/09/Ajax01/" id="post-next" class="post-nav-link">
+      <a href="/2017/12/07/Python字符编码/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Ajax01</h4>
+        <h4 class="title">Python字符编码</h4>
       </a>
     </div>
   
@@ -388,7 +386,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://midsummer.com/2016/11/09/修复Bug，刷新无法动态显示数据库内容/&title=《修复Bug，刷新无法动态显示数据库内容》 — summer'博客&pic=http://midsummer.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://midsummer.com/2018/01/04/Django-orm中auto_now不更新问题/&title=《Django-orm中auto_now不更新问题》 — summer'博客&pic=http://midsummer.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -398,22 +396,24 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://midsummer.com/2016/11/09/修复Bug，刷新无法动态显示数据库内容/&title=《修复Bug，刷新无法动态显示数据库内容》 — summer'博客&source=123456789101112131415161718修复Bug，刷新无法动态显示数据库内容：	方式一：		class TeacherForm(Form)..." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://midsummer.com/2018/01/04/Django-orm中auto_now不更新问题/&title=《Django-orm中auto_now不更新问题》 — summer'博客&source=
+在django的model层给字段添加auto_now之后,再使用save()方法更新数据库时会自动更新当时的时间.
+如果使用update来更新数据，则..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://midsummer.com/2016/11/09/修复Bug，刷新无法动态显示数据库内容/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://midsummer.com/2018/01/04/Django-orm中auto_now不更新问题/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《修复Bug，刷新无法动态显示数据库内容》 — summer'博客&url=http://midsummer.com/2016/11/09/修复Bug，刷新无法动态显示数据库内容/&via=http://midsummer.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Django-orm中auto_now不更新问题》 — summer'博客&url=http://midsummer.com/2018/01/04/Django-orm中auto_now不更新问题/&via=http://midsummer.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://midsummer.com/2016/11/09/修复Bug，刷新无法动态显示数据库内容/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://midsummer.com/2018/01/04/Django-orm中auto_now不更新问题/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -424,7 +424,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACtUlEQVR42u3aQW7DMAwEwPz/0y3Qa2JlSUqJC4xPheNaGh1EmeTjEV8/f9fznef7z7/mT67HvXpmw4WHh4fXmvp6QleTmE86wazn82YR8fDw8I7xJpvyPDysw08+Hzw8PLy78fJD7dVWnoeQnIqHh4f3v3jrJEVvo18fnfHw8PDuw0uSEfmQya95oiGZw4ZcCx4eHl7MqxbA7vD3wfoeHh4e3qCqnl/JYbp6BK8WvV68Bw8PD+8ALz8uV4+/k//qjR7lWvDw8PDGvGpaNi9HVZMR1ZRH1P6Fh4eHd4DXQ1absU4c3JtxDw8PD2/MS4pGvWLVrjasJCBd3sHDw8M7zJu/NE8ZzBu2ojt4eHh4h3nVtMIkJJzgXZa+8PDw8D7Cm2zNvcL/hjpe8sWAh4eHN+bl3Z69xtZeT2lv9DxQ4eHh4c15+cH6W/i8RQwPDw/vNG99MK3+PU8uVJMXb5YMDw8P7zBvvdHn7QXz9/daEy4LYHh4eHhbeb22gHy6uxYl/z64/GLAw8PD28rrJVWr5ave1HutBnh4eHif4SWTqFInS5MfoKMmMDw8PLxNvELEqK5WvHH3UgxRagMPDw/vAC8vRO0qd1WTub1x8fDw8M7x8o/53solLVPVdEN+4eHh4X2Gl2/Ek8J/8ubewr2IeHh4eHhbefmkq2nZ3oE7L4ZVn8TDw8PbxaselKtBotpSkI8ShQc8PDy8A7xe2amaLKimhgtT7MHw8PDwBrxyYnRMmiDzxAQeHh7eOV51251s4r1n1kfwvLSGh4eHt5dXDQb5Np0HieqhOSmn4eHh4Z3m5cGgOtFesniSjHgRGPDw8PBuwJs3BPQCTD4WHh4e3h141V97h/L8DVF9Dw8PD+8Yb5KM6KUbqvfzhd6cxsXDw8PrfOkXhpwc0KuAbW0EeHh4eCnvF8TPIhaEKdpIAAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACuUlEQVR42u3aQW4bMRAEQP//0wmQUwJYq+4ZUkaA0kmwLC6LhyHVnK+v+PXrz+vV+7//8upbyTjP4796yoEXHh4e3mjqr17PE32GPU8u+Z/npYlGwMPDw7vGy4dLSv9myWafvvw7Hh4e3o/yWtKmrD8vBx4eHt7/wmtDgVnc0C43Hh4e3k/x8jKdHI6fF+XsCMeyFjw8PLyYd7bEf+b9R+/38PDw8MrINSnrebnfB7vFbPHw8PAu8JJBk3aBvI0gr+GnDuV4eHh4Z3ltIW4f2TYTbGbyzXfx8PDwLvDyH/mnLvujCZXNCm/Gx8PDw7vG25f7Z9JssfIxX36Kh4eHd5Q3awhot4EZaRaXRLsZHh4e3oK3P+y2x992m5k1N+Dh4eF9ktf++N9P8d6BHg8PD+82Lyn0t5F5+0LxRDw8PLwLvE04mwSvbZwxi31XwQQeHh5eWSfzY3Te6jQLNdpt4w0SDw8P7wIvD0P3IWy7heRTL5B4eHh4a96+cWpz4E6i2/a5/7zHw8PDu8DbH4hnx+6knWuzdQ1/PeDh4eGNeG3TQBLFtsiLGwMeHh7eId6sfLcRbbsl5AtX7Hh4eHh4a15bZIsm0cUyJS0C0UaFh4eH90FeXrLzBqlkIU7dXkX5Ch4eHt6CN5tQW8rPXoNF8S4eHh7eNV4e1+4vt/KrrDbe/WYEPDw8vAu8TdNAHte228b+iQd6IvDw8PAeb4hmx9ZZi8AmnmiDYDw8PLzP8Np4oj2Ut9da+fXbN2Pi4eHhXeC1BTffMPIoYb+sBzYVPDw8vJI3uwZrp7WZ7myB8PDw8G7zNo1WefSQ5Mob9vCeDQ8PD+8ar70S2/9nG1u8ab3Cw8PD+yFeG9GeulobBsR4eHh413h5oNDGvpsrsQT/5niNh4eHd4G3n+6scar97rAtAA8PD+8k7zfQ9OQpUHjG/QAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 
