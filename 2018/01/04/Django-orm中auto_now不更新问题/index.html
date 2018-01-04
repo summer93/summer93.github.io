@@ -28,7 +28,7 @@
 <meta property="og:site_name" content="summer&#39;博客">
 <meta property="og:description" content="在django的model层给字段添加auto_now之后,再使用save()方法更新数据库时会自动更新当时的时间. 如果使用update来更新数据，则是直接调用sql语句不通过 model层, 所以不会自动更新带有auto_now的字段">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-01-04T07:06:37.830Z">
+<meta property="og:updated_time" content="2018-01-04T07:11:28.917Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Django-orm中auto_now不更新问题">
 <meta name="twitter:description" content="在django的model层给字段添加auto_now之后,再使用save()方法更新数据库时会自动更新当时的时间. 如果使用update来更新数据，则是直接调用sql语句不通过 model层, 所以不会自动更新带有auto_now的字段">
@@ -195,10 +195,6 @@
 </ul>
 <a id="more"></a>
 <ul>
-<li>在django的model层给字段添加auto_now之后,再使用save()方法更新数据库时会自动更新当时的时间.</li>
-<li>如果使用update来更新数据，则是直接调用sql语句不通过 model层, 所以不会自动更新带有auto_now的字段</li>
-</ul>
-<ul>
 <li>如果使用了update来更新，需要手动跟新时间update(modified_date_time=datetime.datetime.now())</li>
 </ul>
 
@@ -208,7 +204,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2018-01-04T07:06:37.830Z" itemprop="dateUpdated">2018-01-04 15:06:37</time>
+    最后更新时间：<time datetime="2018-01-04T07:11:28.917Z" itemprop="dateUpdated">2018-01-04 15:11:28</time>
 </span><br>
 
 
